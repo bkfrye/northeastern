@@ -10,47 +10,61 @@
  */
 ?>
 
-		</div><!-- .site-content -->
+		</div>
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
-					?>
-				</nav><!-- .main-navigation -->
-			<?php endif; ?>
+		<section id="site_footer">
+            <div class="footer_nav-wrapper">
+                <nav id="footer_left">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer-left',
+                         ) );
+                    ?>
+                </nav>
+                <nav id="footer_center">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer-center',
+                         ) );
+                    ?>
+                </nav>
+                <nav id="footer_right">
+                    <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer-right',
+                         ) );
+                    ?>
 
-			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'social',
-							'menu_class'     => 'social-links-menu',
-							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>',
-						) );
-					?>
-				</nav><!-- .social-navigation -->
-			<?php endif; ?>
+                    <ul id="privacy_info">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Privacy Statement</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-			<div class="site-info">
-				<?php
-					/**
-					 * Fires before the twentysixteen footer text for footer customization.
-					 *
-					 * @since Twenty Sixteen 1.0
-					 */
-					do_action( 'twentysixteen_credits' );
-				?>
-				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-				
-			</div><!-- .site-info -->
-		</footer><!-- .site-footer -->
+		</section>
+
+		<footer id="footer_global">
+			<div class="wrapper">
+                <a class="logo" href="http://www.northeastern.edu"></a>
+			<ul class="info">
+				<li><a href="http://myneu.neu.edu/cp/home/displaylogin">MyNEU</a></li>
+				<li><a href="http://www.northeastern.edu/findfacultystaff">Find Faculty &amp; Staff</a></li>
+				<li><a href="http://www.northeastern.edu/neuhome/adminlinks/findaz.html">Find A-Z</a></li>
+				<li><a href="http://www.northeastern.edu/emergency/index.html">Emergency Information</a></li>
+				<li><a href="http://www.northeastern.edu/search/index.html">Search</a></li>
+				<li><a href="http://assistive.usablenet.com/tt/http://www.northeastern.edu/index.html">Text Only</a></li>
+				<li><a href="http://www.northeastern.edu/privacy">Privacy</a></li>
+			</ul>
+			<ul class="social-media">
+				<li><a href="http://www.facebook.com/northeastern"><img alt="facebook" src="http://www.northeastern.edu/images/facebook.gif"></a></li>
+				<li><a href="http://www.twitter.com/northeastern"><img alt="twitter" src="http://www.northeastern.edu/images/twitter.gif"></a></li>
+				<li><a href="http://www.youtube.com/northeastern"><img alt="YouTube" src="http://www.northeastern.edu/images/youtube.gif"></a></li>
+			</ul>
+			<p class="contact">360 Huntington Ave., Boston, Massachusetts 02115 · 617.373.2000 · TTY 617.373.3768<br>
+			 © <span class="the-year">2014</span>&nbsp;Northeastern University</p>
+			</div>
+		</footer>
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 

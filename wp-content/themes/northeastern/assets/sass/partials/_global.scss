@@ -1,0 +1,81 @@
+/****************************
+********  General  **********
+****************************/
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body, section, article, div, span{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: $font;
+    color: $darkgray;
+
+    p{
+        font-size: 13px;
+        line-height: 1.5em;
+    }
+}
+
+h1, h2, h3, h4, h5, h6{font-family:$font-light-condensed;}
+
+section{
+
+}
+
+article{
+    @include outer-container(1280px);
+}
+
+img{
+    max-width: 500px;
+    height: auto;
+}
+
+
+.wrap{
+    @include outer-container(1280px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************
+*******   Components  *******
+****************************/
+
+%btn-base{
+    border: 1px solid white;
+    border-radius: 22px;
+    font:{
+        size: 12pt;
+    }
+    text-transform: uppercase;
+    height: 44px;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: font-size 397ms ease;
+}
+
+.btn{
+    @extend %btn-base;
+    color: white;
+}
+
+.btn-red{
+    @extend %btn-base;
+    background-color: red;
+    color: white;
+}

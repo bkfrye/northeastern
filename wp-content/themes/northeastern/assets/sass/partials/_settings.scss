@@ -1,0 +1,34 @@
+$black: #000000;
+$gray: #615445;
+$lightgray: #efefef;
+$mediumgray: #999999;
+$darkgray: #333333;
+$darkred: #ca0814;
+$brightred: #cc0000;
+$pink: #ff0099;
+$blue: #66ccff;
+$yellow: #ffcc00;
+$green: #99cc33;
+$bluegreen: #09c997;
+$orange: #ff9900;
+
+
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+$font: 'HelveticaNeueW01-55Roma', arial, sans-serif;
+$font-light: 'HelveticaNeueW01-45Ligh', arial, sans-serif;
+$font-light-condensed: 'HelveticaNeueW01-47LtCn 692686', arial, sans-serif;
+$font-bold-condensed: 'HelveticaNeueW01-77BdCn 692722', arial, sans-serif;
+$font-bold: 'HelveticaNeueW01-76Bold', arial, sans-serif;
+
+
+// setup icon image map
+$icon-imgs:(
+    Facebook: '../../img/svg/facebook.svg',
+    Twitter: '../../img/svg/twitter.svg',
+    Instagram: '../../img/svg/instagram.svg'
+);
+@each $icon-img, $bg-img in $icon-imgs {
+    .icon-#{$icon-img}{
+        background-image: url($bg-img);
+    }
+}

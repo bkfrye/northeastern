@@ -1,0 +1,30 @@
+@mixin span-columns-gutter( $cols, $gutter ){
+    @include span-columns($cols);
+    $fg-gutter: $gutter;
+}
+
+@mixin linx($link, $visit, $hover, $active) {
+  a {
+    color: $link;
+    &:visited {
+      color: $visit;
+    }
+
+    &:hover {
+      color: $hover;
+    }
+
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin bg-img($url){
+    background:{
+        position: center;
+        size: contain;
+        repeat: no-repeat;
+        image: url('$url');
+    }
+}

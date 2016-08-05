@@ -1,0 +1,166 @@
+/************************
+*** Global Footer  ******
+************************/
+#footer_global {
+    clear:both;
+    width: 100%;
+    color: #FFF;
+    letter-spacing: 0.03em;
+    padding: 20px 0px;
+    background-color: #636363;
+
+    .wrapper{
+        @include outer-container(1280px);
+        padding: 0 1em;
+    }
+
+    p {
+        margin-bottom: 10px;
+        line-height: 100%;
+        color: #FFF;
+        font-size: 11px!important;
+    }
+
+    a.logo {
+        background: url("https://www.northeastern.edu/neuhome/images/logo-footer.png") no-repeat scroll left top transparent;
+        color: #FFFFFF;
+        font-family: Georgia,Times,Arial,serif;
+        font-size: 18px;
+        height: 17px;
+        margin: 4px 20px 14px 0;
+        padding: 0;
+        text-decoration: none;
+        width: 173px;
+        display: block;
+
+        @include desktop{
+            float: left;
+        }
+    }
+
+    .info {
+        font-size: 12px;
+        list-style-type: none;
+        margin: 0 0 10px 0;
+        padding: 0;
+        color: #CCC;
+        @include desktop{
+            display: inline;
+        }
+        li {
+            margin: 0 4px 12px 0;
+            @include desktop{
+                display: inline-block;
+            }
+        }
+
+        li:after {
+            @include desktop{
+                content: "\20\00b7";
+            }
+        }
+
+        li:last-child:after {
+            content: "";
+            margin-right: 0;
+            padding-right: 0;
+        }
+    }
+
+    .info a:link,
+    .contact {
+        font-family: Arial,Verdana,Sans-Serif !important;
+    }
+
+    a:link,
+    a:visited {
+        color: #FFF;
+        text-decoration: none;
+    }
+    a:hover,
+    a:active {
+        color: #CCC;
+        text-decoration: underline;
+    }
+
+    .contact {
+        clear: both;
+        font-size: 100%;
+        line-height: 1.4em;
+        height: 24px;
+        padding: 0;
+        color: #CCC;
+
+        @include desktop{
+            margin: 0 0 0 193px;
+        }
+    }
+}
+
+.social-media {
+    display: inline;
+    float: right;
+    list-style-type: none;
+    font-size: 11px;
+    margin: -2px 0 0 0;
+
+    li {
+        float: left;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+        }
+    }
+    img {
+        margin: 0;
+        float: left;
+    }
+    a img {
+        border: 0;
+        padding: 0;
+    }
+}
+
+
+/************************
+*** Alumni Footer  ******
+************************/
+
+#site_footer{
+    background-color: $darkgray;
+    padding: 2em 1em;
+
+    @include linx(white, white, lightgray, white);
+
+    .footer_nav-wrapper{
+        @include outer-container(1280px);
+    }
+
+    a{
+        text-decoration: none;
+        text-transform: uppercase;
+        font-family: $font-light-condensed;
+    }
+
+    nav{
+        @include tablet{
+            @include span-columns(4);
+        }
+        ul{
+            padding: 0;
+        }
+        li{
+            margin-bottom: 8px;
+        }
+    }
+
+    #privacy_info{
+        margin-top: 32px;
+
+        a{
+            text-decoration: underline;
+        }
+    }
+}

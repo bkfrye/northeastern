@@ -5,3 +5,220 @@ html {
 *, *::after, *::before {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
+
+.icon-Facebook {
+  background-image: url("../../img/svg/facebook.svg"); }
+
+.icon-Twitter {
+  background-image: url("../../img/svg/twitter.svg"); }
+
+.icon-Instagram {
+  background-image: url("../../img/svg/instagram.svg"); }
+
+/****************************
+********  General  **********
+****************************/
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html, body, section, article, div, span {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-family: "HelveticaNeueW01-55Roma", arial, sans-serif;
+  color: #333333; }
+  html p {
+    font-size: 13px;
+    line-height: 1.5em; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
+
+article {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+  article::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+img {
+  max-width: 500px;
+  height: auto; }
+
+.wrap {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+  .wrap::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/****************************
+*******   Components  *******
+****************************/
+.btn, .btn-red {
+  border: 1px solid white;
+  -webkit-border-radius: 22px;
+          border-radius: 22px;
+  font-size: 12pt;
+  text-transform: uppercase;
+  height: 44px;
+  padding: 10px 30px;
+  text-decoration: none;
+  -webkit-transition: font-size 397ms ease;
+  transition: font-size 397ms ease; }
+
+.btn {
+  color: white; }
+
+.btn-red {
+  background-color: red;
+  color: white; }
+
+/************************
+*** Global Footer  ******
+************************/
+#footer_global {
+  clear: both;
+  width: 100%;
+  color: #FFF;
+  letter-spacing: 0.03em;
+  padding: 20px 0px;
+  background-color: #636363; }
+  #footer_global .wrapper {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1em; }
+    #footer_global .wrapper::after {
+      clear: both;
+      content: "";
+      display: table; }
+  #footer_global p {
+    margin-bottom: 10px;
+    line-height: 100%;
+    color: #FFF;
+    font-size: 11px !important; }
+  #footer_global a.logo {
+    background: url("https://www.northeastern.edu/neuhome/images/logo-footer.png") no-repeat scroll left top transparent;
+    color: #FFFFFF;
+    font-family: Georgia,Times,Arial,serif;
+    font-size: 18px;
+    height: 17px;
+    margin: 4px 20px 14px 0;
+    padding: 0;
+    text-decoration: none;
+    width: 173px;
+    display: block; }
+    @media (min-width: 960px) {
+      #footer_global a.logo {
+        float: left; } }
+  #footer_global .info {
+    font-size: 12px;
+    list-style-type: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #CCC; }
+    @media (min-width: 960px) {
+      #footer_global .info {
+        display: inline; } }
+    #footer_global .info li {
+      margin: 0 4px 12px 0; }
+      @media (min-width: 960px) {
+        #footer_global .info li {
+          display: inline-block; } }
+    @media (min-width: 960px) {
+      #footer_global .info li:after {
+        content: "\20\00b7"; } }
+    #footer_global .info li:last-child:after {
+      content: "";
+      margin-right: 0;
+      padding-right: 0; }
+  #footer_global .info a:link,
+  #footer_global .contact {
+    font-family: Arial,Verdana,Sans-Serif !important; }
+  #footer_global a:link,
+  #footer_global a:visited {
+    color: #FFF;
+    text-decoration: none; }
+  #footer_global a:hover,
+  #footer_global a:active {
+    color: #CCC;
+    text-decoration: underline; }
+  #footer_global .contact {
+    clear: both;
+    font-size: 100%;
+    line-height: 1.4em;
+    height: 24px;
+    padding: 0;
+    color: #CCC; }
+    @media (min-width: 960px) {
+      #footer_global .contact {
+        margin: 0 0 0 193px; } }
+
+.social-media {
+  display: inline;
+  float: right;
+  list-style-type: none;
+  font-size: 11px;
+  margin: -2px 0 0 0; }
+  .social-media li {
+    float: left;
+    margin-right: 10px; }
+    .social-media li:last-child {
+      margin-right: 0;
+      padding-right: 0; }
+  .social-media img {
+    margin: 0;
+    float: left; }
+  .social-media a img {
+    border: 0;
+    padding: 0; }
+
+/************************
+*** Alumni Footer  ******
+************************/
+#site_footer {
+  background-color: #333333;
+  padding: 2em 1em; }
+  #site_footer a {
+    color: white; }
+    #site_footer a:visited {
+      color: white; }
+    #site_footer a:hover {
+      color: lightgray; }
+    #site_footer a:active {
+      color: white; }
+  #site_footer .footer_nav-wrapper {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto; }
+    #site_footer .footer_nav-wrapper::after {
+      clear: both;
+      content: "";
+      display: table; }
+  #site_footer a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
+  @media (min-width: 768px) {
+    #site_footer nav {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      #site_footer nav:last-child {
+        margin-right: 0; } }
+  #site_footer nav ul {
+    padding: 0; }
+  #site_footer nav li {
+    margin-bottom: 8px; }
+  #site_footer #privacy_info {
+    margin-top: 32px; }
+    #site_footer #privacy_info a {
+      text-decoration: underline; }

@@ -1,11 +1,14 @@
 <?php
 // require_once('inc/custom-post-type.php');
-// require_once('inc/Mobile_Detect.php');
-// $detect = new Mobile_Detect;
+require_once('inc/Mobile_Detect.php');
+$detect = new Mobile_Detect;
 
 function northeastern_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Nav', 'northeastern' ),
+		'footer-left' => __( 'Footer - Left-col', 'northeastern' ),
+		'footer-center' => __( 'Footer - Center-col', 'northeastern' ),
+		'footer-right' => __( 'Footer - Right-col', 'northeastern' ),
 	) );
 }
 add_action( 'after_setup_theme', 'northeastern_setup' );
@@ -28,7 +31,7 @@ function login_logo() { ?>
 
 // Custom Favicon
 function favicon_link() {
-    echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />' . "\n";
+    echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />' . "\n";
 }
 add_action( 'wp_head', 'favicon_link' );
 
@@ -48,13 +51,19 @@ function northeastern_scripts(){
 	$post = get_post();
 
 	// add styles
-	wp_enqueue_style( 'custom-styles', get_stylesheet_directory_uri() . '/assets/css/styles.css', '', false);
+	wp_enqueue_style( 'ne-typeface', 'https://fast.fonts.com/cssapi/cac43e8c-6965-44df-b8ca-9784607a3b53.css', '', false);
+	wp_enqueue_style( 'ne-alumni-styles', get_stylesheet_directory_uri() . '/assets/css/styles.css', '', false);
 
 	// add dep scripts
 	// wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri().'/js/modernizr.js', array(), true);
 
-	// wp_enqueue_script( 'northeastern-script', get_stylesheet_directory_uri().'/js/main.js', array('jquery'), true);
+	wp_enqueue_script( 'northeastern-script', get_stylesheet_directory_uri().'/assets/js/main.js', array('jquery'), true);
+	wp_enqueue_script( 'freewall', get_stylesheet_directory_uri().'/assets/js/freewall.js', array('jquery'), true);
 
+	if(is_front_page()){
+		wp_enqueue_style( 'front-page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/front-page.css', false );
+		wp_enqueue_script( 'masonry-layout', get_stylesheet_directory_uri() . '/assets/js/masonry.js', '', true);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'northeastern_scripts' , 11);
 
@@ -80,7 +89,7 @@ function move_js() {
    remove_action('wp_head', 'wp_print_head_scripts', 9);
    remove_action('wp_head', 'wp_enqueue_scripts', 1);
 }
-add_action( 'wp_enqueue_scripts', 'move_js' );
+// add_action( 'wp_enqueue_scripts', 'move_js' );
 
 // loads gravity form scripts in footer
 // add_filter( 'gform_init_scripts_footer', '__return_true' );

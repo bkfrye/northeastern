@@ -141,13 +141,11 @@ get_header(); ?>
         </section>
 
         <section class="blog">
-			<div class="wrap">
-				<h3>BLOG</h3>
-	            <article class="blog_item"></article>
-	            <article class="blog_item"></article>
-	            <article class="blog_item"></article>
-	            <article class="blog_item"></article>
-			</div>
+			<?php
+			while ( have_posts() ) : the_post();
+				get_template_part( 'template-parts', 'blog-preview' );
+			endwhile;
+			?>
         </section>
 
 	</main>

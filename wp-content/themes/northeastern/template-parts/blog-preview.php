@@ -24,15 +24,15 @@ $globalcontainer = array();
 	$globalquery = get_posts( 'numberposts=4&post_type=any' );
 
 		foreach($globalquery as $post) : setup_postdata($post);
-			echo "<li>";
+			echo '<li>';
 			if (has_post_thumbnail( $post->ID ) ):
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-				echo "<div class=\"blogimage\" style=\"background-image: url('".$image[0]."');\"></div>";
+				echo '<div class=\"blogimage\" style=\"background-image: url('".$image[0]."');\"></div>';
 			endif;
 
-			echo "<div class=\"blogcontent\">".$post->post_title."<br />";
-			echo $post->post_date."</div>";
-			echo "</li>";
+			echo '<div class=\"blog_card\">'.$post->post_title.'<br />';
+			echo $post->post_date.'</div>';
+			echo '</li>';
 		endforeach;
 
 

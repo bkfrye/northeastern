@@ -27,13 +27,12 @@ $globalcontainer = array();
 			echo '<li>';
 			if (has_post_thumbnail( $post->ID ) ):
 				$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-				echo '<div class=\"blogimage\" style=\"background-image: url('".$image[0]."');\"></div>';
+				echo '<div class=\"blogimage\" style=\"background-image: url("'.$image[0].'");\"></div>';
 			endif;
 
 			echo '<div class=\"blog_card\"><a href='. the_permalink() .' title="'. the_title_attribute() . '">'.$post->post_title.'</a>';
 			echo '<article>'.$post->post_excerpt.'</article>';
 			echo $post->post_date.'</div>';
-			echo ''
 			echo '</li>';
 		endforeach;
 

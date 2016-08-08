@@ -7,7 +7,7 @@ if( $images ): ?>
 		$temp = "";
 		$w = 1;
 		$html = '';
-		$limitItem = 50;
+		$limitItem = 12;
 		for ($i = 0; $i < $limitItem; $i++) {
 			$w = 200 + 200 * random() << 0;
 			$html = $w;

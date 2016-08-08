@@ -76,6 +76,6 @@ img{
 
 .btn-red{
     @extend %btn-base;
-    background-color: red;
-    color: white;
+    border: 1px solid $brightred;
+    color: $brightred;
 }

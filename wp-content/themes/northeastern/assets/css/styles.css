@@ -77,8 +77,8 @@ img {
   color: white; }
 
 .btn-red {
-  background-color: red;
-  color: white; }
+  border: 1px solid #cc0000;
+  color: #cc0000; }
 
 /************************
 *** Global Footer  ******

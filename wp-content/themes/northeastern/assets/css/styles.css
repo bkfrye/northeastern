@@ -88,13 +88,12 @@ img {
   width: 100%;
   color: #FFF;
   letter-spacing: 0.03em;
-  padding: 20px 0px;
+  padding: 2em 1em;
   background-color: #636363; }
   #footer_global .wrapper {
     max-width: 1280px;
     margin-left: auto;
-    margin-right: auto;
-    padding: 0 1em; }
+    margin-right: auto; }
     #footer_global .wrapper::after {
       clear: both;
       content: "";

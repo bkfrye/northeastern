@@ -30,8 +30,10 @@ $globalcontainer = array();
 				echo '<div class=\"blogimage\" style=\"background-image: url('".$image[0]."');\"></div>';
 			endif;
 
-			echo '<div class=\"blog_card\">'.$post->post_title.'<br />';
+			echo '<div class=\"blog_card\"><a href='. the_permalink() .' title="'. the_title_attribute() . '">'.$post->post_title.'</a>';
+			echo '<article>'.$post->post_excerpt.'</article>';
 			echo $post->post_date.'</div>';
+			echo ''
 			echo '</li>';
 		endforeach;
 

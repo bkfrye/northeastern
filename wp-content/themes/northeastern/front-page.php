@@ -21,7 +21,7 @@ get_header(); ?>
 		<div id="homepage_hero">
             <div class="textured_backdrop">
                 <!-- <h1><?php the_field('home_title');?></h1> -->
-				<h1>Once a Husky, Always a Husky</h1>
+				<h1>Connecting &amp; Engaging Alumni Around the World</h1>
             </div>
 
             <?php
@@ -51,6 +51,7 @@ get_header(); ?>
 				<div id="angled-events" class="angled_item">
                 	<div class="lower_third">
 						<h3>Events</h3>
+						<p>Sed do eiusmod tempor incididunt</p>
 					</div>
         		</div>
 
@@ -67,6 +68,7 @@ get_header(); ?>
 				<div id="angled-lifelong_learning" class="angled_item">
             		<div class="lower_third">
 						<h3>Lifelong Learning</h3>
+						<p>Sed do eiusmod tempor incididunt</p>
 					</div>
         		</div>
 
@@ -83,6 +85,7 @@ get_header(); ?>
 				<div id="angled-communities" class="angled_item">
             		<div class="lower_third">
 						<h3>Communities</h3>
+						<p>Sed do eiusmod tempor incididunt</p>
 					</div>
         		</div>
 
@@ -142,9 +145,9 @@ get_header(); ?>
 
         <section class="blog">
 			<?php
-			while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts', 'blog-preview' );
-			endwhile;
+			// while ( have_posts() ) : the_post();
+			// 	get_template_part( 'template-parts/blog', 'home' );
+			// endwhile;
 			?>
         </section>
 

@@ -484,8 +484,8 @@ div[class*=icon] {
 ****************************/
 .upcoming_events {
   height: 30vh;
-  background-image: -webkit-repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.25), transparent 10px);
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.25), transparent 10px); }
+  background-image: -webkit-repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px); }
   .upcoming_events h2 {
     margin: 0;
     padding: 1em 0;

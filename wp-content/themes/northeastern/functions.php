@@ -64,6 +64,10 @@ function northeastern_scripts(){
 		wp_enqueue_style( 'front-page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/front-page.css', false );
 		wp_enqueue_script( 'masonry-layout', get_stylesheet_directory_uri() . '/assets/js/masonry.js', '', true);
 	}
+
+	if(!is_front_page()){
+		wp_enqueue_style( 'page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-main.css', false );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'northeastern_scripts' , 11);
 

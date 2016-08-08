@@ -43,3 +43,11 @@
 	?>
 
 </article><!-- #post-## -->
+
+<section class="blog">
+	<?php
+	while ( have_posts() ) : the_post();
+		get_template_part( 'template-parts/blog', 'footer' );
+	endwhile;
+	?>
+</section>

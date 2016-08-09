@@ -44,6 +44,18 @@ function my_remove_admin_menus() {
 }
 
 /******************************************/
+/** Events CPT Modifications        *******/
+/******************************************/
+add_filter( 'enter_title_here', 'change_events_default_title' );
+function change_events_default_title( $title ){
+   $screen = get_current_screen();
+   if ( 'events' == $screen->post_type ){
+       $title = 'Enter the event name here';
+   }
+   return $title;
+}
+
+/******************************************/
 /** Enqueue/Dequeue Styles and Scripts **/
 /******************************************/
 function northeastern_scripts(){

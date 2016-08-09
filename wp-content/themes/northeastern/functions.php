@@ -1,5 +1,5 @@
 <?php
-// require_once('inc/custom-post-type.php');
+require_once('inc/custom-post-type.php');
 require_once('inc/Mobile_Detect.php');
 $detect = new Mobile_Detect;
 
@@ -22,12 +22,12 @@ function login_logo() { ?>
         body.login div#login h1 a {
             width: auto;
             height: 42.46px;
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/northeastern-logo.svg);
-            background-size: 173.32px 42.46px;
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
+            background-size: 405.32px 44.46px;
         }
     </style>
 <?php }
-// add_action( 'login_enqueue_scripts', 'login_logo' );
+add_action( 'login_enqueue_scripts', 'login_logo' );
 
 // Custom Favicon
 function favicon_link() {
@@ -170,52 +170,6 @@ function custom_mtypes( $m ){
 }
 add_filter( 'upload_mimes', 'custom_mtypes' );
 
-
-
-/******************************************/
-/******** Custom Fields Search *************/
-/******************************************/
-
-
-// join custom fields db info
-function cf_search_join( $join ) {
-    global $wpdb;
-
-    if ( is_search() ) {
-        $join .=' LEFT JOIN '.$wpdb->postmeta. ' ON '. $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id ';
-    }
-
-    return $join;
-}
-add_filter('posts_join', 'cf_search_join' );
-
-
-// Modify the search query with posts_where
-function cf_search_where( $where ) {
-    global $pagenow, $wpdb;
-
-    if ( is_search() ) {
-        $where = preg_replace(
-            "/\(\s*".$wpdb->posts.".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
-            "(".$wpdb->postmeta.".meta_value LIKE $1)", $where );
-    }
-
-    return $where;
-}
-add_filter( 'posts_where', 'cf_search_where' );
-
-
- // Prevent duplicates
-function cf_search_distinct( $where ) {
-    global $wpdb;
-
-    if ( is_search() ) {
-        return "DISTINCT";
-    }
-
-    return $where;
-}
-add_filter( 'posts_distinct', 'cf_search_distinct' );
 
 
 ?>

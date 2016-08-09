@@ -31,7 +31,7 @@ add_action( 'login_enqueue_scripts', 'login_logo' );
 
 // Custom Favicon
 function favicon_link() {
-    echo '<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />' . "\n";
+    echo '<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />' . "\n";
 }
 add_action( 'wp_head', 'favicon_link' );
 
@@ -62,7 +62,9 @@ function northeastern_scripts(){
 
 	if(is_front_page()){
 		wp_enqueue_style( 'front-page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/front-page.css', false );
+		wp_enqueue_style( 'owl-styles', get_bloginfo('stylesheet_directory') . '/assets/css/owl.carousel.css', false );
 		wp_enqueue_script( 'masonry-layout', get_stylesheet_directory_uri() . '/assets/js/masonry.js', '', true);
+		wp_enqueue_script( 'owl', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), true);
 	}
 
 	if(!is_front_page()){

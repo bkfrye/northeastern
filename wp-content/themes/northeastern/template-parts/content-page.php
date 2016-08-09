@@ -21,9 +21,7 @@
 		<?php the_content(); ?>
 	</article>
 	<aside>
-		<p>
-		</p>
-
+		
 	</aside>
 
 </section>

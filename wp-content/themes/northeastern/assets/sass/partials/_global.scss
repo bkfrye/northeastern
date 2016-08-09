@@ -42,14 +42,16 @@ img{
 }
 
 
+/****************************
+********  Links  **********
+****************************/
 
-
-
-
-
-
-
-
+body{
+    @include linx($brightred, $brightred, $gray, $brightred);
+    a{
+        text-decoration: none;
+    }
+}
 
 
 /****************************

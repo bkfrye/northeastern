@@ -59,6 +59,21 @@ img {
     display: table; }
 
 /****************************
+********  Links  **********
+****************************/
+body a {
+  color: #cc0000; }
+  body a:visited {
+    color: #cc0000; }
+  body a:hover {
+    color: #615445; }
+  body a:active {
+    color: #cc0000; }
+
+body a {
+  text-decoration: none; }
+
+/****************************
 *******   Components  *******
 ****************************/
 .btn, .btn-red {

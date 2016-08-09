@@ -36,7 +36,11 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
 
+section {
+  position: relative; }
+
 article {
+  position: relative;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto; }
@@ -76,7 +80,7 @@ body a {
 /****************************
 *******   Components  *******
 ****************************/
-.btn, .btn-red {
+body a.btn, body a.btn-red {
   border: 1px solid white;
   -webkit-border-radius: 22px;
           border-radius: 22px;
@@ -84,14 +88,12 @@ body a {
   text-transform: uppercase;
   height: 44px;
   padding: 10px 30px;
-  text-decoration: none;
-  -webkit-transition: font-size 397ms ease;
-  transition: font-size 397ms ease; }
+  text-decoration: none; }
 
-.btn {
+body a.btn {
   color: white; }
 
-.btn-red {
+body a.btn-red {
   border: 1px solid #cc0000;
   color: #cc0000; }
 
@@ -174,6 +176,9 @@ body a {
     .content aside:last-child {
       margin-right: 0; }
 
+/****************************
+******Sidebar Section ********
+****************************/
 /****************************
 ***** Gallery Section *******
 ****************************/

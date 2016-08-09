@@ -5,7 +5,6 @@
 @import "../partials/_mixins";
 
 
-
 /****************************
 *********** Hero  **********
 ****************************/
@@ -265,7 +264,7 @@
 
     article{
         height: 70vh;
-        overflow-y: scroll;
+        overflow-y: hidden;
     }
 }
 
@@ -502,16 +501,99 @@ div[class*=icon]{
 ****************************/
 
 .upcoming_events{
-
-    height: 30vh;
     background:{
         image: repeating-linear-gradient(45deg, rgba(0,0,0,.15), rgba(0,0,0,0) 10px);
     }
 
-    h2{
+    .event_title-block{
+        @include linx($black, $black, $darkred, $black);
+        @include span-columns(2);
+
+        h2,
+        a{
+            font:{
+                family: $font-bold-condensed;
+            }
+        }
+
+        h2{
+            margin: 0;
+            padding: 1em 0;
+            text-transform: uppercase;
+        }
+
+        a{
+            position: absolute;
+            bottom: 0;
+            margin: 1em 0;
+            text-decoration: underline;
+            text-transform: uppercase;
+        }
+    }
+
+    .owl_wrap{
+        position: relative;
+        @include span-columns(10);
+        .owl_prev,
+        .owl_next{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            transform: translateY(-50%);
+
+            margin: 0;
+            padding: 0 0 4px 0;
+            height: 30px;
+            width: 30px;
+            background-color: lighten($black, 75%);
+            border-radius: 15px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2em;
+
+            &:hover{
+                background-color: lighten($black, 40%);
+            }
+        }
+
+        .owl_prev{
+            left: -20px;
+            padding-right: 2px;
+        }
+        .owl_next{
+            right: -20px;
+            padding-left: 2px;
+        }
+
+    }
+}
+.event_card{
+    margin: 1.5em;
+    padding: 1.5em;
+    background-color: white;
+    text-align: center;
+
+    p{
         margin: 0;
-        padding: 1em 0;
-        text-transform: uppercase;
+        font-family: $font-bold-condensed;
+    }
+
+    .date{
+        color: $darkred;
+        p{
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-bottom: .5em;
+        }
+    }
+    .event_desc{
+        p{
+            font-size: 22px;
+            line-height: 1.1;
+        }
     }
 }
 

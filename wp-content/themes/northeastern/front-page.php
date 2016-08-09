@@ -135,11 +135,38 @@ get_header(); ?>
 
         <section class="upcoming_events">
 			<article>
-				<h2>Upcoming Events</h2>
+				<div class="event_title-block">
+					<h2>Upcoming <br>Events</h2>
+					<a href="#">View All</a>
+				</div>
 
-				<div></div>
-				<div></div>
-				<div></div>
+                <div class="owl_wrap">
+                    <div class="owl-nav">
+                        <div class="owl_prev"><</div>
+                        <div class="owl_next">></div>
+                    </div>
+    				<div class="owl-carousel">
+                        <?php
+                            $args = array(
+								'post_type' => 'events',
+								'posts_per_page' => 9,
+								'order' => ASC
+							);
+
+							$events = new WP_Query( $args );
+							while ( $events->have_posts() ) : $events->the_post();
+						?>
+							<div class="event_card">
+	                            <div class="date">
+	                                <p><?php echo get_field('date')?></p>
+	                            </div>
+	                            <div class="event_desc">
+	                                <p><?php echo the_title()?></p>
+	                            </div>
+	                        </div>
+						<?php endwhile; ?>
+    				</div>
+                </div>
 			</article>
         </section>
 
@@ -157,11 +184,25 @@ get_header(); ?>
 
 
 <script type="text/javascript">
-jQuery('.juicer_list').isotope({
-  itemSelector: '.card',
-  masonry:{
-	  columnWidth: '.card'
-  }
+jQuery(document).ready(function(){
+	jQuery('.juicer_list').isotope({
+	  itemSelector: '.card',
+	  masonry:{
+		  columnWidth: '.card'
+	  }
+	});
+
+    var owl = jQuery('.owl-carousel');
+	owl.owlCarousel({loop: true});
+
+    jQuery('.owl_next').click(function() {
+        owl.trigger('next.owl.carousel');
+        console.log('clicked');
+    })
+    jQuery('.owl_prev').click(function() {
+        owl.trigger('prev.owl.carousel', [300]);
+    })
+
 });
 </script>
 <?php get_footer(); ?>

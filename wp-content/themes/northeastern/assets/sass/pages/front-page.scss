@@ -444,7 +444,6 @@ div[class*=icon]{
         perspective: 300px;
         position: relative;
         text-align: left;
-        color: $bluegreen;
     }
 
     .rotator_item {
@@ -458,6 +457,16 @@ div[class*=icon]{
         opacity: 0;
         transform-origin: 50% 100%;
         transform: rotateX(180deg);
+
+        &:nth-child(3n+1){
+            color: $bluegreen;
+        }
+        &:nth-child(3n+2){
+            color: black;
+        }
+        &:nth-child(3n+3){
+            color: blue;
+        }
 
     }
 
@@ -520,6 +529,7 @@ div[class*=icon]{
     background:{
         image: repeating-linear-gradient(45deg, rgba(0,0,0,.15), rgba(0,0,0,0) 10px);
     }
+    padding: 1em;
 
     .event_title-block{
         @include linx($black, $black, $darkred, $black);
@@ -550,6 +560,8 @@ div[class*=icon]{
     .owl_wrap{
         position: relative;
         @include span-columns(10);
+        padding-right: 21px;
+
         .owl_prev,
         .owl_next{
             display: flex;
@@ -580,7 +592,7 @@ div[class*=icon]{
             padding-right: 2px;
         }
         .owl_next{
-            right: -20px;
+            right: 0;
             padding-left: 2px;
         }
 

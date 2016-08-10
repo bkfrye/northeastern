@@ -126,8 +126,12 @@ get_header(); ?>
 					We're here to help you:
 					<span class="rotator_wrap">
 						<span class="rotator_item rotate-visible">Stay in touch</span>
-						<span class="rotator_item">be an adult</span>
-						<span class="rotator_item">bong a beer</span>
+						<span class="rotator_item">Start a career</span>
+						<span class="rotator_item">Build a network</span>
+						<span class="rotator_item">Find Scholarships</span>
+						<span class="rotator_item">Plan a trip</span>
+						<span class="rotator_item">Get discounts</span>
+						<span class="rotator_item">Find employees</span>
 					</span>
 				</h2>
 	            <a href="#" class="btn">Learn More</a>

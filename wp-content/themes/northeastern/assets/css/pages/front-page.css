@@ -417,8 +417,7 @@ div[class*=icon] {
   -webkit-perspective: 300px;
           perspective: 300px;
   position: relative;
-  text-align: left;
-  color: #09c997; }
+  text-align: left; }
 
 .headline_rotate .rotator_item {
   display: inline-block;
@@ -433,6 +432,12 @@ div[class*=icon] {
           transform-origin: 50% 100%;
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg); }
+  .headline_rotate .rotator_item:nth-child(3n+1) {
+    color: #09c997; }
+  .headline_rotate .rotator_item:nth-child(3n+2) {
+    color: black; }
+  .headline_rotate .rotator_item:nth-child(3n+3) {
+    color: blue; }
 
 .headline_rotate .rotator_item.rotate-visible {
   position: relative;
@@ -517,7 +522,8 @@ div[class*=icon] {
 ****************************/
 .upcoming_events {
   background-image: -webkit-repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px);
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px); }
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px);
+  padding: 1em; }
   .upcoming_events .event_title-block {
     float: left;
     display: block;
@@ -551,7 +557,8 @@ div[class*=icon] {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 82.94039%; }
+    width: 82.94039%;
+    padding-right: 21px; }
     .upcoming_events .owl_wrap:last-child {
       margin-right: 0; }
     .upcoming_events .owl_wrap .owl_prev,
@@ -591,7 +598,7 @@ div[class*=icon] {
       left: -20px;
       padding-right: 2px; }
     .upcoming_events .owl_wrap .owl_next {
-      right: -20px;
+      right: 0;
       padding-left: 2px; }
 
 .event_card {

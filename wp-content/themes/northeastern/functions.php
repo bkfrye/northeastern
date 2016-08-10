@@ -1,5 +1,5 @@
 <?php
-// require_once('inc/custom-post-type.php');
+require_once('inc/custom-post-type.php');
 require_once('inc/Mobile_Detect.php');
 $detect = new Mobile_Detect;
 
@@ -22,16 +22,16 @@ function login_logo() { ?>
         body.login div#login h1 a {
             width: auto;
             height: 42.46px;
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/northeastern-logo.svg);
-            background-size: 173.32px 42.46px;
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/svg/logo.svg);
+            background-size: 405.32px 44.46px;
         }
     </style>
 <?php }
-// add_action( 'login_enqueue_scripts', 'login_logo' );
+add_action( 'login_enqueue_scripts', 'login_logo' );
 
 // Custom Favicon
 function favicon_link() {
-    echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />' . "\n";
+    echo '<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />' . "\n";
 }
 add_action( 'wp_head', 'favicon_link' );
 
@@ -41,6 +41,18 @@ add_action( 'wp_head', 'favicon_link' );
 add_action( 'admin_init', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
+}
+
+/******************************************/
+/** Events CPT Modifications        *******/
+/******************************************/
+add_filter( 'enter_title_here', 'change_events_default_title' );
+function change_events_default_title( $title ){
+   $screen = get_current_screen();
+   if ( 'events' == $screen->post_type ){
+       $title = 'Enter the event name here';
+   }
+   return $title;
 }
 
 /******************************************/
@@ -62,7 +74,13 @@ function northeastern_scripts(){
 
 	if(is_front_page()){
 		wp_enqueue_style( 'front-page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/front-page.css', false );
+		wp_enqueue_style( 'owl-styles', get_bloginfo('stylesheet_directory') . '/assets/css/owl.carousel.css', false );
 		wp_enqueue_script( 'masonry-layout', get_stylesheet_directory_uri() . '/assets/js/masonry.js', '', true);
+		wp_enqueue_script( 'owl', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), true);
+	}
+
+	if(!is_front_page()){
+		wp_enqueue_style( 'page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-main.css', false );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'northeastern_scripts' , 11);
@@ -166,52 +184,6 @@ function custom_mtypes( $m ){
 }
 add_filter( 'upload_mimes', 'custom_mtypes' );
 
-
-
-/******************************************/
-/******** Custom Fields Search *************/
-/******************************************/
-
-
-// join custom fields db info
-function cf_search_join( $join ) {
-    global $wpdb;
-
-    if ( is_search() ) {
-        $join .=' LEFT JOIN '.$wpdb->postmeta. ' ON '. $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id ';
-    }
-
-    return $join;
-}
-add_filter('posts_join', 'cf_search_join' );
-
-
-// Modify the search query with posts_where
-function cf_search_where( $where ) {
-    global $pagenow, $wpdb;
-
-    if ( is_search() ) {
-        $where = preg_replace(
-            "/\(\s*".$wpdb->posts.".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
-            "(".$wpdb->postmeta.".meta_value LIKE $1)", $where );
-    }
-
-    return $where;
-}
-add_filter( 'posts_where', 'cf_search_where' );
-
-
- // Prevent duplicates
-function cf_search_distinct( $where ) {
-    global $wpdb;
-
-    if ( is_search() ) {
-        return "DISTINCT";
-    }
-
-    return $where;
-}
-add_filter( 'posts_distinct', 'cf_search_distinct' );
 
 
 ?>

@@ -5,7 +5,7 @@
  * @since Twenty Sixteen 1.0
  */
 
-$url = "https://www.juicer.io/api/feeds/alumni-website";
+$url = "https://www.juicer.io/api/feeds/alumni-website?per=28";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -22,14 +22,19 @@ echo '<div class="juicer_list">';
 foreach ($contents['posts']['items'] as $feed) {
 	echo '<div class="card '.$feed['source']['source'].'">';
 
-		echo '<a href="'.$feed['full_url'] .'" target="_blank"><img src="'.$feed['image'].'"></a>';
+		echo '<a href="'.$feed['full_url'] .'" target="_blank">';
+		$img = $feed['image'];
+		if ($img) {
+		    echo '<img src="'. $img .'">';
+		}
+		echo '</a>';
 
 		?>
 		<div class="juicer_message">
 			<?php echo $feed['message'];?>
 		</div>
 
-	<?php echo '<a href="'.$feed['full_url'] .'" target="_blank"><img src="'.$feed['image'].'"><footer class="juicer_footer">';
+	<?php echo '<a href="'.$feed['full_url'] .'" target="_blank"><footer class="juicer_footer">';
 
 		echo '<img class="profile" src="'.$feed['poster_image'].'">';
 		echo '<div class="profile_wrap">';

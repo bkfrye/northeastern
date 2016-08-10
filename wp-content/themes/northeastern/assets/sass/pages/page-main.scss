@@ -1,0 +1,161 @@
+@import "bourbon";
+@import "neat";
+@import "../partials/_settings";
+@import "../partials/_media-queries";
+@import "../partials/_mixins";
+@import "../partials/_global";
+
+/****************************
+******Banner Section ********
+****************************/
+.banner_interior{
+    position: relative;
+    height: 415px;
+
+    background:{
+        position: center;
+        size: cover;
+        repeat: no-repeat;
+
+        color: gray;
+    }
+
+    .banner_content{
+        @include outer-container(1280px);
+    }
+
+    .page_title{
+        position: absolute;
+        bottom: 0;
+        background-color: white;
+        transform: skew(35deg);
+        @include span-columns(7);
+
+        &:before{
+            content:'';
+            height: 100%;
+            position: absolute;
+            right: 50%;
+            background-color: white;
+
+            @include span-columns(12);
+
+        }
+
+        h1{
+            font-size: 44px;
+            padding-left:18px;
+            transform: skew(-35deg);
+        }
+    }
+
+}
+
+
+/****************************
+******Content Section ********
+****************************/
+
+.content{
+    @include outer-container(1280px);
+    padding: 18px 1em;
+
+    article{
+        @include span-columns(7);
+    }
+
+    aside{
+        @include span-columns(5);
+        background-color: $lightgray;
+        min-height: 400px;
+    }
+}
+
+/****************************
+******Sidebar Section ********
+****************************/
+
+
+
+
+/****************************
+***** Gallery Section *******
+****************************/
+
+
+/****************************
+******* Blog Section ********
+****************************/
+.blog{
+
+    .view_more{
+        text-align: center;
+    }
+}
+
+
+/****************************
+***** Signup Section ********
+****************************/
+
+.signups{
+    @include outer-container(1280px);
+    display: flex;
+    flex-direction: column;
+
+    @include tablet{
+        flex-direction: row;
+    }
+
+
+    .stay_connected,
+    .contribute{
+        margin: 1em .5em;
+        padding: 1em;
+
+        @include tablet{
+            flex-basis: 50%;
+            padding: 2em;
+
+        }
+    }
+
+    .stay_connected{
+        background-color: $lightgray;
+    }
+
+    .contribute{
+        background-color: $brightred;
+        color: white;
+
+        display: flex;
+        // flex-direction: row;
+        align-items: center;
+
+        @include tablet{
+            div{
+
+                &:first-child{
+                    flex-basis: 55%;
+                }
+
+                &:last-child{
+                    flex-basis: 45%;
+                    text-align: right;
+                }
+
+            }
+        }
+    }
+}
+
+/****************************
+***** Contact Person ********
+****************************/
+
+.contact_person{
+    height: 300px;
+    background:{
+        image: repeating-linear-gradient(45deg, rgba(0,0,0,.15), rgba(0,0,0,0) 10px);
+    }
+}

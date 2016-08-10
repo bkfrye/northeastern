@@ -24,10 +24,12 @@ html{
 h1, h2, h3, h4, h5, h6{font-family:$font-light-condensed;}
 
 section{
+    position: relative;
 
 }
 
 article{
+    position: relative;
     @include outer-container(1280px);
 }
 
@@ -42,40 +44,13 @@ img{
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /****************************
-*******   Components  *******
+********  Links  **********
 ****************************/
 
-%btn-base{
-    border: 1px solid white;
-    border-radius: 22px;
-    font:{
-        size: 12pt;
+body{
+    @include linx($brightred, $brightred, $gray, $brightred);
+    a{
+        text-decoration: none;
     }
-    text-transform: uppercase;
-    height: 44px;
-    padding: 10px 30px;
-    text-decoration: none;
-    transition: font-size 397ms ease;
-}
-
-.btn{
-    @extend %btn-base;
-    color: white;
-}
-
-.btn-red{
-    @extend %btn-base;
-    background-color: red;
-    color: white;
 }

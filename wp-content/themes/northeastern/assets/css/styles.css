@@ -16,6 +16,26 @@ html {
   background-image: url("../../img/svg/instagram.svg"); }
 
 /****************************
+*******   Components  *******
+****************************/
+body a.btn, body a.btn_red {
+  border: 1px solid white;
+  -webkit-border-radius: 22px;
+          border-radius: 22px;
+  font-size: 12pt;
+  text-transform: uppercase;
+  height: 44px;
+  padding: 10px 30px;
+  text-decoration: none; }
+
+body a.btn {
+  color: white; }
+
+body a.btn_red {
+  border: 1px solid #cc0000;
+  color: #cc0000; }
+
+/****************************
 ********  General  **********
 ****************************/
 *, *::after, *::before {
@@ -36,7 +56,11 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
 
+section {
+  position: relative; }
+
 article {
+  position: relative;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto; }
@@ -59,26 +83,19 @@ img {
     display: table; }
 
 /****************************
-*******   Components  *******
+********  Links  **********
 ****************************/
-.btn, .btn-red {
-  border: 1px solid white;
-  -webkit-border-radius: 22px;
-          border-radius: 22px;
-  font-size: 12pt;
-  text-transform: uppercase;
-  height: 44px;
-  padding: 10px 30px;
-  text-decoration: none;
-  -webkit-transition: font-size 397ms ease;
-  transition: font-size 397ms ease; }
+body a {
+  color: #cc0000; }
+  body a:visited {
+    color: #cc0000; }
+  body a:hover {
+    color: #615445; }
+  body a:active {
+    color: #cc0000; }
 
-.btn {
-  color: white; }
-
-.btn-red {
-  background-color: red;
-  color: white; }
+body a {
+  text-decoration: none; }
 
 /************************
 *** Global Footer  ******
@@ -88,13 +105,12 @@ img {
   width: 100%;
   color: #FFF;
   letter-spacing: 0.03em;
-  padding: 20px 0px;
+  padding: 2em 1em;
   background-color: #636363; }
   #footer_global .wrapper {
     max-width: 1280px;
     margin-left: auto;
-    margin-right: auto;
-    padding: 0 1em; }
+    margin-right: auto; }
     #footer_global .wrapper::after {
       clear: both;
       content: "";

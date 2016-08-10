@@ -21,7 +21,7 @@ get_header(); ?>
 		<div id="homepage_hero">
             <div class="textured_backdrop">
                 <!-- <h1><?php the_field('home_title');?></h1> -->
-				<h1>Once a Husky, Always a Husky</h1>
+				<h1>Connecting &amp; Engaging Alumni Around the World</h1>
             </div>
 
             <?php
@@ -50,7 +50,10 @@ get_header(); ?>
 			<article>
 				<div id="angled-events" class="angled_item">
                 	<div class="lower_third">
-						<h3>Events</h3>
+						<div class="lower_third-wrap">
+							<h3>Events</h3>
+							<p>Sed do eiusmod tempor incididunt</p>
+						</div>
 					</div>
         		</div>
 
@@ -66,7 +69,10 @@ get_header(); ?>
 
 				<div id="angled-lifelong_learning" class="angled_item">
             		<div class="lower_third">
-						<h3>Lifelong Learning</h3>
+						<div class="lower_third-wrap">
+							<h3>Events</h3>
+							<p>Sed do eiusmod tempor incididunt</p>
+						</div>
 					</div>
         		</div>
 
@@ -82,7 +88,10 @@ get_header(); ?>
 
 				<div id="angled-communities" class="angled_item">
             		<div class="lower_third">
-						<h3>Communities</h3>
+						<div class="lower_third-wrap">
+							<h3>Events</h3>
+							<p>Sed do eiusmod tempor incididunt</p>
+						</div>
 					</div>
         		</div>
 
@@ -114,6 +123,9 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/juicer' );?>
 
 			</article>
+			<div class="view_more-wrap">
+				<a href="#" id="view_more-juicer" class="btn_red">View More</a>
+			</div>
         </section>
 
         <section class="learn_more_callout">
@@ -122,8 +134,12 @@ get_header(); ?>
 					We're here to help you:
 					<span class="rotator_wrap">
 						<span class="rotator_item rotate-visible">Stay in touch</span>
-						<span class="rotator_item">be an adult</span>
-						<span class="rotator_item">bong a beer</span>
+						<span class="rotator_item">Start a career</span>
+						<span class="rotator_item">Build a network</span>
+						<span class="rotator_item">Find Scholarships</span>
+						<span class="rotator_item">Plan a trip</span>
+						<span class="rotator_item">Get discounts</span>
+						<span class="rotator_item">Find employees</span>
 					</span>
 				</h2>
 	            <a href="#" class="btn">Learn More</a>
@@ -132,22 +148,50 @@ get_header(); ?>
 
         <section class="upcoming_events">
 			<article>
-				<h2>Upcoming Events</h2>
+				<div class="event_title-block">
+					<h2>Upcoming <br>Events</h2>
+					<a href="#">View All</a>
+				</div>
 
-				<div></div>
-				<div></div>
-				<div></div>
+                <div class="owl_wrap">
+                    <div class="owl-nav">
+                        <div class="owl_prev"><</div>
+                        <div class="owl_next">></div>
+                    </div>
+    				<div class="owl-carousel">
+                        <?php
+                            $args = array(
+								'post_type' => 'events',
+								'posts_per_page' => 9,
+								'order' => ASC
+							);
+
+							$events = new WP_Query( $args );
+							while ( $events->have_posts() ) : $events->the_post();
+
+							$short_title = the_title('','',false);
+							$trimmed_title = wp_trim_words( $short_title, 8, '&hellip;')
+						?>
+							<div class="event_card">
+	                            <div class="date">
+	                                <p><?php echo get_field('date')?></p>
+	                            </div>
+	                            <div class="event_desc">
+	                                <p><?php echo $trimmed_title ?></p>
+	                            </div>
+	                        </div>
+						<?php endwhile; ?>
+    				</div>
+                </div>
 			</article>
         </section>
 
         <section class="blog">
-			<div class="wrap">
-				<h3>BLOG</h3>
-	            <article class="blog_item"></article>
-	            <article class="blog_item"></article>
-	            <article class="blog_item"></article>
-	            <article class="blog_item"></article>
-			</div>
+			<?php
+			// while ( have_posts() ) : the_post();
+			// 	get_template_part( 'template-parts/blog', 'home' );
+			// endwhile;
+			?>
         </section>
 
 	</main>
@@ -156,11 +200,31 @@ get_header(); ?>
 
 
 <script type="text/javascript">
-jQuery('.juicer_list').isotope({
-  itemSelector: '.card',
-  masonry:{
-	  columnWidth: '.card'
-  }
+jQuery(document).ready(function(){
+	jQuery('.juicer_list').isotope({
+	  itemSelector: '.card',
+	  masonry:{
+		  columnWidth: '.card'
+	  }
+	});
+
+    var owl = jQuery('.owl-carousel');
+	owl.owlCarousel({
+		loop: true,
+		responsive: {
+			0:{items: 1,loop: false},
+			959:{items: 3}
+		}
+	});
+
+    jQuery('.owl_next').click(function() {
+        owl.trigger('next.owl.carousel');
+        console.log('clicked');
+    })
+    jQuery('.owl_prev').click(function() {
+        owl.trigger('prev.owl.carousel', [300]);
+    })
+
 });
 </script>
 <?php get_footer(); ?>

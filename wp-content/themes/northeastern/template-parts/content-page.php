@@ -21,22 +21,23 @@
 		<?php the_content(); ?>
 	</article>
 	<aside>
-		
+
 	</aside>
 
 </section>
 
 <section class="img_gallery">
+	<div id="freewall">
 	<?php
-		get_template_part( 'template-parts', 'freewall' );
+		get_template_part( 'template-parts/freewall' );
 	?>
+	</div>
 </section>
 
 <section class="blog">
 	<?php
 		// get_template_part( 'template-parts/blog', 'footer' );
 	?>
-
 
 	<div class="view_more">
 		<a href="#" class="btn-red">View More</a>
@@ -67,3 +68,19 @@
 	</article>
 
 </section>
+
+<script type="text/javascript">
+	var wall = new Freewall("#freewall");
+	wall.reset({
+		selector: '.cell',
+		animate: true,
+		cellW: 10,
+		cellH: 300,
+		onResize: function() {
+			wall.fitWidth();
+		}
+	});
+	wall.fitWidth();
+	// for scroll bar appear;
+	jQuery(window).trigger("resize");
+</script>

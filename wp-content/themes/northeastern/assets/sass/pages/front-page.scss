@@ -458,16 +458,27 @@ div[class*=icon]{
         transform-origin: 50% 100%;
         transform: rotateX(180deg);
 
-        &:nth-child(3n+1){
+        &:nth-child(1){
             color: $bluegreen;
         }
-        &:nth-child(3n+2){
-            color: black;
+        &:nth-child(2){
+            color: $orange;
         }
-        &:nth-child(3n+3){
-            color: blue;
+        &:nth-child(3){
+            color: $green;
         }
-
+        &:nth-child(4){
+            color: $pink;
+        }
+        &:nth-child(5){
+            color: $green;
+        }
+        &:nth-child(6){
+            color: $blue;
+        }
+        &:nth-child(7){
+            color: $green;
+        }
     }
 
     .rotator_item.rotate-visible {
@@ -562,6 +573,12 @@ div[class*=icon]{
         @include span-columns(10);
         padding-right: 21px;
 
+        .owl-item{
+            height: auto;
+            width: 100%;
+            display: block;
+        }
+
         .owl_prev,
         .owl_next{
             display: flex;
@@ -599,6 +616,7 @@ div[class*=icon]{
     }
 }
 .event_card{
+    min-height: 180px;
     margin: 1.5em;
     padding: 1.5em;
     background-color: white;

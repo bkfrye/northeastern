@@ -16,6 +16,26 @@ html {
   background-image: url("../../img/svg/instagram.svg"); }
 
 /****************************
+*******   Components  *******
+****************************/
+body a.btn, body a.btn-red, .social_feed .btn p {
+  border: 1px solid white;
+  -webkit-border-radius: 22px;
+          border-radius: 22px;
+  font-size: 12pt;
+  text-transform: uppercase;
+  height: 44px;
+  padding: 10px 30px;
+  text-decoration: none; }
+
+body a.btn {
+  color: white; }
+
+body a.btn-red {
+  border: 1px solid #cc0000;
+  color: #cc0000; }
+
+/****************************
 *********** Hero  **********
 ****************************/
 #homepage_hero {
@@ -236,6 +256,19 @@ html {
   .social_feed article {
     height: 70vh;
     overflow-y: hidden; }
+  .social_feed .btn {
+    display: block;
+    margin: 0 auto;
+    text-align: center; }
+    .social_feed .btn p {
+      display: inline-block;
+      border: 1px solid #cc0000;
+      color: #cc0000;
+      cursor: pointer; }
+
+article.expand_juicer {
+  height: inherit;
+  overflow-y: visible; }
 
 #juicer_nav {
   text-align: center; }

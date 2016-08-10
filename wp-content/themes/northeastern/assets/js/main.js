@@ -69,6 +69,11 @@ jQuery(function() {
 
     });
 
+    jQuery('.btn p').click(function(){
+        jQuery('.social_feed article').addClass('expand_juicer');
+        jQuery(this).css('display', 'none');
+    });
+
 
     // rotating headline controller
     var animationDelay = 2500;

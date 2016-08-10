@@ -21,7 +21,6 @@
         justify-content: center;
         text-align: center;
         margin-top: 20vh;
-        // padding: 10px;
         background:{
             color: rgba(0,0,0,.3);
             image: repeating-linear-gradient(45deg, rgba(0,0,0,.15), rgba(0,0,0,0) 10px);
@@ -29,8 +28,6 @@
             size: contain;
             position: center;
         }
-
-
     }
 
     h1{
@@ -47,7 +44,6 @@
 
 #video_container {
     overflow:hidden;
-    // opacity:0;
     transition: all 0.3s ease 0s;
 
     #fs_video {
@@ -266,6 +262,26 @@
         height: 70vh;
         overflow-y: hidden;
     }
+
+    .btn{
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+
+        p{
+            display: inline-block;
+            @extend %btn-base;
+            border: 1px solid $brightred;
+            color: $brightred;
+
+            cursor: pointer;
+        }
+    }
+}
+
+article.expand_juicer{
+    height: inherit;
+    overflow-y: visible;
 }
 
 #juicer_nav{

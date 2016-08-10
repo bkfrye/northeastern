@@ -16,6 +16,26 @@ html {
   background-image: url("../../img/svg/instagram.svg"); }
 
 /****************************
+*******   Components  *******
+****************************/
+body a.btn, body a.btn-red {
+  border: 1px solid white;
+  -webkit-border-radius: 22px;
+          border-radius: 22px;
+  font-size: 12pt;
+  text-transform: uppercase;
+  height: 44px;
+  padding: 10px 30px;
+  text-decoration: none; }
+
+body a.btn {
+  color: white; }
+
+body a.btn-red {
+  border: 1px solid #cc0000;
+  color: #cc0000; }
+
+/****************************
 ********  General  **********
 ****************************/
 *, *::after, *::before {
@@ -76,26 +96,6 @@ body a {
 
 body a {
   text-decoration: none; }
-
-/****************************
-*******   Components  *******
-****************************/
-body a.btn, body a.btn-red {
-  border: 1px solid white;
-  -webkit-border-radius: 22px;
-          border-radius: 22px;
-  font-size: 12pt;
-  text-transform: uppercase;
-  height: 44px;
-  padding: 10px 30px;
-  text-decoration: none; }
-
-body a.btn {
-  color: white; }
-
-body a.btn-red {
-  border: 1px solid #cc0000;
-  color: #cc0000; }
 
 /****************************
 ******Banner Section ********

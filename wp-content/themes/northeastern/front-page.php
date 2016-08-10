@@ -117,6 +117,7 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/juicer' );?>
 
 			</article>
+			<div class="btn"><p>View More</p></div>
         </section>
 
         <section class="learn_more_callout">

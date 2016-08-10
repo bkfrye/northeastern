@@ -160,13 +160,16 @@ get_header(); ?>
 
 							$events = new WP_Query( $args );
 							while ( $events->have_posts() ) : $events->the_post();
+
+							$short_title = the_title('','',false);
+							$trimmed_title = wp_trim_words( $short_title, 8, '&hellip;')
 						?>
 							<div class="event_card">
 	                            <div class="date">
 	                                <p><?php echo get_field('date')?></p>
 	                            </div>
 	                            <div class="event_desc">
-	                                <p><?php echo the_title()?></p>
+	                                <p><?php echo $trimmed_title ?></p>
 	                            </div>
 	                        </div>
 						<?php endwhile; ?>
@@ -198,7 +201,13 @@ jQuery(document).ready(function(){
 	});
 
     var owl = jQuery('.owl-carousel');
-	owl.owlCarousel({loop: true});
+	owl.owlCarousel({
+		loop: true,
+		responsive: {
+			0:{items: 1,loop: false},
+			959:{items: 3}
+		}
+	});
 
     jQuery('.owl_next').click(function() {
         owl.trigger('next.owl.carousel');

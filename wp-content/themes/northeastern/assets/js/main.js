@@ -69,9 +69,10 @@ jQuery(function() {
 
     });
 
-    jQuery('.btn p').click(function(){
+    jQuery('#view_more-juicer').click(function(e){
         jQuery('.social_feed article').addClass('expand_juicer');
         jQuery(this).css('display', 'none');
+        return false;
     });
 
 

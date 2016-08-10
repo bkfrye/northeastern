@@ -55,7 +55,7 @@ body {
         @extend %btn-base;
         color: white;
     }
-    a.btn-red{
+    a.btn_red{
         @extend %btn-base;
         border: 1px solid $brightred;
         color: $brightred;

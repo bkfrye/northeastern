@@ -137,19 +137,6 @@
             background-color: rgba(202, 8, 20, .7);
             color: white;
         }
-
-        .lower_third{
-            position: absolute;
-            bottom: 12%;
-            left: -16px;
-            background-color: rgba(255,255,255, .7);
-            width: 86%;
-            text-transform: uppercase;
-            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
-
-            z-index: 10;
-            transform: skewX(-25deg);
-        }
     }
 
     .angled_content{
@@ -174,7 +161,7 @@
             margin: 3px 3px 7px 3px;
             padding: 1em 9em;
 
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+            // clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
         }
         z-index: 5;
 
@@ -194,7 +181,7 @@
         position: relative;
         display: inline-block;
         margin: 0;
-        padding: 8px 45px;
+        padding: 8px 45px 0;
 
         width: auto;
     }
@@ -206,13 +193,28 @@
             display: block;
             right: 21px;
             top: 50%;
-            transform: translateY(-56.56%);
+            transform: translateY(-40%);
         }
     }
 
     .lower_third p{
         margin: 0;
         padding: 0 0 8px 45px;
+    }
+}
+
+.lower_third{
+    position: absolute;
+    bottom: 12%;
+    left: -16px;
+    background-color: rgba(255,255,255, .7);
+    width: 86%;
+    text-transform: uppercase;
+
+    z-index: 10;
+
+    .lower_third-wrap{
+        transform: skewX(-25deg);
     }
 }
 
@@ -238,7 +240,6 @@
         width: 40%;
     }
 
-
     &:after{
         transform: skewX(0deg);
     }
@@ -246,8 +247,6 @@
     .lower_third{
         transform: skewX(0deg);
     }
-
-
 }
 
 /****************************
@@ -263,19 +262,9 @@
         overflow-y: hidden;
     }
 
-    .btn{
-        display: block;
-        margin: 0 auto;
+    .view_more-wrap{
+        margin: 2em 0;
         text-align: center;
-
-        p{
-            display: inline-block;
-            @extend %btn-base;
-            border: 1px solid $brightred;
-            color: $brightred;
-
-            cursor: pointer;
-        }
     }
 }
 

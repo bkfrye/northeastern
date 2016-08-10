@@ -50,8 +50,10 @@ get_header(); ?>
 			<article>
 				<div id="angled-events" class="angled_item">
                 	<div class="lower_third">
-						<h3>Events</h3>
-						<p>Sed do eiusmod tempor incididunt</p>
+						<div class="lower_third-wrap">
+							<h3>Events</h3>
+							<p>Sed do eiusmod tempor incididunt</p>
+						</div>
 					</div>
         		</div>
 
@@ -67,8 +69,10 @@ get_header(); ?>
 
 				<div id="angled-lifelong_learning" class="angled_item">
             		<div class="lower_third">
-						<h3>Lifelong Learning</h3>
-						<p>Sed do eiusmod tempor incididunt</p>
+						<div class="lower_third-wrap">
+							<h3>Events</h3>
+							<p>Sed do eiusmod tempor incididunt</p>
+						</div>
 					</div>
         		</div>
 
@@ -84,8 +88,10 @@ get_header(); ?>
 
 				<div id="angled-communities" class="angled_item">
             		<div class="lower_third">
-						<h3>Communities</h3>
-						<p>Sed do eiusmod tempor incididunt</p>
+						<div class="lower_third-wrap">
+							<h3>Events</h3>
+							<p>Sed do eiusmod tempor incididunt</p>
+						</div>
 					</div>
         		</div>
 
@@ -117,7 +123,9 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/juicer' );?>
 
 			</article>
-			<div class="btn"><p>View More</p></div>
+			<div class="view_more-wrap">
+				<a href="#" id="view_more-juicer" class="btn_red">View More</a>
+			</div>
         </section>
 
         <section class="learn_more_callout">

@@ -18,7 +18,7 @@ html {
 /****************************
 *******   Components  *******
 ****************************/
-body a.btn, body a.btn-red {
+body a.btn, body a.btn_red {
   border: 1px solid white;
   -webkit-border-radius: 22px;
           border-radius: 22px;
@@ -31,7 +31,7 @@ body a.btn, body a.btn-red {
 body a.btn {
   color: white; }
 
-body a.btn-red {
+body a.btn_red {
   border: 1px solid #cc0000;
   color: #cc0000; }
 

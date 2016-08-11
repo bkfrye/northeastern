@@ -36,12 +36,26 @@ function favicon_link() {
 add_action( 'wp_head', 'favicon_link' );
 
 /******************************************/
-/** Remove Comments Link from admin *******/
+/** Remove Tabs from admin ****************/
 /******************************************/
 add_action( 'admin_init', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
 }
+
+// Restrict ACF Access
+function my_acf_show_admin($show) {
+	// provide a list of usernames who can edit custom field definitions here
+	$admins = array(
+		'admin'
+	);
+
+	// get the current user
+	$current_user = wp_get_current_user();
+
+	return (in_array($current_user->user_login, $admins));
+}
+add_filter('acf/settings/show_admin', 'my_acf_show_admin');
 
 /******************************************/
 /** Events CPT Modifications        *******/

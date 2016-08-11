@@ -143,6 +143,7 @@
         position: relative;
         display: block;
         color: #fff;
+        background-color: $darkgray;
         margin: 0;
         padding: 1em 2em 2em;
 
@@ -153,7 +154,6 @@
 
         @include tablet{
             position: absolute;
-            background-color: $darkgray;
             width: 75%;
             top: 0;
             bottom: 0;
@@ -218,6 +218,9 @@
     }
 }
 
+.content-active .lower_third-wrap{
+    transform: skewX(0);
+}
 
 .hide{
     display: none!important;
@@ -420,7 +423,7 @@ div[class*=icon]{
     h2{
         margin: 0 0 0 -90%;
         text-transform: uppercase;
-        font-size: 2.4em;
+        font-size: 4vw;
 
         padding-bottom: 50px;
         font-weight: 300;
@@ -440,12 +443,19 @@ div[class*=icon]{
         position: absolute;
         top: 0;
         left: 0;
-        width: 500px;
         font-family: $font-light-condensed;
 
         opacity: 0;
         transform-origin: 50% 100%;
         transform: rotateX(180deg);
+
+        @include tablet{
+            width: 360px;
+        }
+
+        @include desktop{
+            width: 500px;
+        }
 
         &:nth-child(1){
             color: $bluegreen;

@@ -11,17 +11,20 @@ $scriptVersion = $detect->getScriptVersion();
 
 get_header(); ?>
 <style>
-#angled-events:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/events.jpg);}
+#angled-events:after{background-image:url(<?php echo the_field('callout_bg_1');?>);}
+#angled-lifelong_learning:after{background-image:url(<?php echo the_field('callout_bg_2');?>);}
+#angled-communities:after{background-image:url(<?php echo the_field('callout_bg_3');?>);}
+/*#angled-events:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/events.jpg);}
 #angled-lifelong_learning:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/lifelong-learning.jpg);}
-#angled-communities:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/communities.jpg);}
+#angled-communities:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/communities.jpg);}*/
 </style>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<div id="homepage_hero">
             <div class="textured_backdrop">
-                <!-- <h1><?php the_field('home_title');?></h1> -->
-				<h1>Connecting &amp; Engaging Alumni Around the World</h1>
+                <h1><?php echo the_field('main_title');?></h1>
+				<!-- <h1>Connecting &amp; Engaging Alumni Around the World</h1> -->
             </div>
 
             <?php
@@ -52,54 +55,48 @@ get_header(); ?>
                 	<div class="lower_third">
 						<div class="lower_third-wrap">
 							<h3>Events</h3>
-							<p>Sed do eiusmod tempor incididunt</p>
+							<p><?php echo the_field('callout_desc_1');?></p>
 						</div>
 					</div>
         		</div>
 
                 <div class="angled_content hide">
-                    <h4>Event Name</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h4><?php echo the_field('callout_detailed_title_1');?></h4>
+					<?php echo the_field('callout_detailed_1');?>
 
                     <a href="#" class="btn">Learn More</a>
                     <div class="close">X</div>
                 </div>
 
 				<div id="angled-lifelong_learning" class="angled_item">
-            		<div class="lower_third">
+					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Events</h3>
-							<p>Sed do eiusmod tempor incididunt</p>
+							<h3>Lifelong Learning</h3>
+							<p><?php echo the_field('callout_desc_2');?></p>
 						</div>
 					</div>
         		</div>
 
                 <div class="angled_content hide">
-                    <h4>Event Name</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h4><?php echo the_field('callout_detailed_title_2');?></h4>
+					<?php echo the_field('callout_detailed_2');?>
 
                     <a href="#" class="btn">Learn More</a>
                     <div class="close">X</div>
                 </div>
 
 				<div id="angled-communities" class="angled_item">
-            		<div class="lower_third">
+					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Events</h3>
-							<p>Sed do eiusmod tempor incididunt</p>
+							<h3>Communities</h3>
+							<p><?php echo the_field('callout_desc_3');?></p>
 						</div>
 					</div>
         		</div>
 
                 <div class="angled_content hide">
-                    <h4>Event Name</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h4><?php echo the_field('callout_detailed_title_3');?></h4>
+					<?php echo the_field('callout_detailed_3');?>
 
                     <a href="#" class="btn">Learn More</a>
                     <div class="close">X</div>
@@ -170,7 +167,7 @@ get_header(); ?>
 							while ( $events->have_posts() ) : $events->the_post();
 
 							$short_title = the_title('','',false);
-							$trimmed_title = wp_trim_words( $short_title, 8, '&hellip;')
+							$trimmed_title = wp_trim_words( $short_title, 8, '...')
 						?>
 							<div class="event_card">
 	                            <div class="date">

@@ -8,10 +8,10 @@
  */
 ?>
 
-<section class="banner_interior" style="background-image:url(http://northeastern.dev/wp-content/uploads/2016/08/unspecified-1.jpg)">
+<section class="banner_interior" style="background-image:url(<?php echo get_field('hero_image');?>)">
 	<div class="banner_content">
 		<div class="page_title">
-			<h1>Page Title</h1>
+			<?php the_title('<h1>','</h1>');?>
 		</div>
 	</div>
 </section>
@@ -21,6 +21,9 @@
 		<?php the_content(); ?>
 	</article>
 	<aside>
+		<?php get_template_part('template-parts/sidebar', 'facebook'); ?>
+		<?php get_template_part('template-parts/sidebar', 'events'); ?>
+
 
 	</aside>
 
@@ -29,7 +32,7 @@
 <section class="img_gallery">
 	<div id="freewall">
 	<?php
-		get_template_part( 'template-parts/freewall' );
+		// get_template_part( 'template-parts/freewall' );
 	?>
 	</div>
 </section>
@@ -39,9 +42,9 @@
 		// get_template_part( 'template-parts/blog', 'footer' );
 	?>
 
-	<div class="view_more">
-		<a href="#" class="btn-red">View More</a>
-	</div>
+	<!-- <div class="view_more">
+		<a href="#" class="btn_red">View More</a>
+	</div> -->
 </section>
 
 <section class="signups">

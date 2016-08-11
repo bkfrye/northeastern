@@ -36,6 +36,12 @@ body a.btn_red {
   color: #cc0000; }
 
 /****************************
+******** General  **********
+****************************/
+html p {
+  font-size: 13px; }
+
+/****************************
 *********** Hero  **********
 ****************************/
 #homepage_hero {
@@ -158,6 +164,7 @@ body a.btn_red {
     position: relative;
     display: block;
     color: #fff;
+    background-color: #333333;
     margin: 0;
     padding: 1em 2em 2em;
     opacity: 1;
@@ -171,7 +178,6 @@ body a.btn_red {
     @media (min-width: 768px) {
       .callouts .angled_content {
         position: absolute;
-        background-color: #333333;
         width: 75%;
         top: 0;
         bottom: 0;
@@ -216,6 +222,11 @@ body a.btn_red {
     -webkit-transform: skewX(-25deg);
         -ms-transform: skewX(-25deg);
             transform: skewX(-25deg); }
+
+.content-active .lower_third-wrap {
+  -webkit-transform: skewX(0);
+      -ms-transform: skewX(0);
+          transform: skewX(0); }
 
 .hide {
   display: none !important; }
@@ -400,7 +411,7 @@ div[class*=icon] {
   .learn_more_callout h2 {
     margin: 0 0 0 -90%;
     text-transform: uppercase;
-    font-size: 2.4em;
+    font-size: 4vw;
     padding-bottom: 50px;
     font-weight: 300; }
 
@@ -416,7 +427,6 @@ div[class*=icon] {
   position: absolute;
   top: 0;
   left: 0;
-  width: 500px;
   font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif;
   opacity: 0;
   -webkit-transform-origin: 50% 100%;
@@ -424,6 +434,12 @@ div[class*=icon] {
           transform-origin: 50% 100%;
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg); }
+  @media (min-width: 768px) {
+    .headline_rotate .rotator_item {
+      width: 360px; } }
+  @media (min-width: 960px) {
+    .headline_rotate .rotator_item {
+      width: 500px; } }
   .headline_rotate .rotator_item:nth-child(1) {
     color: #09c997; }
   .headline_rotate .rotator_item:nth-child(2) {

@@ -49,8 +49,11 @@ html, body, section, article, div, span {
 html {
   font-family: "HelveticaNeueW01-55Roma", arial, sans-serif;
   color: #333333; }
+  html h1 {
+    text-transform: uppercase;
+    letter-spacing: 1px; }
   html p {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5em; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -98,11 +101,18 @@ body a {
   text-decoration: none; }
 
 /****************************
+********  General  **********
+****************************/
+html h1 {
+  font-size: 26px;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
+
+/****************************
 ******Banner Section ********
 ****************************/
 .banner_interior {
   position: relative;
-  height: 415px;
+  height: 70vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -159,26 +169,94 @@ body a {
     clear: both;
     content: "";
     display: table; }
-  .content article {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 57.35098%; }
-    .content article:last-child {
-      margin-right: 0; }
+  @media (min-width: 768px) {
+    .content article {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      width: 67%; }
+      .content article:last-child {
+        margin-right: 0; } }
+  .content article h1 {
+    margin-top: 0; }
   .content aside {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 40.29137%;
-    background-color: #efefef;
-    min-height: 400px; }
-    .content aside:last-child {
-      margin-right: 0; }
+    background-color: #efefef; }
+    @media (min-width: 768px) {
+      .content aside {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        width: 29%;
+        min-height: 400px; }
+        .content aside:last-child {
+          margin-right: 0; } }
 
 /****************************
 ******Sidebar Section ********
 ****************************/
+aside h3 {
+  display: inline-block;
+  position: relative;
+  background-color: #ca0814;
+  color: white;
+  margin: 0;
+  padding: .5em 3em .5em 1em;
+  width: 85%;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+  @media (min-width: 768px) {
+    aside h3 {
+      width: 80%; } }
+  @media (min-width: 960px) {
+    aside h3 {
+      width: 70%; } }
+  aside h3:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -30px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 41px 0 0 30px;
+    border-color: transparent transparent transparent #ca0814; }
+
+.event_info .event_info-item {
+  width: 100%;
+  padding: .5em 2em 30px;
+  border-bottom: 1px solid white; }
+  .event_info .event_info-item p {
+    margin-top: 0; }
+
+.event_info .event_info-date {
+  color: #ca0814;
+  font-size: 30px;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+  margin: 0; }
+
+.event_info .event_info-title {
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
+
+.event_info .event_info-desc {
+  margin-bottom: 30px; }
+
+.facebook_connect {
+  width: 100%;
+  padding: 2em; }
+  .facebook_connect svg {
+    width: 45px;
+    height: auto;
+    float: left;
+    margin-right: 1em; }
+  .facebook_connect p {
+    margin: 0 0 33px; }
+  .facebook_connect .btn_wrap {
+    margin-bottom: 7px; }
+
 /****************************
 ***** Gallery Section *******
 ****************************/
@@ -249,6 +327,8 @@ body a {
             -ms-flex-preferred-size: 45%;
                 flex-basis: 45%;
         text-align: right; } }
+    .signups .contribute h3 {
+      font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
 
 /****************************
 ***** Contact Person ********

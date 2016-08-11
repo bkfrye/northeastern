@@ -3,8 +3,14 @@
 @import "../partials/_settings";
 @import "../partials/_media-queries";
 @import "../partials/_mixins";
-
-
+/****************************
+******** General  **********
+****************************/
+html{
+    p{
+        font-size: 13px;
+    }
+}
 /****************************
 *********** Hero  **********
 ****************************/

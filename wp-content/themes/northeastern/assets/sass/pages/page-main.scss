@@ -6,11 +6,24 @@
 @import "../partials/_global";
 
 /****************************
+********  General  **********
+****************************/
+html{
+    h1{
+        font:{
+            size: 26px;
+            family: $font-bold-condensed;
+        }
+    }
+}
+
+
+/****************************
 ******Banner Section ********
 ****************************/
 .banner_interior{
     position: relative;
-    height: 415px;
+    height: 70vh;
 
     background:{
         position: center;
@@ -61,21 +74,115 @@
     padding: 18px 1em;
 
     article{
-        @include span-columns(7);
+        @include tablet{
+            @include span-columns(8);
+            width: 67%;
+        }
+
+        h1{
+            margin-top: 0;
+        }
     }
 
     aside{
-        @include span-columns(5);
         background-color: $lightgray;
-        min-height: 400px;
+
+        @include tablet{
+            @include span-columns(4);
+            width: 29%
+;            min-height: 400px;
+        }
+
     }
 }
 
 /****************************
 ******Sidebar Section ********
 ****************************/
+aside{
+    h3{
+        display: inline-block;
+        position: relative;
+        background-color: $darkred;
+        color: white;
+        margin: 0;
+        padding: .5em 3em .5em 1em;
+        width: 85%;
+        font-family: $font-bold-condensed;
+        letter-spacing: 1px;
 
+        text-transform: uppercase;
+        @include tablet{
+            width: 80%;
+        }
 
+        @include desktop{
+            width: 70%;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -30px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 41px 0 0 30px;
+            border-color: transparent transparent transparent $darkred;
+
+        }
+    }
+}
+
+.event_info{
+    .event_info-item{
+        width: 100%;
+        padding: .5em 2em 30px;
+        border-bottom: 1px solid white;
+
+        p{
+            margin-top: 0;
+        }
+    }
+
+    .event_info-date{
+        color: $darkred;
+        font:{
+            size: 30px;
+            family: $font-bold-condensed;
+        }
+        margin: 0;
+    }
+
+    .event_info-title{
+        font-family: $font-bold-condensed;
+    }
+
+    .event_info-desc{
+        margin-bottom: 30px;
+    }
+}
+
+.facebook_connect{
+    width: 100%;
+    padding: 2em;
+
+    svg{
+        width: 45px;
+        height: auto;
+        float: left;
+        margin-right: 1em;
+    }
+    p{
+        margin: 0 0 33px;
+    }
+
+    .btn_wrap{
+        margin-bottom: 7px;
+    }
+}
 
 
 /****************************
@@ -144,6 +251,12 @@
                     text-align: right;
                 }
 
+            }
+        }
+
+        h3{
+            font:{
+                family: $font-bold-condensed;
             }
         }
     }

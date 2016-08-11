@@ -49,8 +49,11 @@ html, body, section, article, div, span {
 html {
   font-family: "HelveticaNeueW01-55Roma", arial, sans-serif;
   color: #333333; }
+  html h1 {
+    text-transform: uppercase;
+    letter-spacing: 1px; }
   html p {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5em; }
 
 h1, h2, h3, h4, h5, h6 {

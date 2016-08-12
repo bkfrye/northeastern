@@ -21,19 +21,33 @@ body{
 ****************************/
 
 #events{
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
     @include tablet{
-        display: flex;
+
     }
     .event-item{
         display: flex;
         flex-direction: column;
+        min-width: 100%;
         padding: 1em;
         background-color: white;
 
-        margin: 1em;
+        margin-bottom: 1em;
+        @include box-shadow;
+
 
         @include tablet{
-
+            min-width: auto;
+            flex-basis: 48.5%;
+        }
+        @include desktop{
+            flex-basis: 23.5%;
         }
     }
 

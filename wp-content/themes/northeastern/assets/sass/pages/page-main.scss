@@ -76,7 +76,6 @@ html{
     article{
         @include tablet{
             @include span-columns(8);
-            // width: 67%;
         }
 
         h1{
@@ -89,10 +88,20 @@ html{
 
         @include tablet{
             @include span-columns(4);
-            // width: 29%;
             min-height: 400px;
         }
 
+    }
+
+    .intro_section{
+        padding-bottom: 1em;
+        margin-bottom: 2.8em;
+
+        border-bottom: 1px solid $lightgray;
+        p{
+            font-size: 24px;
+            line-height: 1.3;
+        }
     }
 }
 
@@ -272,7 +281,6 @@ aside{
                     flex-basis: 45%;
                     text-align: center;
                 }
-
             }
         }
 

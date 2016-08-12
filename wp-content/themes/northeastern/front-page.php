@@ -147,7 +147,7 @@ get_header(); ?>
 			<article>
 				<div class="event_title-block">
 					<h2>Upcoming <br>Events</h2>
-					<a href="#">View All</a>
+					<a href="/events">View All</a>
 				</div>
 
                 <div class="owl_wrap">

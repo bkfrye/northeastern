@@ -21,8 +21,22 @@
 		<?php the_content(); ?>
 	</article>
 	<aside>
-		<?php get_template_part('template-parts/sidebar', 'facebook'); ?>
-		<?php get_template_part('template-parts/sidebar', 'events'); ?>
+		<?php
+			$sidebar_items =  get_field('sidebar_items');
+
+			if( in_array('facebook', $sidebar_items) ) {
+				get_template_part('template-parts/sidebar', 'facebook');
+			}
+			if ( in_array('events', $sidebar_items) ) {
+				get_template_part('template-parts/sidebar', 'events');
+			} else {
+				echo 'nothing selected...';
+			}
+		?>
+
+
+		<!-- <?php get_template_part('template-parts/sidebar', 'facebook'); ?>
+		<?php get_template_part('template-parts/sidebar', 'events'); ?> -->
 
 
 	</aside>

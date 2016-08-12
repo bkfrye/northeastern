@@ -16,26 +16,6 @@ html {
   background-image: url("../../img/svg/instagram.svg"); }
 
 /****************************
-*******   Components  *******
-****************************/
-body a.btn, body a.btn_red {
-  border: 1px solid white;
-  -webkit-border-radius: 22px;
-          border-radius: 22px;
-  font-size: 12pt;
-  text-transform: uppercase;
-  height: 44px;
-  padding: 10px 30px;
-  text-decoration: none; }
-
-body a.btn {
-  color: white; }
-
-body a.btn_red {
-  border: 1px solid #cc0000;
-  color: #cc0000; }
-
-/****************************
 ********  General  **********
 ****************************/
 *, *::after, *::before {
@@ -99,6 +79,29 @@ body a {
 
 body a {
   text-decoration: none; }
+
+/****************************
+*******   Components  *******
+****************************/
+body a.btn, body a.btn_red {
+  display: inline-block;
+  border: 1px solid white;
+  -webkit-border-radius: 22px;
+          border-radius: 22px;
+  font-size: 12pt;
+  text-transform: uppercase;
+  height: 44px;
+  min-width: 190px;
+  padding: 10px 30px;
+  text-decoration: none;
+  text-align: center; }
+
+body a.btn {
+  color: white; }
+
+body a.btn_red {
+  border: 1px solid #cc0000;
+  color: #cc0000; }
 
 /****************************
 ********  General  **********
@@ -174,8 +177,7 @@ html h1 {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 65.88078%;
-      width: 67%; }
+      width: 65.88078%; }
       .content article:last-child {
         margin-right: 0; } }
   .content article h1 {
@@ -188,13 +190,12 @@ html h1 {
         display: block;
         margin-right: 2.35765%;
         width: 31.76157%;
-        width: 29%;
         min-height: 400px; }
         .content aside:last-child {
           margin-right: 0; } }
 
 /****************************
-******Sidebar Section ********
+***** Sidebar ***************
 ****************************/
 aside h3 {
   display: inline-block;
@@ -202,7 +203,7 @@ aside h3 {
   background-color: #ca0814;
   color: white;
   margin: 0;
-  padding: .5em 3em .5em 1em;
+  padding: .5em .5em .5em 1em;
   width: 85%;
   font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
   letter-spacing: 1px;
@@ -227,8 +228,14 @@ aside h3 {
 
 .event_info .event_info-item {
   width: 100%;
-  padding: .5em 2em 30px;
-  border-bottom: 1px solid white; }
+  border-bottom: 1px solid white;
+  padding: 1em 2em; }
+  @media (min-width: 768px) {
+    .event_info .event_info-item {
+      padding: .5em 1em; } }
+  @media (min-width: 960px) {
+    .event_info .event_info-item {
+      padding: .5em 2em 30px; } }
   .event_info .event_info-item p {
     margin-top: 0; }
 
@@ -246,14 +253,40 @@ aside h3 {
 
 .facebook_connect {
   width: 100%;
-  padding: 2em; }
+  padding: 1em 2em; }
+  @media (min-width: 768px) {
+    .facebook_connect {
+      padding: 1em; } }
+  @media (min-width: 960px) {
+    .facebook_connect {
+      padding: 2em; } }
+  .facebook_connect .facebook_connect-wrap {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    .facebook_connect .facebook_connect-wrap::after {
+      clear: both;
+      content: "";
+      display: table; }
   .facebook_connect svg {
-    width: 45px;
+    max-width: 45px;
     height: auto;
+    margin-right: 1em;
     float: left;
-    margin-right: 1em; }
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .facebook_connect svg:last-child {
+      margin-right: 0; }
   .facebook_connect p {
-    margin: 0 0 33px; }
+    margin: 0 0 33px;
+    line-height: 1.2;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    .facebook_connect p:last-child {
+      margin-right: 0; }
   .facebook_connect .btn_wrap {
     margin-bottom: 7px; }
 
@@ -326,7 +359,7 @@ aside h3 {
         -webkit-flex-basis: 45%;
             -ms-flex-preferred-size: 45%;
                 flex-basis: 45%;
-        text-align: right; } }
+        text-align: center; } }
     .signups .contribute h3 {
       font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
 

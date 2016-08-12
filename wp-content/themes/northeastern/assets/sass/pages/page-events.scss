@@ -1,0 +1,60 @@
+@import "bourbon";
+@import "neat";
+@import "../partials/_settings";
+@import "../partials/_media-queries";
+@import "../partials/_mixins";
+@import "../partials/_global";
+
+/****************************
+********  General  **********
+****************************/
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: $lightgray;
+}
+
+
+/****************************
+******Banner Section ********
+****************************/
+
+#events{
+    @include tablet{
+        display: flex;
+    }
+    .event-item{
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        background-color: white;
+
+        margin: 1em;
+
+        @include tablet{
+
+        }
+    }
+
+    .event_info-date{
+        color: $darkred;
+        font:{
+            size: 30px;
+            family: $font-bold-condensed;
+        }
+        margin: 0;
+    }
+
+    .event_info-title{
+        font-family: $font-bold-condensed;
+    }
+
+    .event_info-desc{
+        flex: 1;
+    }
+
+    .btn_red{
+
+    }
+}

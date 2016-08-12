@@ -96,6 +96,10 @@ function northeastern_scripts(){
 	if(!is_front_page()){
 		wp_enqueue_style( 'page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-main.css', false );
 	}
+
+	if(is_page('events')){
+		wp_enqueue_style( 'events-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-events.css', false );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'northeastern_scripts' , 11);
 

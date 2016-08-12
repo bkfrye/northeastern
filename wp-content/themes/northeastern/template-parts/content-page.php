@@ -18,27 +18,30 @@
 
 <section class="content">
 	<article>
-		<?php the_content(); ?>
+		<?php
+			echo '<div class="intro_section">' . get_field('intro_section') . '</div>';
+			the_content();
+		?>
 	</article>
 	<aside>
 		<?php
 			$sidebar_items =  get_field('sidebar_items');
 
-			if( in_array('facebook', $sidebar_items) ) {
-				get_template_part('template-parts/sidebar', 'facebook');
-			}
-			if ( in_array('events', $sidebar_items) ) {
+			if( $sidebar_items == [] ) {
 				get_template_part('template-parts/sidebar', 'events');
-			} else {
-				echo 'nothing selected...';
+			}
+			else{
+				if ( in_array('facebook', $sidebar_items) ) {
+					get_template_part('template-parts/sidebar', 'facebook');
+				}
+				if ( in_array('events', $sidebar_items) ) {
+					get_template_part('template-parts/sidebar', 'events');
+				}
+				if ( in_array('events', $sidebar_items) ) {
+					get_template_part('template-parts/sidebar', 'connect');
+				}
 			}
 		?>
-
-
-		<!-- <?php get_template_part('template-parts/sidebar', 'facebook'); ?>
-		<?php get_template_part('template-parts/sidebar', 'events'); ?> -->
-
-
 	</aside>
 
 </section>
@@ -79,12 +82,7 @@
 	</div>
 </section>
 
-<section class="contact_person">
-	<article>
-
-	</article>
-
-</section>
+<?php get_template_part( 'template-parts/contact-person' );?>
 
 <script type="text/javascript">
 	var wall = new Freewall("#freewall");

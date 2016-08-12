@@ -48,7 +48,7 @@
         </article>
 
     <?php endwhile;
-        echo '<a href="#">View More Events</a>';
+        echo '<a href="/events" style="display: inline-block;margin-left: 2em; padding: 1em 0;">View More Events</a>';
     ?>
 
 </div>

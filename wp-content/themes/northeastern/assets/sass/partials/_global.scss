@@ -59,3 +59,34 @@ body{
         text-decoration: none;
     }
 }
+
+/****************************
+*******   Components  *******
+****************************/
+
+%btn-base{
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 22px;
+    font:{
+        size: 12pt;
+    }
+    text-transform: uppercase;
+    height: 44px;
+    min-width: 190px;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+body {
+    a.btn{
+        @extend %btn-base;
+        color: white;
+    }
+    a.btn_red{
+        @extend %btn-base;
+        border: 1px solid $brightred;
+        color: $brightred;
+    }
+}

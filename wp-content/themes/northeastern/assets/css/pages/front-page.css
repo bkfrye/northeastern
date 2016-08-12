@@ -16,26 +16,6 @@ html {
   background-image: url("../../img/svg/instagram.svg"); }
 
 /****************************
-*******   Components  *******
-****************************/
-body a.btn, body a.btn_red {
-  border: 1px solid white;
-  -webkit-border-radius: 22px;
-          border-radius: 22px;
-  font-size: 12pt;
-  text-transform: uppercase;
-  height: 44px;
-  padding: 10px 30px;
-  text-decoration: none; }
-
-body a.btn {
-  color: white; }
-
-body a.btn_red {
-  border: 1px solid #cc0000;
-  color: #cc0000; }
-
-/****************************
 ******** General  **********
 ****************************/
 html p {
@@ -315,8 +295,8 @@ article.expand_juicer {
     list-style-type: none;
     margin: 1%;
     margin-bottom: 9px;
-    -webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.1); }
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15); }
     @media (min-width: 768px) {
       .juicer_list .card {
         width: 31.3%; } }
@@ -626,7 +606,9 @@ div[class*=icon] {
   margin: 1.5em;
   padding: 1.5em;
   background-color: white;
-  text-align: center; }
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15); }
   .event_card p {
     margin: 0;
     font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }

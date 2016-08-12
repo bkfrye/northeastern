@@ -147,7 +147,7 @@ get_header(); ?>
 			<article>
 				<div class="event_title-block">
 					<h2>Upcoming <br>Events</h2>
-					<a href="#">View All</a>
+					<a href="/events">View All</a>
 				</div>
 
                 <div class="owl_wrap">
@@ -157,21 +157,24 @@ get_header(); ?>
                     </div>
     				<div class="owl-carousel">
                         <?php
-                            $args = array(
-								'post_type' => 'events',
+							$args = array(
+					            'post_type' => 'events',
+					            'status' => 'published',
 								'posts_per_page' => 9,
-								'order' => ASC
-							);
+					            'orderby' => 'meta_value',
+					            'order' => ASC,
+					            'meta_key' => 'date_start',
+				            );
 
 							$events = new WP_Query( $args );
-							while ( $events->have_posts() ) : $events->the_post();
 
+							while ( $events->have_posts() ) : $events->the_post();
 							$short_title = the_title('','',false);
-							$trimmed_title = wp_trim_words( $short_title, 8, '...')
+							$trimmed_title = wp_trim_words( $short_title, 8, '...');
 						?>
 							<div class="event_card">
 	                            <div class="date">
-	                                <p><?php echo get_field('date')?></p>
+	                                <p><?php echo get_field('date_start')?></p>
 	                            </div>
 	                            <div class="event_desc">
 	                                <p><?php echo $trimmed_title ?></p>

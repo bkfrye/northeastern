@@ -157,7 +157,7 @@ body a.btn_red {
     color: #FFF;
     font-size: 11px !important; }
   #footer_global a.logo {
-    background: url("https://www.northeastern.edu/neuhome/images/logo-footer.png") no-repeat scroll left top transparent;
+    background: url("../img/svg/logo-neu.svg") no-repeat scroll left top transparent;
     color: #FFFFFF;
     font-family: Georgia,Times,Arial,serif;
     font-size: 18px;
@@ -269,8 +269,14 @@ body a.btn_red {
   #site_footer nav ul {
     padding: 0; }
   #site_footer nav li {
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    list-style-type: none; }
   #site_footer #privacy_info {
     margin-top: 32px; }
     #site_footer #privacy_info a {
       text-decoration: underline; }
+  #site_footer .social_logo {
+    display: inline-block;
+    width: 25px;
+    height: auto;
+    margin-right: 6px; }

@@ -602,6 +602,7 @@ div[class*=icon] {
       padding-left: 2px; }
 
 .event_card {
+  position: relative;
   min-height: 180px;
   margin: 1.5em;
   padding: 1.5em;
@@ -621,6 +622,43 @@ div[class*=icon] {
   .event_card .event_desc p {
     font-size: 22px;
     line-height: 1.1; }
+
+.event_card-overlay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1em;
+  background-color: rgba(51, 51, 51, 0.9);
+  opacity: 0;
+  -webkit-transition: opacity 212ms ease-in-out;
+  transition: opacity 212ms ease-in-out; }
+  .event_card-overlay:hover {
+    opacity: 1; }
+  .event_card-overlay p {
+    color: white; }
+  .event_card-overlay .facebook,
+  .event_card-overlay .twitter,
+  .event_card-overlay .linkedin {
+    display: inline; }
+    .event_card-overlay .facebook svg,
+    .event_card-overlay .twitter svg,
+    .event_card-overlay .linkedin svg {
+      max-width: 32px; }
 
 /****************************
 ******* Blog Section ********

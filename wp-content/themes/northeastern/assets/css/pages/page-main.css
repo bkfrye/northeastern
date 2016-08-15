@@ -104,6 +104,36 @@ body a.btn_red {
   color: #cc0000; }
 
 /****************************
+******* Forms ***************
+****************************/
+#gform_1 {
+  height: 35px; }
+  #gform_1 ul {
+    margin: 0;
+    padding: 0; }
+    #gform_1 ul li {
+      list-style-type: none;
+      margin: 0; }
+  #gform_1 label {
+    display: none; }
+  #gform_1 .gform_body,
+  #gform_1 .gform_footer {
+    display: inline-block; }
+  #gform_1 .gform_body {
+    width: 85%; }
+  #gform_1 #input_1_1 {
+    width: 100%;
+    height: 35px;
+    border: 2px solid #c1c1c1;
+    padding-left: 1em;
+    line-height: 1;
+    float: left; }
+  #gform_1 #gform_submit_button_1 {
+    width: 35px;
+    height: auto;
+    margin-left: 12px; }
+
+/****************************
 ********  General  **********
 ****************************/
 html h1 {
@@ -346,6 +376,8 @@ aside h3 {
         padding: 2em; } }
   .signups .stay_connected {
     background-color: #efefef; }
+    .signups .stay_connected h3 {
+      font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif; }
   .signups .contribute {
     background-color: #cc0000;
     color: white;

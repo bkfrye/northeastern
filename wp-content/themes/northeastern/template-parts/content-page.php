@@ -20,7 +20,7 @@
 	<article>
 		<?php
 			echo '<div class="intro_section">' . get_field('intro_section') . '</div>';
-			the_content();
+			echo '<div class="main_section">' . get_field('main_section') . '</div>';
 		?>
 	</article>
 	<aside>

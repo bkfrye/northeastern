@@ -47,7 +47,19 @@ get_header(); ?>
 						}
 					}
 					?></p>
-				<p class="event_info-title"><?php echo the_title(); ?></p>
+				<p class="event_info-title"><?php echo the_title(); ?><br>
+					<?php
+						echo get_field('start_time');
+						$end_time = get_field('end_time');
+
+						if ( $end_time ){
+							echo ' - ' . $end_time;
+						} else{
+							echo '';
+						}
+
+					?>
+				</p>
 				<div class="event_info-desc">
 					<p><?php echo get_field('desc') ?></p>
 				</div>

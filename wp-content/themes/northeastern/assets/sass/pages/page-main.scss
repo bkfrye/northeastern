@@ -106,6 +106,45 @@ html{
 }
 
 /****************************
+***** Communities pages *****
+****************************/
+.community_leaders{
+    padding: 2em 0;
+    border-bottom: 1px solid $lightgray;
+
+    ul{
+        margin: 0;
+        padding: 0;
+
+        @include outer-container;
+    }
+    li{
+        list-style-type: none;
+        margin-bottom: 2em;
+
+        @include span-columns(12);
+
+        @include desktop{
+            @include span-columns(4);
+            margin: 0;
+        }
+
+        p{
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .leader-name{
+            font-weight: 800;
+        }
+        .leader-email{
+            color: $darkred;
+        }
+
+    }
+}
+
+/****************************
 ***** Sidebar ***************
 ****************************/
 aside{

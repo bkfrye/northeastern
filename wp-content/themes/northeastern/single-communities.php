@@ -28,13 +28,14 @@ get_header(); ?>
 
 					while ( have_posts() ) : the_post();
 						echo '<section class="community_leaders">';
+						echo '<h1>Community Leaders</h1>';
 						$rows = get_field('community_leaders');
 						if($rows)
 						{
 							echo '<ul>';
 							foreach($rows as $row)
 							{
-								echo '<li><p>'. $row['name'] .'<br>'. $row['title']. '<br>'. $row['email']. '</li>';
+								echo '<li><p class="leader-name">'. $row['name'] .'</p><p class="leader-title">'. $row['title']. '</p><p class="leader-email">'. $row['email']. '</p></li>';
 							}
 							echo '</ul>';
 						}

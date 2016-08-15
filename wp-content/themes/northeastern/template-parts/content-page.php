@@ -54,15 +54,12 @@
 	</div>
 </section>
 
-<section class="blog">
+
 	<?php
 		// get_template_part( 'template-parts/blog', 'footer' );
 	?>
 
-	<!-- <div class="view_more">
-		<a href="#" class="btn_red">View More</a>
-	</div> -->
-</section>
+
 
 <section class="signups">
 	<div class="stay_connected">

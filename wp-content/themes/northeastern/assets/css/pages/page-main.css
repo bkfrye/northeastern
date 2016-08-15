@@ -35,6 +35,8 @@ html {
   html p {
     font-size: 16px;
     line-height: 1.5em; }
+  html span {
+    font-family: "HelveticaNeueW01-55Roma", arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
@@ -258,9 +260,9 @@ aside h3 {
     right: -30px;
     bottom: 0;
     width: 0;
-    height: 0;
+    height: 100%;
     border-style: solid;
-    border-width: 41px 0 0 30px;
+    border-width: 40px 0 0 30px;
     border-color: transparent transparent transparent #ca0814; }
 
 .event_info .event_info-item {

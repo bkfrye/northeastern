@@ -63,7 +63,7 @@
 
 <section class="signups">
 	<div class="stay_connected">
-		<h3><span class="bold">Stay connected</span><br>and share your successes.</h3>
+		<h3><span>Stay connected</span><br>and share your successes.</h3>
 		<?php echo gravity_form( 1, false, false, false, '', true ); ?>
 
 	</div>

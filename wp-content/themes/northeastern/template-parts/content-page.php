@@ -27,15 +27,15 @@
 		<?php
 			$sidebar_items =  get_field('sidebar_items');
 
-			if( $sidebar_items == [] ) {
-				get_template_part('template-parts/sidebar', 'events');
+			if( empty($sidebar_items) ) {
+				get_template_part('template-parts/sidebar', 'events_main');
 			}
 			else{
 				if ( in_array('facebook', $sidebar_items) ) {
 					get_template_part('template-parts/sidebar', 'facebook');
 				}
 				if ( in_array('events', $sidebar_items) ) {
-					get_template_part('template-parts/sidebar', 'events');
+					get_template_part('template-parts/sidebar', 'events_main');
 				}
 				if ( in_array('events', $sidebar_items) ) {
 					get_template_part('template-parts/sidebar', 'connect');
@@ -66,8 +66,8 @@
 
 <section class="signups">
 	<div class="stay_connected">
-		<h3><span class="bold">Stay connected</span> and share your successes.</h3>
-		<input type="text" name="name" value="">
+		<h3><span class="bold">Stay connected</span><br>and share your successes.</h3>
+		<?php echo gravity_form( 1, false, false, false, '', true ); ?>
 
 	</div>
 	<div class="contribute">

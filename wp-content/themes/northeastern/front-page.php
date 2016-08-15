@@ -14,9 +14,6 @@ get_header(); ?>
 #angled-events:after{background-image:url(<?php echo the_field('callout_bg_1');?>);}
 #angled-lifelong_learning:after{background-image:url(<?php echo the_field('callout_bg_2');?>);}
 #angled-communities:after{background-image:url(<?php echo the_field('callout_bg_3');?>);}
-/*#angled-events:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/events.jpg);}
-#angled-lifelong_learning:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/lifelong-learning.jpg);}
-#angled-communities:after{background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/assets/img/communities.jpg);}*/
 </style>
 
 <div id="primary" class="content-area">
@@ -179,6 +176,75 @@ get_header(); ?>
 	                            <div class="event_desc">
 	                                <p><?php echo $trimmed_title ?></p>
 	                            </div>
+								<div class="event_card-overlay">
+									<p>SHARE</p>
+									<div class="share_links">
+
+										<?php
+											$shareURL = urlencode(get_field('register'));
+											$shareTitle = str_replace( ' ', '%20', get_the_title());
+										?>
+										<div class="facebook">
+											<a href="<?php echo '//www.facebook.com/sharer/sharer.php?u='.$shareURL;?>" target="_blank">
+												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													 viewBox="0 0 486.4 486.4" style="enable-background:new 0 0 486.4 486.4;" xml:space="preserve">
+													<style type="text/css">
+														.st0{fill:#FFFFFF;}
+													</style>
+													<g>
+														<path id="Facebook__x28_alt_x29_" class="st0" d="M485.2,81.9c0-42.4-38.3-80.7-80.7-80.7H81.9C39.5,1.2,1.2,39.5,1.2,81.9v322.7
+															c0,42.4,38.3,80.7,80.7,80.7h161.3V302.4H184v-80.7h59.2v-31.4c0-54.2,40.7-103,90.8-103h65.2v80.7h-65.2
+															c-7.1,0-15.5,8.7-15.5,21.6v32.1h80.7v80.7h-80.7v182.8h86c42.4,0,80.7-38.3,80.7-80.7V81.9z"/>
+													</g>
+												</svg>
+											</a>
+										</div>
+										<div class="twitter">
+											<a href="<?php echo '//twitter.com/intent/tweet?text='.$shareTitle.'&amp;url='.$shareURL ?>" target="_blank">
+												<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													 viewBox="0 0 486.4 486.4" style="enable-background:new 0 0 486.4 486.4;" xml:space="preserve">
+													<style type="text/css">
+														.st0{fill:#FFFFFF;}
+													</style>
+													<g>
+														<g>
+															<g>
+																<path class="st0" d="M395.2,0h-304C40.8,0,0,40.8,0,91.2v304c0,50.4,40.8,91.2,91.2,91.2h304c50.4,0,91.2-40.8,91.2-91.2v-304
+																	C486.4,40.8,445.6,0,395.2,0z M364.2,188.6l0.2,7.8c0,79.2-60.2,170.4-170.4,170.4c-33.8,0-65.3-9.9-91.8-26.9
+																	c4.7,0.5,9.5,0.9,14.3,0.9c28.1,0,53.9-9.6,74.4-25.6c-26.2-0.5-48.3-17.8-55.9-41.6c3.7,0.7,7.4,1,11.3,1
+																	c5.5,0,10.8-0.7,15.8-2.1c-27.4-5.5-48-29.7-48-58.7v-0.8c8.1,4.5,17.3,7.2,27.1,7.5c-16.1-10.7-26.6-29.1-26.6-49.8
+																	c0-11,2.9-21.2,8.1-30.1c29.5,36.2,73.7,60.1,123.4,62.6c-1-4.4-1.6-9-1.6-13.6c0-33,26.8-59.9,59.9-59.9
+																	c17.2,0,32.8,7.3,43.7,18.9c13.6-2.7,26.4-7.7,38-14.5c-4.5,14-14,25.7-26.3,33.1c12.1-1.4,23.7-4.7,34.4-9.4
+																	C386.1,169.7,375.9,180.2,364.2,188.6z"/>
+															</g>
+														</g>
+													</g>
+												</svg>
+											</a>
+										</div>
+										<div class="linkedin">
+											<a href="<?php echo '//www.linkedin.com/shareArticle?mini=true&url='.$shareURL; ?>" target="_blank">
+												<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+													 viewBox="0 0 430.1 430.1" style="enable-background:new 0 0 430.1 430.1;" xml:space="preserve">
+													<style type="text/css">
+														.st1{fill:#FFFFFF;}
+													</style>
+													<path id="LinkedIn__x28_alt_x29_" class="st0" d="M230.7,194.3h0.4v-0.6C231,193.9,230.8,194.1,230.7,194.3z M230.7,194.3h0.4v-0.6
+														C231,193.9,230.8,194.1,230.7,194.3z"/>
+													<path class="st1" d="M230.7,194.3h0.4v-0.6C231,193.9,230.8,194.1,230.7,194.3z M230.7,194.3h0.4v-0.6
+														C231,193.9,230.8,194.1,230.7,194.3z M342.6,4.5H86.4c-45.6,0-83,37.3-83,83v256.1c0,45.6,37.3,83,83,83h256.1c45.6,0,83-37.3,83-83
+														V87.4C425.5,41.8,388.2,4.5,342.6,4.5z M131.6,358H67.5V166.5h64.1V358z M99.5,140.4h-0.4c-21.5,0-35.4-14.7-35.4-33.1
+														c0-18.7,14.3-33,36.3-33c21.9,0,35.4,14.3,35.8,33C135.8,125.7,121.9,140.4,99.5,140.4z M298.5,358V255.5c0-25.7-9.3-43.3-32.4-43.3
+														c-17.8,0-28.2,11.8-32.8,23.3c-1.7,4-2.2,9.8-2.2,15.5v107H167c0,0,0.9-173.5,0-191.5h64.1v27.1c8.5-13,23.7-31.7,57.7-31.7
+														c42.2,0,73.8,27.3,73.8,86.2l0.1,109.9H298.5z M231.1,194.3v-0.6c-0.1,0.2-0.3,0.4-0.4,0.6H231.1z"/>
+												</svg>
+											</a>
+										</div>
+									</div>
+									<div class="learn_more">
+										<a href="<?php echo get_field('register')?>" class="btn" target="_blank">LEARN MORE</a>
+									</div>
+								</div>
 	                        </div>
 						<?php endwhile; ?>
     				</div>

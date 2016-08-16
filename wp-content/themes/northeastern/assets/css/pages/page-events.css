@@ -87,7 +87,7 @@ body a {
 ****************************/
 body a.btn, body a.btn_red {
   display: inline-block;
-  border: 1px solid white;
+  border: 2px solid white;
   -webkit-border-radius: 22px;
           border-radius: 22px;
   font-size: 12pt;
@@ -99,10 +99,11 @@ body a.btn, body a.btn_red {
   text-align: center; }
 
 body a.btn {
-  color: white; }
+  color: white;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
 
 body a.btn_red {
-  border: 1px solid #cc0000;
+  border: 2px solid #cc0000;
   color: #cc0000; }
 
 /****************************

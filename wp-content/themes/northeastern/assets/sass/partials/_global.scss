@@ -69,7 +69,7 @@ body{
 
 %btn-base{
     display: inline-block;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 22px;
     font:{
         size: 12pt;
@@ -86,10 +86,11 @@ body {
     a.btn{
         @extend %btn-base;
         color: white;
+        font-family: $font-bold-condensed;
     }
     a.btn_red{
         @extend %btn-base;
-        border: 1px solid $brightred;
+        border: 2px solid $brightred;
         color: $brightred;
     }
 }

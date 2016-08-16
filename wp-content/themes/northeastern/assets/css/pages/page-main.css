@@ -87,7 +87,7 @@ body a {
 ****************************/
 body a.btn, body a.btn_red {
   display: inline-block;
-  border: 1px solid white;
+  border: 2px solid white;
   -webkit-border-radius: 22px;
           border-radius: 22px;
   font-size: 12pt;
@@ -99,10 +99,11 @@ body a.btn, body a.btn_red {
   text-align: center; }
 
 body a.btn {
-  color: white; }
+  color: white;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
 
 body a.btn_red {
-  border: 1px solid #cc0000;
+  border: 2px solid #cc0000;
   color: #cc0000; }
 
 /****************************
@@ -134,6 +135,142 @@ body a.btn_red {
     width: 35px;
     height: auto;
     margin-left: 12px; }
+
+/****************************
+***** Sidebar ***************
+****************************/
+aside .event_info h3 {
+  position: relative;
+  background-color: #ca0814;
+  color: white;
+  margin: 0;
+  padding: .5em .5em .5em 1em;
+  width: 85%;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase; }
+  @media (min-width: 768px) {
+    aside .event_info h3 {
+      width: 80%; } }
+  @media (min-width: 960px) {
+    aside .event_info h3 {
+      width: 70%; } }
+  aside .event_info h3:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -30px;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    border-style: solid;
+    border-width: 40px 0 0 30px;
+    border-color: transparent transparent transparent #ca0814; }
+
+aside .connect h3, aside .connect p {
+  margin: 0;
+  text-align: center; }
+
+aside .connect h3 {
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px; }
+
+aside .connect .alumni_community,
+aside .connect .career_first {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em 4.5em;
+  margin-bottom: 1em; }
+
+aside .connect .alumni_community {
+  background-color: #ffcc00; }
+
+aside .connect .career_first {
+  background-color: #99cc33; }
+
+aside .connect .btn_wrap {
+  margin-top: 32px;
+  text-align: center; }
+
+aside .connect .btn {
+  color: #000000;
+  border: 2px solid #000000; }
+
+.event_info .event_info-item {
+  width: 100%;
+  border-bottom: 1px solid white;
+  padding: 1em 2em; }
+  @media (min-width: 768px) {
+    .event_info .event_info-item {
+      padding: .5em 1em; } }
+  @media (min-width: 960px) {
+    .event_info .event_info-item {
+      padding: .5em 2em 30px; } }
+  .event_info .event_info-item p {
+    margin-top: 0; }
+
+.event_info .event_info-date {
+  color: #ca0814;
+  font-size: 30px;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+  margin: 0; }
+
+.event_info .event_info-title {
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
+
+.event_info .event_info-desc {
+  margin-bottom: 30px; }
+
+.facebook_connect {
+  width: 100%;
+  padding: 1em 2em; }
+  @media (min-width: 768px) {
+    .facebook_connect {
+      padding: 1em; } }
+  @media (min-width: 960px) {
+    .facebook_connect {
+      padding: 2em; } }
+  .facebook_connect .facebook_connect-wrap {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    .facebook_connect .facebook_connect-wrap::after {
+      clear: both;
+      content: "";
+      display: table; }
+  .facebook_connect svg {
+    max-width: 45px;
+    height: auto;
+    margin-right: 1em;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    .facebook_connect svg:last-child {
+      margin-right: 0; }
+  .facebook_connect p {
+    margin: 0 0 33px;
+    line-height: 1.2;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    .facebook_connect p:last-child {
+      margin-right: 0; }
+  .facebook_connect .btn_wrap {
+    margin-bottom: 7px; }
 
 /****************************
 ********  General  **********
@@ -274,102 +411,6 @@ html h1 {
       font-weight: 800; }
     .community_leaders li .leader-email {
       color: #ca0814; }
-
-/****************************
-***** Sidebar ***************
-****************************/
-aside h3 {
-  display: inline-block;
-  position: relative;
-  background-color: #ca0814;
-  color: white;
-  margin: 0;
-  padding: .5em .5em .5em 1em;
-  width: 85%;
-  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase; }
-  @media (min-width: 768px) {
-    aside h3 {
-      width: 80%; } }
-  @media (min-width: 960px) {
-    aside h3 {
-      width: 70%; } }
-  aside h3:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -30px;
-    bottom: 0;
-    width: 0;
-    height: 100%;
-    border-style: solid;
-    border-width: 40px 0 0 30px;
-    border-color: transparent transparent transparent #ca0814; }
-
-.event_info .event_info-item {
-  width: 100%;
-  border-bottom: 1px solid white;
-  padding: 1em 2em; }
-  @media (min-width: 768px) {
-    .event_info .event_info-item {
-      padding: .5em 1em; } }
-  @media (min-width: 960px) {
-    .event_info .event_info-item {
-      padding: .5em 2em 30px; } }
-  .event_info .event_info-item p {
-    margin-top: 0; }
-
-.event_info .event_info-date {
-  color: #ca0814;
-  font-size: 30px;
-  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
-  margin: 0; }
-
-.event_info .event_info-title {
-  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
-
-.event_info .event_info-desc {
-  margin-bottom: 30px; }
-
-.facebook_connect {
-  width: 100%;
-  padding: 1em 2em; }
-  @media (min-width: 768px) {
-    .facebook_connect {
-      padding: 1em; } }
-  @media (min-width: 960px) {
-    .facebook_connect {
-      padding: 2em; } }
-  .facebook_connect .facebook_connect-wrap {
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto; }
-    .facebook_connect .facebook_connect-wrap::after {
-      clear: both;
-      content: "";
-      display: table; }
-  .facebook_connect svg {
-    max-width: 45px;
-    height: auto;
-    margin-right: 1em;
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%; }
-    .facebook_connect svg:last-child {
-      margin-right: 0; }
-  .facebook_connect p {
-    margin: 0 0 33px;
-    line-height: 1.2;
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 74.41059%; }
-    .facebook_connect p:last-child {
-      margin-right: 0; }
-  .facebook_connect .btn_wrap {
-    margin-bottom: 7px; }
 
 /****************************
 ***** Gallery Section *******

@@ -28,16 +28,16 @@
 			$sidebar_items =  get_field('sidebar_items');
 
 			if( empty($sidebar_items) ) {
-				get_template_part('template-parts/sidebar', 'events_main');
+				get_template_part('template-parts/sidebar', 'events');
 			}
 			else{
 				if ( in_array('facebook', $sidebar_items) ) {
 					get_template_part('template-parts/sidebar', 'facebook');
 				}
 				if ( in_array('events', $sidebar_items) ) {
-					get_template_part('template-parts/sidebar', 'events_main');
+					get_template_part('template-parts/sidebar', 'events');
 				}
-				if ( in_array('events', $sidebar_items) ) {
+				if ( in_array('connect', $sidebar_items) ) {
 					get_template_part('template-parts/sidebar', 'connect');
 				}
 			}

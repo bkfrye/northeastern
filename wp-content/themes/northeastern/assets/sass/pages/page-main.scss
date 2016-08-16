@@ -231,8 +231,67 @@ html{
 ****************************/
 
 .contact_person{
-    height: 300px;
+    padding: 2em 1em;
     background:{
-        image: repeating-linear-gradient(45deg, rgba(0,0,0,.15), rgba(0,0,0,0) 10px);
+        image: repeating-linear-gradient(45deg, rgba(0,0,0,.10), rgba(0,0,0,0) 10px);
+    }
+
+    .profile_img{
+        display: none;
+        width: 178px;
+        height: 178px;
+        background:{
+            size: cover;
+            position: center;
+            repeat: no-repeat;
+        }
+
+        @include tablet{
+            display: inherit;
+            @include span-columns(3);
+            width: 192px;
+            height: 192px;
+        }
+
+        @include desktop{
+            @include span-columns(3);
+            width: 210px;
+            height: 210px;
+        }
+    }
+
+    .profile_info{
+
+        @include tablet{
+            @include span-columns(5);
+        }
+
+        @include desktop{
+            @include span-columns(8);
+        }
+
+
+        .profile-title{
+            font:{
+                size: 24px;
+                family: $font-bold-condensed;
+            }
+            margin-bottom: 1em;
+        }
+
+        .profile-name{
+            font:{
+                weight: 800;
+                size: 18px;
+            }
+            margin: 0;
+        }
+
+        .profile-email{
+            color: $darkred;
+        }
+    }
+    p{
+        margin: 0;
     }
 }

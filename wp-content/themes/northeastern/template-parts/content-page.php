@@ -41,47 +41,16 @@
 					get_template_part('template-parts/sidebar', 'connect');
 				}
 			}
+
+			wp_reset_postdata();
 		?>
 	</aside>
 
 </section>
 
-<section class="img_gallery">
-	<div id="freewall">
-	<?php
-		// get_template_part( 'template-parts/freewall' );
-	?>
-	</div>
-</section>
+<?php get_template_part('template-parts/super-footer');?>
 
-
-	<?php
-		// get_template_part( 'template-parts/blog', 'footer' );
-	?>
-
-
-
-<section class="signups">
-	<div class="stay_connected">
-		<h3><span>Stay connected</span><br>and share your successes.</h3>
-		<?php echo gravity_form( 1, false, false, false, '', true ); ?>
-
-	</div>
-	<div class="contribute">
-		<div>
-			<h3>Become a Contributor</h3>
-			<p>A stronger, more connected alumni network benefits all of us. What brilliance can you share?</p>
-		</div>
-		<div>
-			<a href="#" class="btn">Connect Now</a>
-		</div>
-
-	</div>
-</section>
-
-<?php get_template_part( 'template-parts/contact-person' );?>
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var wall = new Freewall("#freewall");
 	wall.reset({
 		selector: '.cell',
@@ -95,4 +64,4 @@
 	wall.fitWidth();
 	// for scroll bar appear;
 	jQuery(window).trigger("resize");
-</script>
+</script> -->

@@ -89,7 +89,6 @@ html{
     position: relative;
     margin: 0 auto;
     display: block;
-    height: 100%;
 
     article{
         position: relative;
@@ -627,6 +626,9 @@ div[class*=icon]{
     padding: 1.5em;
     background-color: white;
     text-align: center;
+
+    display: flex;
+    flex-direction: column;
 
     @include box-shadow;
 

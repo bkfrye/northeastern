@@ -84,8 +84,7 @@ html p {
 .callouts {
   position: relative;
   margin: 0 auto;
-  display: block;
-  height: 100%; }
+  display: block; }
   .callouts article {
     position: relative; }
     @media (min-width: 768px) {
@@ -509,6 +508,10 @@ div[class*=icon] {
   padding: 1.5em;
   background-color: white;
   text-align: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15); }
   .event_card p {
     margin: 0;

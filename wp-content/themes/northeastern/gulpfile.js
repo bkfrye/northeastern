@@ -34,7 +34,7 @@ gulp.task('styles', function() {
       includePaths: bourbon,
       includePaths: neat
     }))
-    .pipe(autoprefixer('last 10 versions', 'ie 10'))
+    .pipe(autoprefixer('last 2 versions', 'ie 10'))
     .pipe(gulp.dest('assets/css/'))
     .pipe(browserSync.reload({
         stream: true

@@ -89,17 +89,17 @@ function northeastern_scripts(){
 
 	wp_enqueue_script( 'nav', get_stylesheet_directory_uri().'/assets/js/nav.js', array('jquery'), true);
 	wp_enqueue_script( 'northeastern-script', get_stylesheet_directory_uri().'/assets/js/main.js', array('jquery'), true);
-	wp_enqueue_script( 'freewall', get_stylesheet_directory_uri().'/assets/js/freewall.js', array('jquery'), true);
 
 	if(is_front_page()){
 		wp_enqueue_style( 'front-page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/front-page.css', false );
 		wp_enqueue_style( 'owl-styles', get_bloginfo('stylesheet_directory') . '/assets/css/owl.carousel.css', false );
-		wp_enqueue_script( 'masonry-layout', get_stylesheet_directory_uri() . '/assets/js/masonry.js', '', true);
+		wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/assets/js/isotope.js', '', true);
 		wp_enqueue_script( 'owl', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), true);
 	}
 
 	if(!is_front_page()){
 		wp_enqueue_style( 'page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-main.css', false );
+		wp_enqueue_script( 'freewall', get_stylesheet_directory_uri().'/assets/js/freewall.js', array('jquery'), true);
 	}
 
 	if(is_page('events')){
@@ -207,95 +207,5 @@ function custom_mtypes( $m ){
 }
 add_filter( 'upload_mimes', 'custom_mtypes' );
 
-
-/******************************************/
-/************ Nav Builder *****************/
-/******************************************/
-/**
- * Expose navigation menu via ajax
- *
- * @return HTML the markup for the navigation
- */
-function return_menu_html_via_ajax() {
-	$wpHeader = get_header();
-
-	echo $wpHeader;
-	exit();
-	die();
-}
-add_action( 'wp_ajax_nopriv_menu_request', 'return_menu_html_via_ajax' );
-
-/**
- *
- */
-class NU_Menu_Maker_Walker extends Walker {
-
-	var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
-
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class='nu-shared-navigation__sub-menu-item' aria-hidden='true'>\n";
-	}
-
-	function end_lvl( &$output, $depth = 0, $args = array() ) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "$indent</ul>\n";
-	}
-
-	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-
-		global $wp_query;
-		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-		$class_names = $value = '';
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-		/* Add active class */
-		if(in_array('current-menu-item', $classes)) {
-			$classes[] = 'active';
-			unset($classes['current-menu-item']);
-		}
-
-		/* Check for children */
-		$children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
-		if (!empty($children)) {
-			$classes[] = 'nu-shared-navigation__has-sub';
-		}
-
-		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-		$class_names = join( ' ', array( $class_names, 'nu-shared-navigation__menu-item', 'nu-shared-navigation__menu__menu-item' ) );
-		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-
-		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-
-		$output .= $indent . '<li' . $id . $value . $class_names . $aria . '>';
-
-		$attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-		$attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-		$attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-
-		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'><span>';
-		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output .= '</span>';
-		if (!empty($children)) {
-			$item_output .= '<div class="svg-container visible-xs-inline-block visible-sm-inline-block">
-				<svg class="svg svg__svg-icon--white" width="100%" height="100%" viewBox="0 0 16 32">
-					<path d="M14.125 11.438l1.875 1.875-8 8-8-8 1.875-1.875 6.125 6.125z"></path>
-				</svg>
-			</div>';
-		}
-		$item_output .= '</a>';
-		$item_output .= $args->after;
-
-		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-	}
-
-	function end_el( &$output, $item, $depth = 0, $args = array() ) {
-		$output .= "</li>\n";
-	}
-
-}
 
 ?>

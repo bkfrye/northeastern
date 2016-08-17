@@ -3,6 +3,11 @@
 @import "../partials/_settings";
 @import "../partials/_media-queries";
 @import "../partials/_mixins";
+
+$overlay-1: transparentize($orange, .3);
+$overlay-2: transparentize($blue, .3);
+$overlay-3: transparentize($yellow, .3);
+
 /****************************
 ******** General  **********
 ****************************/
@@ -94,168 +99,334 @@ html{
         position: relative;
         // height: 250px;
 
-        @include tablet{
+        background-color: lighten(black, 27%);
+
+        @include desktop{
             overflow: hidden;
-            height: 340px;
+            background-color: white;
+        }
+
+        h4{
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.block {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    height: auto;
+    overflow: hidden;
+    @include desktop{
+
+        display: inline-block;
+        margin-top: 3px;
+        width: 33%;
+    }
+
+    .lower_third{
+        position: absolute;
+        left: 0;
+        bottom: 1em;
+
+        z-index: 1;
+        @include desktop{
+
+            bottom: 2em;
+            width: 80%;
+
+            background-color: rgba(255,255,255,.9);
         }
     }
 
-    .angled_item{
-        position: relative;
-        width: 100%;
-        height: 97%;
-        min-height: 160px;
-        margin: .25%;
-        cursor: pointer;
-
-        overflow: hidden;
-        transform: skewX(25deg);
-
-        @include tablet{
-            float: left;
-            width: 32.8%;
-        }
-
-        &::after{
-            content: "";
-            height: 100%;
-            width: 100%;
-
-            background:{
-                position: center;
-                size: cover;
-                repeat: no-repeat;
-            }
-
-            z-index: 5;
-
+    .lower_third-wrap{
+        @include desktop{
             transform: skewX(-25deg);
-
-            @include tablet{
-                position: absolute;
-                left: -34%;
-                width: 168%;
-            }
-        }
-
-        &:hover .lower_third{
-            background-color: rgba(202, 8, 20, .7);
-            color: white;
         }
     }
 
-    .angled_content{
-        position: relative;
-        display: block;
-        color: #fff;
-        background-color: $darkgray;
-        margin: 0;
-        padding: 1em 2em 2em;
-
-        opacity: 1;
-        transform: translate(0, 0);
-
-        transition: translate 2s ease;
-
-        @include tablet{
-            position: absolute;
-            width: 75%;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            margin: 3px 3px 7px 3px;
-            padding: 1em 9em;
-
-            // clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
-        }
-        z-index: 5;
-
-        opacity: 1;
-
-        .close{
-            position: absolute;
-            top: 1em;
-            right: 1em;
-
-            cursor: pointer;
-        }
-
-    }
-
-    h3, .lower_third p{
+    h3{
         position: relative;
         display: inline-block;
         margin: 0;
-        padding: 8px 45px 0;
-
-        width: auto;
-    }
-    h3{
+        padding: 8px 21px 0px 35px;
+        text-transform: uppercase;
         font-family: $font-bold-condensed;
         &:after{
             content:">";
             position: absolute;
             display: block;
-            right: 21px;
+            right: 0px;
             top: 50%;
-            transform: translateY(-40%);
+            transform: translateY(-40%) rotate(90deg);
+
+            @include desktop{
+                transform: translateY(-40%) rotate(0deg);
+            }
+
         }
     }
 
     .lower_third p{
-        margin: 0;
-        padding: 0 0 8px 45px;
+        display: none;
+        @include desktop{
+            display: inherit;
+            margin: 0;
+            padding: 9px 0 8px 35px;
+        }
+    }
+
+    &:hover .lower_third{
+        @include desktop{
+            background-color: rgba(202, 8, 20, .875);
+            color: white;
+        }
+    }
+
+    .btn{
+        @include desktop{
+            position: absolute;
+            left: 23px;
+            bottom: 21px;
+            transform: skewX(-25deg);
+        }
     }
 }
 
-.lower_third{
-    position: absolute;
-    bottom: 12%;
-    left: -16px;
-    background-color: rgba(255,255,255, .7);
-    width: 86%;
-    text-transform: uppercase;
-
-    z-index: 10;
-
-    .lower_third-wrap{
-        transform: skewX(-25deg);
+.block.show {
+    cursor: inherit;
+    .lower_third-wrap {
+        transform: skewX(0deg);
     }
 }
 
-.content-active .lower_third-wrap{
-    transform: skewX(0);
-}
+.content-block,
+.content-block_mobile{
+    position: relative;
+    left: 0;
+    right: 0;
 
-.hide{
-    display: none!important;
-}
+    background-color: lighten(black, 27%);
+    color: white;
 
-#angled-events{
-    background-color: $blue;
-}
-#angled-lifelong_learning{
-    background-color: $green;
-}
-#angled-communities{
-    background-color: $orange;
-}
+    transition: height 1s ease-in-out;
 
-.angled_item.content-active{
-    transform: skewX(0deg);
-
-    @include tablet{
-        width: 40%;
+    @include desktop{
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 33%;
+        height: 100%;
+        width: 72%;
+        transform: skewX(25deg);
+        opacity: 0;
+        border-left: 4px solid white;
     }
+    z-index: 100;
+
+    .content-block_copy {
+        position: relative;
+        display: block;
+        padding: 2em 1em;
+
+        @include tablet{
+            padding: 3em 6em;
+        }
+
+        @include desktop{
+            position: absolute;
+            top: 10%;
+            // right: 0;
+            bottom: 80px;
+            left: 80px;
+            width: 80%;
+            padding: 0 3em 0 0;
+
+            width: 670px;
+
+            overflow: hidden;
+            transform: skewX(-25deg);
+        }
+    }
+    .close{
+        position: absolute;
+        top: 0px;
+        right: 2em;
+        padding: 1em;
+        cursor: pointer;
+
+        z-index: 500;
+
+        @include desktop{
+            transform: skewX(-25deg);
+        }
+    }
+}
+
+#angled_one,
+#angled_two,
+#angled_three{
+    height: 130px;
 
     &:after{
-        transform: skewX(0deg);
+        position: absolute;
+        content: "";
+        height: 100%;
+        top: 0;
+        left: -20%;
+        right: -20%;
+        bottom: 0;
+        background:{
+            size: cover;
+            position: center;
+            repeat: no-repeat;
+        }
+
+        @include desktop{
+            transform: skewX(-25deg);
+        }
     }
 
-    .lower_third{
-        transform: skewX(0deg);
+
+    @include desktop{
+        min-height: 282px;
+        height: auto;
+        transform: skewX(25deg);
+    }
+
+    .color_overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+
+        @include desktop{
+            display: none;
+        }
     }
 }
+
+#angled_one .color_overlay{
+    background-color: transparentize($orange, .3);
+}
+#angled_two .color_overlay{
+    background-color: transparentize($blue, .3);
+}
+#angled_three .color_overlay{
+    background-color: transparentize($yellow, .3);
+}
+
+#angled_one.show,
+#angled_two.show,
+#angled_three.show{
+    @include desktop{
+        transform: skewX(0);
+        &:after{
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 40%;
+            top: 0;
+            left: 0;
+            transform: skewX(0);
+        }
+    }
+}
+
+// controls show/hide of .block
+.show {
+    @include desktop{
+        width: 100%;
+    }
+}
+
+
+.enter {
+    // display: block;
+    // height: 100%;
+    // @include desktop{
+        display: inherit;
+        opacity: 1;
+        animation: show 230ms ease-in-out;
+    // }
+}
+
+#mobile_one.enter,
+#mobile_two.enter,
+#mobile_three.enter{
+    display: block;
+}
+
+.hidden {
+    @include desktop{
+        display: none;
+    }
+}
+
+@keyframes show {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: inherit;
+    opacity: 0;
+  }
+  100% {
+    display: inherit;
+    opacity: 1;
+  }
+}
+
+// @keyframes grow {
+//   0% {
+//     // display: none;
+//     opacity: 0;
+//     height: 0px;
+//   }
+//   1% {
+//     // display: block;
+//     opacity: 0;
+//     height: 0px;
+//   }
+//   100% {
+//     // display: block;
+//     opacity: 1;
+//     height: 100%;
+//   }
+// }
+
+//end control of .block
+
+
+.content-block_desktop{
+    display: none;
+    opacity: 0;
+
+    .btn{
+        margin: 1em 1em 2em;
+
+        @include tablet{
+            margin-left: 6em;
+        }
+    }
+
+}
+
+.content-block_desktop.show{
+    display: block;
+    opacity: 1;
+    animation: show 230ms ease-in-out;
+}
+
 
 /****************************
 ****** Juicer feed  *********
@@ -687,9 +858,9 @@ div[class*=icon]{
 }
 
 
-/****************************
-******* Blog Section ********
-****************************/
-.blog{
-    height: 600px;
-}
+// /****************************
+// ******* Blog Section ********
+// ****************************/
+// .blog{
+//     height: 600px;
+// }

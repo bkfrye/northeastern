@@ -11,18 +11,17 @@ $scriptVersion = $detect->getScriptVersion();
 
 get_header(); ?>
 <style>
-#angled-events:after{background-image:url(<?php echo the_field('callout_bg_1');?>);}
-#angled-lifelong_learning:after{background-image:url(<?php echo the_field('callout_bg_2');?>);}
-#angled-communities:after{background-image:url(<?php echo the_field('callout_bg_3');?>);}
+#angled_one:after{background-image:url(<?php echo the_field('callout_bg_1');?>);}
+#angled_two:after{background-image:url(<?php echo the_field('callout_bg_2');?>);}
+#angled_three:after{background-image:url(<?php echo the_field('callout_bg_3');?>);}
 </style>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div id="homepage_hero">
-            <div class="textured_backdrop">
+		<!-- <div id="homepage_hero"> -->
+            <!-- <div class="textured_backdrop">
                 <h1><?php echo the_field('main_title');?></h1>
-				<!-- <h1>Connecting &amp; Engaging Alumni Around the World</h1> -->
-            </div>
+            </div> -->
 
             <?php
                 $home_video_poster = get_field('home_video_poster');
@@ -30,74 +29,93 @@ get_header(); ?>
                 $home_video_webm = get_field('home_video_webm');
                 $home_video_mp4 = get_field('home_video_mp4');
 
-                echo '<div id="video_container">';
+                // echo '<div id="video_container">';
                 // if( $deviceType == 'computer' ) {// || $deviceType == 'tablet' ) {
                     //if( ( !$detect->isMobile() && $detect->isTablet() ) || $deviceType == 'computer' ) {
-                        echo '<video autoplay loop muted id="fs_video">';
-                            echo '<source src="'.get_stylesheet_directory_uri().'/assets/video/test_vid.mp4" type="video/mp4">';
+                        // echo '<video autoplay loop muted id="fs_video">';
+                            // echo '<source src="'.get_stylesheet_directory_uri().'/assets/video/test_vid.mp4" type="video/mp4">';
                             // echo '<source src="'.$home_video_webm.'" type="video/webm">';
                             // echo '<source src="'.$home_video_mp4.'" type="video/mp4">';
-                        echo '</video>';
+                        // echo '</video>';
                     // } else {
                     //     echo '<img id="video_image" src="'.$home_video_poster_url.'" alt="" />';
                     // }
-                echo '</div>';
+                // echo '</div>';
 
             ?>
-		</div>
+		<!-- </div> -->
 
         <section class="callouts">
 			<article>
-				<div id="angled-events" class="angled_item">
-                	<div class="lower_third">
+
+
+				<div id="angled_one" class="block">
+					<div class="color_overlay"></div>
+					<div class="lower_third">
 						<div class="lower_third-wrap">
 							<h3>Events</h3>
 							<p><?php echo the_field('callout_desc_1');?></p>
 						</div>
 					</div>
-        		</div>
+				    <div id="content_one" class="content-block">
+						<div class="close">X</div>
+						<div class="content-block_copy">
+							<h4><?php echo the_field('callout_detailed_title_1');?></h4>
+							<?php echo the_field('callout_detailed_1');?>
+						</div>
+						<a href="#" class="btn">Learn More</a>
+					</div>
+				</div>
+				<div id="mobile_one" class="content-block_desktop"></div>
 
-                <div class="angled_content hide">
-					<h4><?php echo the_field('callout_detailed_title_1');?></h4>
-					<?php echo the_field('callout_detailed_1');?>
 
-                    <a href="#" class="btn">Learn More</a>
-                    <div class="close">X</div>
-                </div>
 
-				<div id="angled-lifelong_learning" class="angled_item">
+
+				<div id="angled_two" class="block">
+					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
 							<h3>Lifelong Learning</h3>
 							<p><?php echo the_field('callout_desc_2');?></p>
 						</div>
 					</div>
-        		</div>
+					<div id="content_two" class="content-block">
+						<div class="close">X</div>
+						<div class="content-block_copy">
+							<h4><?php echo the_field('callout_detailed_title_1');?></h4>
+							<?php echo the_field('callout_detailed_1');?>
+						</div>
+						<a href="#" class="btn">Learn More</a>
+					</div>
+				</div>
+				<div id="mobile_two" class="content-block_desktop"></div>
 
-                <div class="angled_content hide">
-					<h4><?php echo the_field('callout_detailed_title_2');?></h4>
-					<?php echo the_field('callout_detailed_2');?>
 
-                    <a href="#" class="btn">Learn More</a>
-                    <div class="close">X</div>
-                </div>
 
-				<div id="angled-communities" class="angled_item">
+
+
+				<div id="angled_three" class="block">
+					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
 							<h3>Communities</h3>
 							<p><?php echo the_field('callout_desc_3');?></p>
 						</div>
 					</div>
-        		</div>
+					<div id="content_three" class="content-block">
+						<div class="close">X</div>
+						<div class="content-block_copy">
+							<h4><?php echo the_field('callout_detailed_title_1');?></h4>
+							<?php echo the_field('callout_detailed_1');?>
+						</div>
+						<a href="#" class="btn">Learn More</a>
+					</div>
+				</div>
+				<div id="mobile_three" class="content-block_desktop"></div>
 
-                <div class="angled_content hide">
-					<h4><?php echo the_field('callout_detailed_title_3');?></h4>
-					<?php echo the_field('callout_detailed_3');?>
 
-                    <a href="#" class="btn">Learn More</a>
-                    <div class="close">X</div>
-                </div>
+
+
 
 			</article>
         </section>

@@ -1,26 +1,26 @@
 {
-  "name": "c2-theme",
+  "name": "northeastern alumni theme",
   "version": "1.0.0",
-  "description": "toolbelt for project build",
+  "description": "WP theme for NEU Alumni",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.12.5",
-    "del": "^2.2.0",
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cache": "^0.4.4",
-    "gulp-sass": "^2.3.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-sass": "^2.3.2",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https//github.com/crisp-agency/c2"
+    "url": "https//github.com/crisp-agency/northeastern"
   },
   "author": "brandon frye",
   "license": "ISC"

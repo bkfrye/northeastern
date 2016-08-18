@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   box-sizing: border-box; }
 
@@ -239,6 +240,15 @@ html p {
       #angled_two:after,
       #angled_three:after {
         transform: skewX(-25deg); } }
+    @media (max-width: 959px) {
+      #angled_one:after,
+      #angled_two:after,
+      #angled_three:after {
+        filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter ….3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-filter: gray;
+                filter: gray; } }
   @media (min-width: 960px) {
     #angled_one,
     #angled_two,
@@ -264,13 +274,13 @@ html p {
         display: none; } }
 
 #angled_one .color_overlay {
-  background-color: rgba(255, 153, 0, 0.7); }
+  background-color: rgba(255, 204, 0, 0.7); }
 
 #angled_two .color_overlay {
-  background-color: rgba(102, 204, 255, 0.7); }
+  background-color: rgba(9, 201, 151, 0.6); }
 
 #angled_three .color_overlay {
-  background-color: rgba(255, 204, 0, 0.7); }
+  background-color: rgba(202, 8, 20, 0.7); }
 
 @media (min-width: 960px) {
   #angled_one.show,

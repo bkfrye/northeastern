@@ -18,10 +18,10 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<!-- <div id="homepage_hero"> -->
-            <!-- <div class="textured_backdrop">
+		<div id="homepage_hero">
+            <div class="textured_backdrop">
                 <h1><?php echo the_field('main_title');?></h1>
-            </div> -->
+            </div>
 
             <?php
                 $home_video_poster = get_field('home_video_poster');
@@ -43,7 +43,7 @@ get_header(); ?>
                 // echo '</div>';
 
             ?>
-		<!-- </div> -->
+		</div>
 
         <section class="callouts">
 			<article>

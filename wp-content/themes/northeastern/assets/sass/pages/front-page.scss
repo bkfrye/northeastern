@@ -4,9 +4,9 @@
 @import "../partials/_media-queries";
 @import "../partials/_mixins";
 
-$overlay-1: transparentize($orange, .3);
-$overlay-2: transparentize($blue, .3);
-$overlay-3: transparentize($yellow, .3);
+$overlay-1: transparentize($yellow, .3);
+$overlay-2: transparentize($bluegreen, .4);
+$overlay-3: transparentize($darkred, .3);
 
 /****************************
 ******** General  **********
@@ -289,6 +289,13 @@ html{
         @include desktop{
             transform: skewX(-25deg);
         }
+
+        @media (max-width:959px){
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter ….3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+        }
     }
 
 
@@ -315,13 +322,13 @@ html{
 }
 
 #angled_one .color_overlay{
-    background-color: transparentize($orange, .3);
+    background-color: $overlay-1;
 }
 #angled_two .color_overlay{
-    background-color: transparentize($blue, .3);
+    background-color: $overlay-2;
 }
 #angled_three .color_overlay{
-    background-color: transparentize($yellow, .3);
+    background-color: $overlay-3;
 }
 
 #angled_one.show,

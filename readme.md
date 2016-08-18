@@ -19,12 +19,15 @@ You now have all the necessary dependencies to run the build process.
 To use BrowserSync during `gulp` you need to update `proxy` in gulpfile.js to reflect your local development hostname.
 
 For example, if your local development URL is `http://project-name.dev` you would update the file to read:
-```json
+
+```
 ...
-`gulp.task('browserSync', function() {
+
+gulp.task('browserSync', function() {
   browserSync.init({
 	proxy: "http://project-name.dev"
   })
-});`
+});
+
 ...
 ```

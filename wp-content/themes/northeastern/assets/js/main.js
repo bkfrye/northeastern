@@ -1,34 +1,104 @@
 jQuery(function() {
 
-    // controls the expandable content on the homepage
-    var content = jQuery('.angled_content');
-    var item = jQuery('.angled_item');
+    // jQuery(window).resize(function() {
+    //     if(true === item.hasClass('enter') && jQuery(window).width() < 768) {
+    //         closeContent();
+    //     }
+    // });
 
-    function closeContent(){
-        content.addClass('hide');
-        item.removeClass('hide');
-        item.removeClass('content-active');
+
+    // controls the three block angled content
+    var _this = jQuery(this);
+    var block = jQuery('.block');
+    var contentBlock = jQuery('.content-block');
+    var angled = jQuery('#angled_one, #angled_two, #angled_three');
+    var close = jQuery('.close');
+    var contentOne = jQuery('#content_one'),
+        contentTwo = jQuery('#content_two'),
+        contentThree = jQuery('#content_three');
+
+    var desktopOne = jQuery('#angled_one'),
+        desktopTwo = jQuery('#angled_two'),
+        desktopThree = jQuery('#angled_three');
+
+    var mobileOne = jQuery('#mobile_one'),
+        mobileTwo = jQuery('#mobile_two'),
+        mobileThree = jQuery('#mobile_three');
+
+    var blockMobile = jQuery('.content-block_desktop');
+
+
+//////////////////////////////////////////////////////
+    function removeContent(){
+        block.removeClass('show');
+        block.removeClass('hidden');
+        contentBlock.removeClass('enter');
+        blockMobile.removeClass('show');
     }
 
-    item.click(function(){
-        if (jQuery(this).next(content).hasClass('hide')){
-            jQuery(this).next(content).removeClass('hide');
-        }
+    // block.click(function(){
+    //     jQuery(this).addClass('show');
+    //     contentBlock.addClass('enter');
+    //     block.not(jQuery(this)).addClass('hidden');
+    // });
 
-        item.not(jQuery(this)).addClass('hide');
-        item.addClass('content-active');
-    });
-
-    jQuery('.close').click(function(){
-        closeContent();
+    close.click(function(e){
+        removeContent();
+        e.stopPropagation();
     });
 
     jQuery(window).resize(function() {
-        if(true === item.hasClass('content-active') && jQuery(window).width() < 768) {
-            closeContent();
+        if(true === block.hasClass('show')) {
+            removeContent();
         }
     });
 
+    //switches angled content copy between blocks for responsiveness
+    function moveElements() {
+        var domWidth = jQuery(window).width();
+        var blockMobile = jQuery('.content-block_desktop');
+        // var findNext = jQuery(this).nextAll(blockMobile).first();
+
+        if (domWidth < 960) {
+            // pageTitle.prependTo(mainContent);
+            // actionAlert.appendTo(header);
+            contentOne.appendTo(mobileOne);
+            contentTwo.appendTo(mobileTwo);
+            contentThree.appendTo(mobileThree);
+
+
+            block.click(function(){
+                jQuery(this).nextAll(blockMobile).first().addClass('show');
+                // contentBlock.addClass('enter');
+                // block.not(jQuery(this)).addClass('hidden');
+            });
+
+
+
+        } else {
+            // pageTitle.appendTo(banner);
+            // actionAlert.prependTo(banner);
+
+
+            contentOne.appendTo(desktopOne);
+            contentTwo.appendTo(desktopTwo);
+            contentThree.appendTo(desktopThree);
+
+            block.click(function(){
+                jQuery(this).addClass('show');
+                contentBlock.addClass('enter');
+                block.not(jQuery(this)).addClass('hidden');
+            });
+        }
+    }
+
+    jQuery(document).ready(function() {
+        moveElements();
+    jQuery(window).resize(function() {
+        moveElements();
+    });
+
+    });
 
 
     // controls the filter for the juicer feed

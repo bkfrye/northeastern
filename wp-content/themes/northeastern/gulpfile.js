@@ -2,8 +2,6 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync'),
-    cache = require('gulp-cache'),
-    del = require('del'),
     runSequence = require('run-sequence'),
     bourbon = require("node-bourbon").includePaths,
     neat = require("node-neat").includePaths;
@@ -34,7 +32,7 @@ gulp.task('styles', function() {
       includePaths: bourbon,
       includePaths: neat
     }))
-    .pipe(autoprefixer('last 10 versions', 'ie 10'))
+    .pipe(autoprefixer('last 2 versions', 'ie 10'))
     .pipe(gulp.dest('assets/css/'))
     .pipe(browserSync.reload({
         stream: true

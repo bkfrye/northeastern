@@ -4,6 +4,7 @@
 @import "../partials/_media-queries";
 @import "../partials/_mixins";
 @import "../partials/_global";
+@import "../partials/_sidebars";
 
 /****************************
 ********  General  **********
@@ -106,112 +107,41 @@ html{
 }
 
 /****************************
-***** Sidebar ***************
+***** Communities pages *****
 ****************************/
-aside{
-    h3{
-        display: inline-block;
-        position: relative;
-        background-color: $darkred;
-        color: white;
+.community_leaders{
+    padding: 2em 0;
+    border-bottom: 1px solid $lightgray;
+
+    ul{
         margin: 0;
-        padding: .5em .5em .5em 1em;
-        width: 85%;
-        font-family: $font-bold-condensed;
-        letter-spacing: 1px;
+        padding: 0;
 
-        text-transform: uppercase;
-        @include tablet{
-            width: 80%;
-        }
-
-        @include desktop{
-            width: 70%;
-        }
-
-        &:after{
-            content: '';
-            position: absolute;
-            top: 0;
-            right: -30px;
-            bottom: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 41px 0 0 30px;
-            border-color: transparent transparent transparent $darkred;
-
-        }
+        @include outer-container;
     }
-}
+    li{
+        list-style-type: none;
+        margin-bottom: 2em;
 
-.event_info{
-    .event_info-item{
-        width: 100%;
-        border-bottom: 1px solid white;
-        padding: 1em 2em;
+        @include span-columns(12);
 
-        @include tablet{
-            padding: .5em 1em;
-        }
         @include desktop{
-            padding: .5em 2em 30px;
+            @include span-columns(4);
+            margin: 0;
         }
 
         p{
-            margin-top: 0;
+            margin: 0;
+            font-size: 14px;
         }
-    }
 
-    .event_info-date{
-        color: $darkred;
-        font:{
-            size: 30px;
-            family: $font-bold-condensed;
+        .leader-name{
+            font-weight: 800;
         }
-        margin: 0;
-    }
+        .leader-email{
+            color: $darkred;
+        }
 
-    .event_info-title{
-        font-family: $font-bold-condensed;
-    }
-
-    .event_info-desc{
-        margin-bottom: 30px;
-    }
-}
-
-.facebook_connect{
-    width: 100%;
-    padding: 1em 2em;
-
-    @include tablet{
-        padding: 1em;
-    }
-    @include desktop{
-        padding: 2em;
-    }
-
-    .facebook_connect-wrap{
-        @include outer-container();
-    }
-
-    svg{
-        max-width: 45px;
-        height: auto;
-        // float: left;
-        margin-right: 1em;
-
-        @include span-columns(3);
-    }
-    p{
-        margin: 0 0 33px;
-        line-height: 1.2;
-        @include span-columns(9);
-    }
-
-    .btn_wrap{
-        margin-bottom: 7px;
     }
 }
 
@@ -260,6 +190,10 @@ aside{
 
     .stay_connected{
         background-color: $lightgray;
+
+        h3{
+            font-family: $font-light;
+        }
     }
 
     .contribute{
@@ -297,8 +231,67 @@ aside{
 ****************************/
 
 .contact_person{
-    height: 300px;
+    padding: 2em 1em;
     background:{
-        image: repeating-linear-gradient(45deg, rgba(0,0,0,.15), rgba(0,0,0,0) 10px);
+        image: repeating-linear-gradient(45deg, rgba(0,0,0,.10), rgba(0,0,0,0) 10px);
+    }
+
+    .profile_img{
+        display: none;
+        width: 178px;
+        height: 178px;
+        background:{
+            size: cover;
+            position: center;
+            repeat: no-repeat;
+        }
+
+        @include tablet{
+            display: inherit;
+            @include span-columns(3);
+            width: 192px;
+            height: 192px;
+        }
+
+        @include desktop{
+            @include span-columns(3);
+            width: 210px;
+            height: 210px;
+        }
+    }
+
+    .profile_info{
+
+        @include tablet{
+            @include span-columns(5);
+        }
+
+        @include desktop{
+            @include span-columns(8);
+        }
+
+
+        .profile-title{
+            font:{
+                size: 24px;
+                family: $font-bold-condensed;
+            }
+            margin-bottom: 1em;
+        }
+
+        .profile-name{
+            font:{
+                weight: 800;
+                size: 18px;
+            }
+            margin: 0;
+        }
+
+        .profile-email{
+            color: $darkred;
+        }
+    }
+    p{
+        margin: 0;
     }
 }

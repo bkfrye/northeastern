@@ -1,9 +1,5 @@
 <?php
 /**
- * The template for displaying the header
- *
- * Displays all of the head element and everything up until the "site-content" div.
- *
  * @package WordPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
@@ -21,7 +17,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body>
 <div id="page" class="site">
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
@@ -41,7 +37,7 @@
 					if ( $description || is_customize_preview() ) : ?>
 						<p class="site-description"><?php echo $description; ?></p>
 					<?php endif; ?>
-				</div><!-- .site-branding -->
+				</div>
 
 				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
 					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
@@ -55,7 +51,7 @@
 										'menu_class'     => 'primary-menu',
 									 ) );
 								?>
-							</nav><!-- .main-navigation -->
+							</nav>
 						<?php endif; ?>
 
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
@@ -69,11 +65,11 @@
 										'link_after'     => '</span>',
 									) );
 								?>
-							</nav><!-- .social-navigation -->
+							</nav>
 						<?php endif; ?>
-					</div><!-- .site-header-menu -->
+					</div>
 				<?php endif; ?>
-			</div><!-- .site-header-main -->
+			</div>
 
 			<?php if ( get_header_image() ) : ?>
 				<?php
@@ -92,8 +88,8 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 					</a>
-				</div><!-- .header-image -->
-			<?php endif; // End header image check. ?>
-		</header><!-- .site-header -->
+				</div>
+			<?php endif;?>
+		</header>
 
 		<div id="content" class="site-content">

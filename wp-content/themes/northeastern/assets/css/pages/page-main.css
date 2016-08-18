@@ -1,10 +1,8 @@
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 *, *::after, *::before {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; }
+  box-sizing: inherit; }
 
 .icon-Facebook {
   background-image: url("../../img/svg/facebook.svg"); }
@@ -19,8 +17,7 @@ html {
 ********  General  **********
 ****************************/
 *, *::after, *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 html, body, section, article, div, span {
   margin: 0;
@@ -35,6 +32,8 @@ html {
   html p {
     font-size: 16px;
     line-height: 1.5em; }
+  html span {
+    font-family: "HelveticaNeueW01-55Roma", arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
@@ -85,9 +84,8 @@ body a {
 ****************************/
 body a.btn, body a.btn_red {
   display: inline-block;
-  border: 1px solid white;
-  -webkit-border-radius: 22px;
-          border-radius: 22px;
+  border: 2px solid white;
+  border-radius: 22px;
   font-size: 12pt;
   text-transform: uppercase;
   height: 44px;
@@ -97,115 +95,47 @@ body a.btn, body a.btn_red {
   text-align: center; }
 
 body a.btn {
-  color: white; }
+  color: white;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
 
 body a.btn_red {
-  border: 1px solid #cc0000;
+  border: 2px solid #cc0000;
   color: #cc0000; }
 
 /****************************
-********  General  **********
+******* Forms ***************
 ****************************/
-html h1 {
-  font-size: 26px;
-  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
-
-/****************************
-******Banner Section ********
-****************************/
-.banner_interior {
-  position: relative;
-  height: 70vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: gray; }
-  .banner_interior .banner_content {
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto; }
-    .banner_interior .banner_content::after {
-      clear: both;
-      content: "";
-      display: table; }
-  .banner_interior .page_title {
-    position: absolute;
-    bottom: 0;
-    background-color: white;
-    -webkit-transform: skew(35deg);
-        -ms-transform: skew(35deg);
-            transform: skew(35deg);
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 57.35098%; }
-    .banner_interior .page_title:last-child {
-      margin-right: 0; }
-    .banner_interior .page_title:before {
-      content: '';
-      height: 100%;
-      position: absolute;
-      right: 50%;
-      background-color: white;
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 100%; }
-      .banner_interior .page_title:before:last-child {
-        margin-right: 0; }
-    .banner_interior .page_title h1 {
-      font-size: 44px;
-      padding-left: 18px;
-      -webkit-transform: skew(-35deg);
-          -ms-transform: skew(-35deg);
-              transform: skew(-35deg); }
-
-/****************************
-******Content Section ********
-****************************/
-.content {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 18px 1em; }
-  .content::after {
-    clear: both;
-    content: "";
-    display: table; }
-  @media (min-width: 768px) {
-    .content article {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 65.88078%; }
-      .content article:last-child {
-        margin-right: 0; } }
-  .content article h1 {
-    margin-top: 0; }
-  .content aside {
-    background-color: #efefef; }
-    @media (min-width: 768px) {
-      .content aside {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%;
-        min-height: 400px; }
-        .content aside:last-child {
-          margin-right: 0; } }
-  .content .intro_section {
-    padding-bottom: 1em;
-    margin-bottom: 2.8em;
-    border-bottom: 1px solid #efefef; }
-    .content .intro_section p {
-      font-size: 24px;
-      line-height: 1.3; }
+#gform_1 {
+  height: 35px; }
+  #gform_1 ul {
+    margin: 0;
+    padding: 0; }
+    #gform_1 ul li {
+      list-style-type: none;
+      margin: 0; }
+  #gform_1 label {
+    display: none; }
+  #gform_1 .gform_body,
+  #gform_1 .gform_footer {
+    display: inline-block; }
+  #gform_1 .gform_body {
+    width: 85%; }
+  #gform_1 #input_1_1 {
+    width: 100%;
+    height: 35px;
+    border: 2px solid #c1c1c1;
+    padding-left: 1em;
+    line-height: 1;
+    float: left; }
+  #gform_1 #gform_submit_button_1 {
+    width: 35px;
+    height: auto;
+    margin-left: 12px; }
 
 /****************************
 ***** Sidebar ***************
 ****************************/
-aside h3 {
-  display: inline-block;
+aside .event_info h3 {
   position: relative;
   background-color: #ca0814;
   color: white;
@@ -216,22 +146,56 @@ aside h3 {
   letter-spacing: 1px;
   text-transform: uppercase; }
   @media (min-width: 768px) {
-    aside h3 {
+    aside .event_info h3 {
       width: 80%; } }
   @media (min-width: 960px) {
-    aside h3 {
+    aside .event_info h3 {
       width: 70%; } }
-  aside h3:after {
+  aside .event_info h3:after {
     content: '';
     position: absolute;
     top: 0;
     right: -30px;
     bottom: 0;
     width: 0;
-    height: 0;
+    height: 100%;
     border-style: solid;
-    border-width: 41px 0 0 30px;
+    border-width: 40px 0 0 30px;
     border-color: transparent transparent transparent #ca0814; }
+
+aside .connect h3, aside .connect p {
+  margin: 0;
+  text-align: center; }
+
+aside .connect h3 {
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px; }
+
+aside .connect .alumni_community,
+aside .connect .career_first {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 2em 4.5em;
+  margin-bottom: 1em; }
+
+aside .connect .alumni_community {
+  background-color: #ffcc00; }
+
+aside .connect .career_first {
+  background-color: #99cc33; }
+
+aside .connect .btn_wrap {
+  margin-top: 32px;
+  text-align: center; }
+
+aside .connect .btn {
+  color: #000000;
+  border: 2px solid #000000; }
 
 .event_info .event_info-item {
   width: 100%;
@@ -298,6 +262,142 @@ aside h3 {
     margin-bottom: 7px; }
 
 /****************************
+********  General  **********
+****************************/
+html h1 {
+  font-size: 26px;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
+
+/****************************
+******Banner Section ********
+****************************/
+.banner_interior {
+  position: relative;
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: gray; }
+  .banner_interior .banner_content {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto; }
+    .banner_interior .banner_content::after {
+      clear: both;
+      content: "";
+      display: table; }
+  .banner_interior .page_title {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    transform: skew(35deg);
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%; }
+    .banner_interior .page_title:last-child {
+      margin-right: 0; }
+    .banner_interior .page_title:before {
+      content: '';
+      height: 100%;
+      position: absolute;
+      right: 50%;
+      background-color: white;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      .banner_interior .page_title:before:last-child {
+        margin-right: 0; }
+    .banner_interior .page_title h1 {
+      font-size: 44px;
+      padding-left: 18px;
+      transform: skew(-35deg); }
+
+/****************************
+******Content Section ********
+****************************/
+.content {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 18px 1em; }
+  .content::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media (min-width: 768px) {
+    .content article {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%; }
+      .content article:last-child {
+        margin-right: 0; } }
+  .content article h1 {
+    margin-top: 0; }
+  .content aside {
+    background-color: #efefef; }
+    @media (min-width: 768px) {
+      .content aside {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        min-height: 400px; }
+        .content aside:last-child {
+          margin-right: 0; } }
+  .content .intro_section {
+    padding-bottom: 1em;
+    margin-bottom: 2.8em;
+    border-bottom: 1px solid #efefef; }
+    .content .intro_section p {
+      font-size: 24px;
+      line-height: 1.3; }
+
+/****************************
+***** Communities pages *****
+****************************/
+.community_leaders {
+  padding: 2em 0;
+  border-bottom: 1px solid #efefef; }
+  .community_leaders ul {
+    margin: 0;
+    padding: 0;
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto; }
+    .community_leaders ul::after {
+      clear: both;
+      content: "";
+      display: table; }
+  .community_leaders li {
+    list-style-type: none;
+    margin-bottom: 2em;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .community_leaders li:last-child {
+      margin-right: 0; }
+    @media (min-width: 960px) {
+      .community_leaders li {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        margin: 0; }
+        .community_leaders li:last-child {
+          margin-right: 0; } }
+    .community_leaders li p {
+      margin: 0;
+      font-size: 14px; }
+    .community_leaders li .leader-name {
+      font-weight: 800; }
+    .community_leaders li .leader-email {
+      color: #ca0814; }
+
+/****************************
 ***** Gallery Section *******
 ****************************/
 /****************************
@@ -313,26 +413,18 @@ aside h3 {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  -ms-flex-direction: column;
+      flex-direction: column; }
   .signups::after {
     clear: both;
     content: "";
     display: table; }
   @media (min-width: 768px) {
     .signups {
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
+      -ms-flex-direction: row;
+          flex-direction: row; } }
   .signups .stay_connected,
   .signups .contribute {
     margin: 1em .5em;
@@ -340,32 +432,27 @@ aside h3 {
     @media (min-width: 768px) {
       .signups .stay_connected,
       .signups .contribute {
-        -webkit-flex-basis: 50%;
-            -ms-flex-preferred-size: 50%;
-                flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%;
         padding: 2em; } }
   .signups .stay_connected {
     background-color: #efefef; }
+    .signups .stay_connected h3 {
+      font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif; }
   .signups .contribute {
     background-color: #cc0000;
     color: white;
-    display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    -ms-flex-align: center;
+        align-items: center; }
     @media (min-width: 768px) {
       .signups .contribute div:first-child {
-        -webkit-flex-basis: 55%;
-            -ms-flex-preferred-size: 55%;
-                flex-basis: 55%; }
+        -ms-flex-preferred-size: 55%;
+            flex-basis: 55%; }
       .signups .contribute div:last-child {
-        -webkit-flex-basis: 45%;
-            -ms-flex-preferred-size: 45%;
-                flex-basis: 45%;
+        -ms-flex-preferred-size: 45%;
+            flex-basis: 45%;
         text-align: center; } }
     .signups .contribute h3 {
       font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
@@ -374,6 +461,61 @@ aside h3 {
 ***** Contact Person ********
 ****************************/
 .contact_person {
-  height: 300px;
-  background-image: -webkit-repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px);
-  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px); }
+  padding: 2em 1em;
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1), transparent 10px); }
+  .contact_person .profile_img {
+    display: none;
+    width: 178px;
+    height: 178px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+    @media (min-width: 768px) {
+      .contact_person .profile_img {
+        display: inherit;
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%;
+        width: 192px;
+        height: 192px; }
+        .contact_person .profile_img:last-child {
+          margin-right: 0; } }
+    @media (min-width: 960px) {
+      .contact_person .profile_img {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%;
+        width: 210px;
+        height: 210px; }
+        .contact_person .profile_img:last-child {
+          margin-right: 0; } }
+  @media (min-width: 768px) {
+    .contact_person .profile_info {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 40.29137%; }
+      .contact_person .profile_info:last-child {
+        margin-right: 0; } }
+  @media (min-width: 960px) {
+    .contact_person .profile_info {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%; }
+      .contact_person .profile_info:last-child {
+        margin-right: 0; } }
+  .contact_person .profile_info .profile-title {
+    font-size: 24px;
+    font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+    margin-bottom: 1em; }
+  .contact_person .profile_info .profile-name {
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0; }
+  .contact_person .profile_info .profile-email {
+    color: #ca0814; }
+  .contact_person p {
+    margin: 0; }

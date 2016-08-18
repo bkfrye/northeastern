@@ -1,10 +1,8 @@
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 *, *::after, *::before {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; }
+  box-sizing: inherit; }
 
 .icon-Facebook {
   background-image: url("../../img/svg/facebook.svg"); }
@@ -19,8 +17,7 @@ html {
 ********  General  **********
 ****************************/
 *, *::after, *::before {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 html, body, section, article, div, span {
   margin: 0;
@@ -35,6 +32,8 @@ html {
   html p {
     font-size: 16px;
     line-height: 1.5em; }
+  html span {
+    font-family: "HelveticaNeueW01-55Roma", arial, sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
@@ -85,9 +84,8 @@ body a {
 ****************************/
 body a.btn, body a.btn_red {
   display: inline-block;
-  border: 1px solid white;
-  -webkit-border-radius: 22px;
-          border-radius: 22px;
+  border: 2px solid white;
+  border-radius: 22px;
   font-size: 12pt;
   text-transform: uppercase;
   height: 44px;
@@ -97,11 +95,42 @@ body a.btn, body a.btn_red {
   text-align: center; }
 
 body a.btn {
-  color: white; }
+  color: white;
+  font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
 
 body a.btn_red {
-  border: 1px solid #cc0000;
+  border: 2px solid #cc0000;
   color: #cc0000; }
+
+/****************************
+******* Forms ***************
+****************************/
+#gform_1 {
+  height: 35px; }
+  #gform_1 ul {
+    margin: 0;
+    padding: 0; }
+    #gform_1 ul li {
+      list-style-type: none;
+      margin: 0; }
+  #gform_1 label {
+    display: none; }
+  #gform_1 .gform_body,
+  #gform_1 .gform_footer {
+    display: inline-block; }
+  #gform_1 .gform_body {
+    width: 85%; }
+  #gform_1 #input_1_1 {
+    width: 100%;
+    height: 35px;
+    border: 2px solid #c1c1c1;
+    padding-left: 1em;
+    line-height: 1;
+    float: left; }
+  #gform_1 #gform_submit_button_1 {
+    width: 35px;
+    height: auto;
+    margin-left: 12px; }
 
 /************************
 *** Global Footer  ******
@@ -127,7 +156,7 @@ body a.btn_red {
     color: #FFF;
     font-size: 11px !important; }
   #footer_global a.logo {
-    background: url("https://www.northeastern.edu/neuhome/images/logo-footer.png") no-repeat scroll left top transparent;
+    background: url("../img/svg/logo-neu.svg") no-repeat scroll left top transparent;
     color: #FFFFFF;
     font-family: Georgia,Times,Arial,serif;
     font-size: 18px;
@@ -239,8 +268,14 @@ body a.btn_red {
   #site_footer nav ul {
     padding: 0; }
   #site_footer nav li {
-    margin-bottom: 8px; }
+    margin-bottom: 8px;
+    list-style-type: none; }
   #site_footer #privacy_info {
     margin-top: 32px; }
     #site_footer #privacy_info a {
       text-decoration: underline; }
+  #site_footer .social_logo {
+    display: inline-block;
+    width: 25px;
+    height: auto;
+    margin-right: 6px; }

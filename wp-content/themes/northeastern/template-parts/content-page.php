@@ -27,7 +27,7 @@
 		<?php
 			$sidebar_items =  get_field('sidebar_items');
 
-			if( $sidebar_items == [] ) {
+			if( empty($sidebar_items) ) {
 				get_template_part('template-parts/sidebar', 'events');
 			}
 			else{
@@ -37,54 +37,20 @@
 				if ( in_array('events', $sidebar_items) ) {
 					get_template_part('template-parts/sidebar', 'events');
 				}
-				if ( in_array('events', $sidebar_items) ) {
+				if ( in_array('connect', $sidebar_items) ) {
 					get_template_part('template-parts/sidebar', 'connect');
 				}
 			}
+
+			wp_reset_postdata();
 		?>
 	</aside>
 
 </section>
 
-<section class="img_gallery">
-	<div id="freewall">
-	<?php
-		// get_template_part( 'template-parts/freewall' );
-	?>
-	</div>
-</section>
+<?php get_template_part('template-parts/super-footer');?>
 
-<section class="blog">
-	<?php
-		// get_template_part( 'template-parts/blog', 'footer' );
-	?>
-
-	<!-- <div class="view_more">
-		<a href="#" class="btn_red">View More</a>
-	</div> -->
-</section>
-
-<section class="signups">
-	<div class="stay_connected">
-		<h3><span class="bold">Stay connected</span> and share your successes.</h3>
-		<input type="text" name="name" value="">
-
-	</div>
-	<div class="contribute">
-		<div>
-			<h3>Become a Contributor</h3>
-			<p>A stronger, more connected alumni network benefits all of us. What brilliance can you share?</p>
-		</div>
-		<div>
-			<a href="#" class="btn">Connect Now</a>
-		</div>
-
-	</div>
-</section>
-
-<?php get_template_part( 'template-parts/contact-person' );?>
-
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var wall = new Freewall("#freewall");
 	wall.reset({
 		selector: '.cell',
@@ -98,4 +64,4 @@
 	wall.fitWidth();
 	// for scroll bar appear;
 	jQuery(window).trigger("resize");
-</script>
+</script> -->

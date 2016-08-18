@@ -57,6 +57,9 @@ function my_acf_show_admin($show) {
 }
 add_filter('acf/settings/show_admin', 'my_acf_show_admin');
 
+// check to see if this works
+// apply_filters( 'toolset_filter_toolset_admin_bar_menu_disable', true );
+
 /******************************************/
 /** Events CPT Modifications        *******/
 /******************************************/
@@ -79,22 +82,24 @@ function northeastern_scripts(){
 	// add styles
 	wp_enqueue_style( 'ne-typeface', 'https://fast.fonts.com/cssapi/cac43e8c-6965-44df-b8ca-9784607a3b53.css', '', false);
 	wp_enqueue_style( 'ne-alumni-styles', get_stylesheet_directory_uri() . '/assets/css/styles.css', '', false);
+	wp_enqueue_style( 'ne-nav-styles', get_stylesheet_directory_uri() . '/assets/css/nav.css', '', false);
 
 	// add dep scripts
 	// wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri().'/js/modernizr.js', array(), true);
 
+	wp_enqueue_script( 'nav', get_stylesheet_directory_uri().'/assets/js/nav.js', array('jquery'), true);
 	wp_enqueue_script( 'northeastern-script', get_stylesheet_directory_uri().'/assets/js/main.js', array('jquery'), true);
-	wp_enqueue_script( 'freewall', get_stylesheet_directory_uri().'/assets/js/freewall.js', array('jquery'), true);
 
 	if(is_front_page()){
 		wp_enqueue_style( 'front-page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/front-page.css', false );
 		wp_enqueue_style( 'owl-styles', get_bloginfo('stylesheet_directory') . '/assets/css/owl.carousel.css', false );
-		wp_enqueue_script( 'masonry-layout', get_stylesheet_directory_uri() . '/assets/js/masonry.js', '', true);
+		wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/assets/js/isotope.js', '', true);
 		wp_enqueue_script( 'owl', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), true);
 	}
 
 	if(!is_front_page()){
 		wp_enqueue_style( 'page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-main.css', false );
+		wp_enqueue_script( 'freewall', get_stylesheet_directory_uri().'/assets/js/freewall.js', array('jquery'), true);
 	}
 
 	if(is_page('events')){
@@ -201,7 +206,6 @@ function custom_mtypes( $m ){
     return $m;
 }
 add_filter( 'upload_mimes', 'custom_mtypes' );
-
 
 
 ?>

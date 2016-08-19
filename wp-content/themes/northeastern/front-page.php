@@ -163,7 +163,7 @@ get_header(); ?>
 				<div class="event_title-block">
 					<h2>Upcoming Events</h2>
 					<div class="event_btn-wrap">
-						<a href="/events">View All</a>
+						<a href="/alumni/events">View All</a>
 					</div>
 				</div>
 

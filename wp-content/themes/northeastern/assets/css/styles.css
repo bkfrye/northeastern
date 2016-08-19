@@ -811,7 +811,7 @@ a {
     font-family: Georgia,Times,Arial,serif;
     font-size: 18px;
     height: 17px;
-    margin: 4px 20px 14px 0;
+    margin: 4px 20px 14px -3px;
     padding: 0;
     text-decoration: none;
     width: 173px;
@@ -830,7 +830,7 @@ a {
         display: inline; } }
     #footer_global .info li {
       margin: 0 4px 12px 0; }
-      @media (min-width: 960px) {
+      @media (min-width: 768px) {
         #footer_global .info li {
           display: inline-block; } }
     @media (min-width: 960px) {
@@ -896,6 +896,7 @@ a {
     #site_footer a:active {
       color: white; }
   #site_footer .footer_nav-wrapper {
+    position: relative;
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto; }
@@ -907,7 +908,7 @@ a {
     text-decoration: none;
     text-transform: uppercase;
     font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
-  @media (min-width: 768px) {
+  @media (min-width: 640px) {
     #site_footer nav {
       float: left;
       display: block;
@@ -915,6 +916,11 @@ a {
       width: 31.76157%; }
       #site_footer nav:last-child {
         margin-right: 0; } }
+  #site_footer nav:first-child {
+    margin-top: 3em; }
+    @media (min-width: 640px) {
+      #site_footer nav:first-child {
+        margin: 0; } }
   #site_footer nav ul {
     padding: 0; }
   #site_footer nav li {
@@ -924,8 +930,35 @@ a {
     margin-top: 32px; }
     #site_footer #privacy_info a {
       text-decoration: underline; }
+  #site_footer #social_wrap {
+    position: absolute;
+    top: -3em;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    width: 100%; }
+    @media (min-width: 640px) {
+      #site_footer #social_wrap {
+        position: relative;
+        display: inherit;
+        top: 0; } }
+    @media (max-width: 639px) {
+      #site_footer #social_wrap a {
+        width: 100%;
+        height: 100%; } }
   #site_footer .social_logo {
-    display: inline-block;
-    width: 25px;
-    height: auto;
-    margin-right: 6px; }
+    width: 39px;
+    width: 39px; }
+    @media (min-width: 639px) {
+      #site_footer .social_logo {
+        display: inherit;
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
+        width: 25px;
+        height: auto;
+        margin-right: 6px; }
+        #site_footer .social_logo:last-child {
+          margin-right: 0; } }

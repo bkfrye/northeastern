@@ -76,4 +76,41 @@ function cpt_events() {
 }
 add_action( 'init', 'cpt_events');
 
+/* Events */
+function cpt_contacts() {
+	register_post_type( 'contacts',
+	 	// let's now add all the options for this post type
+		array('labels' => array(
+			'name' => __('Contact List', 'post type general name'),
+			'singular_name' => __('Contact Person', 'post type singular name'),
+			'add_new' => __('Add New', 'custom post type item'),
+			'add_new_item' => __('Add New Contact Person'),
+			'edit' => __( 'Edit' ),
+			'edit_item' => __('Edit Contact Person'),
+			'new_item' => __('New Contact Person'),
+			'view_item' => __('View Contact Person'),
+			'search_items' => __('Search Contacts'),
+			'not_found' =>  __('Nothing found in the Database.'),
+			'not_found_in_trash' => __('Nothing found in Trash'),
+			'parent_item_colon' => ''
+			),
+			'description' => __( 'NE Contacts' ),
+			'public' => true,
+			'exclude_from_search' => false,
+			'publicly_queryable' => false,
+			'show_ui' => true,
+			'show_in_nav_menus' => false,
+			'menu_position' => 40,
+			'menu_icon' => 'dashicons-id',
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			'supports' => array( 'title', 'editor'),
+			'has_archive' => false,
+			'query_var' => false
+	 	)
+	);
+
+}
+add_action( 'init', 'cpt_contacts');
+
 ?>

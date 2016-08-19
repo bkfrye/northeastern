@@ -61,13 +61,16 @@ add_filter('acf/settings/show_admin', 'my_acf_show_admin');
 // apply_filters( 'toolset_filter_toolset_admin_bar_menu_disable', true );
 
 /******************************************/
-/** Events CPT Modifications        *******/
+/** CPT Modifications        *******/
 /******************************************/
 add_filter( 'enter_title_here', 'change_events_default_title' );
 function change_events_default_title( $title ){
    $screen = get_current_screen();
    if ( 'events' == $screen->post_type ){
        $title = 'Enter the event name here';
+   }
+   if ( 'contacts' == $screen->post_type ){
+       $title = 'Enter name here';
    }
    return $title;
 }

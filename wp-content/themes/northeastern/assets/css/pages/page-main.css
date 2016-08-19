@@ -468,7 +468,7 @@ html h1 {
     width: 178px;
     height: 178px;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-repeat: no-repeat; }
     @media (min-width: 768px) {
       .contact_person .profile_img {

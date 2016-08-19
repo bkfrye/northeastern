@@ -52,7 +52,7 @@ get_header(); ?>
 					$sidebar_items =  get_field('sidebar_items');
 
 					if( empty($sidebar_items) ) {
-						get_template_part('template-parts/sidebar', 'facebook');
+						get_template_part('template-parts/sidebar', 'connect');
 					}
 					else{
 						if ( in_array('facebook', $sidebar_items) ) {
@@ -61,7 +61,7 @@ get_header(); ?>
 						if ( in_array('events', $sidebar_items) ) {
 							get_template_part('template-parts/sidebar', 'events_community');
 						}
-						if ( in_array('events', $sidebar_items) ) {
+						if ( in_array('connect', $sidebar_items) ) {
 							get_template_part('template-parts/sidebar', 'connect');
 						}
 					}

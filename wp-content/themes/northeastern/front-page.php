@@ -161,8 +161,10 @@ get_header(); ?>
         <section class="upcoming_events">
 			<article>
 				<div class="event_title-block">
-					<h2>Upcoming <br>Events</h2>
-					<a href="/events">View All</a>
+					<h2>Upcoming Events</h2>
+					<div class="event_btn-wrap">
+						<a href="/events">View All</a>
+					</div>
 				</div>
 
                 <div class="owl_wrap">

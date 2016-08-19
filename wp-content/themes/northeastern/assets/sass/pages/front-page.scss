@@ -583,13 +583,19 @@ div[class*=icon]{
     color: white;
     text-align: center;
 
-    h2{
-        margin: 0 0 0 -90%;
-        text-transform: uppercase;
-        font-size: 4vw;
+    overflow-x: hidden;
 
+    h2{
+        margin: 0 0 0 -70%;
+        text-transform: uppercase;
         padding-bottom: 50px;
         font-weight: 300;
+
+        font-size: 4vw;
+
+        @include tablet{
+            margin: 0 0 0 -90%;
+        }
     }
 }
 
@@ -611,14 +617,7 @@ div[class*=icon]{
         opacity: 0;
         transform-origin: 50% 100%;
         transform: rotateX(180deg);
-
-        @include tablet{
-            width: 360px;
-        }
-
-        @include desktop{
-            width: 500px;
-        }
+        width: 500px;
 
         &:nth-child(1){
             color: $bluegreen;
@@ -706,7 +705,11 @@ div[class*=icon]{
 
     .event_title-block{
         @include linx($black, $black, $darkred, $black);
-        @include span-columns(2);
+
+        @include tablet{
+            @include span-columns(2);
+        }
+
 
         h2,
         a{
@@ -717,23 +720,67 @@ div[class*=icon]{
 
         h2{
             margin: 0;
-            padding: 1em 0;
             text-transform: uppercase;
+
+            @include tablet{
+                padding: 1em 0;
+            }
         }
 
         a{
             position: absolute;
             bottom: 0;
             margin: 1em 0;
-            text-decoration: underline;
+
+            display: inline-block;
+            background-color: $black;
+            border: 2px solid white;
+            border-radius: 22px;
+            font:{
+                size: 12pt;
+            }
             text-transform: uppercase;
+            height: 44px;
+            min-width: 190px;
+            padding: 10px 30px;
+            text-decoration: none;
+            text-align: center;
+            color: white!important;
+
+            @include tablet{
+                color: $black!important;
+                min-width: auto;
+                background: 0;
+                padding: 0;
+                text-align: left;
+                border: 0;
+                text-decoration: underline;
+                text-transform: uppercase;
+            }
+        }
+
+        .event_btn-wrap{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            @include tablet{
+                display: block;
+            }
         }
     }
 
     .owl_wrap{
         position: relative;
-        @include span-columns(10);
-        padding-right: 21px;
+        @include span-columns(12);
+
+        margin-bottom: 4em;
+
+        @include tablet{
+            @include span-columns(10);
+            margin-bottom: 0;
+            padding-right: 21px;
+        }
 
         .owl-item{
             height: auto;
@@ -750,16 +797,26 @@ div[class*=icon]{
             z-index: 10;
             top: 50%;
             transform: translateY(-50%);
-
             margin: 0;
             padding: 0 0 4px 0;
             height: 30px;
             width: 30px;
-            background-color: lighten($black, 75%);
-            border-radius: 15px;
-            color: white;
+            background-color: lighten($black, 85%);
+
+
+            color: $black;
             cursor: pointer;
             font-size: 1.2em;
+
+            height: 81%;
+
+            @include tablet{
+                height: 30px;
+                width: 30px;
+                color: white;
+                border-radius: 15px;
+                background-color: lighten($black, 75%);
+            }
 
             &:hover{
                 background-color: lighten($black, 40%);
@@ -767,19 +824,25 @@ div[class*=icon]{
         }
 
         .owl_prev{
-            left: -20px;
-            padding-right: 2px;
+            left: -16px;
+            @include tablet{
+                padding-right: 2px;
+            }
         }
         .owl_next{
-            right: 0;
-            padding-left: 2px;
+            right: -16px;
+            @include tablet{
+                right: 0;
+                padding-left: 2px;
+            }
+
         }
 
     }
 }
 .event_card{
     position: relative;
-    min-height: 180px;
+    min-height: 202px;
     margin: 1.5em;
     padding: 1.5em;
     background-color: white;

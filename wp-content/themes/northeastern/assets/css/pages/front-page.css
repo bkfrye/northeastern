@@ -482,13 +482,17 @@ div[class*=icon] {
   height: 300px;
   background-color: #333333;
   color: white;
-  text-align: center; }
+  text-align: center;
+  overflow-x: hidden; }
   .learn_more_callout h2 {
-    margin: 0 0 0 -90%;
+    margin: 0 0 0 -70%;
     text-transform: uppercase;
-    font-size: 4vw;
     padding-bottom: 50px;
-    font-weight: 300; }
+    font-weight: 300;
+    font-size: 4vw; }
+    @media (min-width: 768px) {
+      .learn_more_callout h2 {
+        margin: 0 0 0 -90%; } }
 
 .headline_rotate .rotator_wrap {
   display: inline-block;
@@ -504,13 +508,8 @@ div[class*=icon] {
   font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif;
   opacity: 0;
   transform-origin: 50% 100%;
-  transform: rotateX(180deg); }
-  @media (min-width: 768px) {
-    .headline_rotate .rotator_item {
-      width: 360px; } }
-  @media (min-width: 960px) {
-    .headline_rotate .rotator_item {
-      width: 500px; } }
+  transform: rotateX(180deg);
+  width: 500px; }
   .headline_rotate .rotator_item:nth-child(1) {
     color: #09c997; }
   .headline_rotate .rotator_item:nth-child(2) {
@@ -568,43 +567,86 @@ div[class*=icon] {
 .upcoming_events {
   background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.15), transparent 10px);
   padding: 1em; }
-  .upcoming_events .event_title-block {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 14.70196%; }
-    .upcoming_events .event_title-block a {
+  .upcoming_events .event_title-block a {
+    color: #000000; }
+    .upcoming_events .event_title-block a:visited {
       color: #000000; }
-      .upcoming_events .event_title-block a:visited {
-        color: #000000; }
-      .upcoming_events .event_title-block a:hover {
-        color: #ca0814; }
-      .upcoming_events .event_title-block a:active {
-        color: #000000; }
-    .upcoming_events .event_title-block:last-child {
-      margin-right: 0; }
-    .upcoming_events .event_title-block h2,
-    .upcoming_events .event_title-block a {
-      font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
-    .upcoming_events .event_title-block h2 {
-      margin: 0;
-      padding: 1em 0;
-      text-transform: uppercase; }
-    .upcoming_events .event_title-block a {
-      position: absolute;
-      bottom: 0;
-      margin: 1em 0;
-      text-decoration: underline;
-      text-transform: uppercase; }
+    .upcoming_events .event_title-block a:hover {
+      color: #ca0814; }
+    .upcoming_events .event_title-block a:active {
+      color: #000000; }
+  @media (min-width: 768px) {
+    .upcoming_events .event_title-block {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 14.70196%; }
+      .upcoming_events .event_title-block:last-child {
+        margin-right: 0; } }
+  .upcoming_events .event_title-block h2,
+  .upcoming_events .event_title-block a {
+    font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
+  .upcoming_events .event_title-block h2 {
+    margin: 0;
+    text-transform: uppercase; }
+    @media (min-width: 768px) {
+      .upcoming_events .event_title-block h2 {
+        padding: 1em 0; } }
+  .upcoming_events .event_title-block a {
+    position: absolute;
+    bottom: 0;
+    margin: 1em 0;
+    display: inline-block;
+    background-color: #000000;
+    border: 2px solid white;
+    border-radius: 22px;
+    font-size: 12pt;
+    text-transform: uppercase;
+    height: 44px;
+    min-width: 190px;
+    padding: 10px 30px;
+    text-decoration: none;
+    text-align: center;
+    color: white !important; }
+    @media (min-width: 768px) {
+      .upcoming_events .event_title-block a {
+        color: #000000 !important;
+        min-width: auto;
+        background: 0;
+        padding: 0;
+        text-align: left;
+        border: 0;
+        text-decoration: underline;
+        text-transform: uppercase; } }
+  .upcoming_events .event_title-block .event_btn-wrap {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    @media (min-width: 768px) {
+      .upcoming_events .event_title-block .event_btn-wrap {
+        display: block; } }
   .upcoming_events .owl_wrap {
     position: relative;
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 82.94039%;
-    padding-right: 21px; }
+    width: 100%;
+    margin-bottom: 4em; }
     .upcoming_events .owl_wrap:last-child {
       margin-right: 0; }
+    @media (min-width: 768px) {
+      .upcoming_events .owl_wrap {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 82.94039%;
+        margin-bottom: 0;
+        padding-right: 21px; }
+        .upcoming_events .owl_wrap:last-child {
+          margin-right: 0; } }
     .upcoming_events .owl_wrap .owl-item {
       height: auto;
       width: 100%;
@@ -625,24 +667,37 @@ div[class*=icon] {
       padding: 0 0 4px 0;
       height: 30px;
       width: 30px;
-      background-color: #bfbfbf;
-      border-radius: 15px;
-      color: white;
+      background-color: #d9d9d9;
+      color: #000000;
       cursor: pointer;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      height: 81%; }
+      @media (min-width: 768px) {
+        .upcoming_events .owl_wrap .owl_prev,
+        .upcoming_events .owl_wrap .owl_next {
+          height: 30px;
+          width: 30px;
+          color: white;
+          border-radius: 15px;
+          background-color: #bfbfbf; } }
       .upcoming_events .owl_wrap .owl_prev:hover,
       .upcoming_events .owl_wrap .owl_next:hover {
         background-color: #666666; }
     .upcoming_events .owl_wrap .owl_prev {
-      left: -20px;
-      padding-right: 2px; }
+      left: -16px; }
+      @media (min-width: 768px) {
+        .upcoming_events .owl_wrap .owl_prev {
+          padding-right: 2px; } }
     .upcoming_events .owl_wrap .owl_next {
-      right: 0;
-      padding-left: 2px; }
+      right: -16px; }
+      @media (min-width: 768px) {
+        .upcoming_events .owl_wrap .owl_next {
+          right: 0;
+          padding-left: 2px; } }
 
 .event_card {
   position: relative;
-  min-height: 180px;
+  min-height: 202px;
   margin: 1.5em;
   padding: 1.5em;
   background-color: white;

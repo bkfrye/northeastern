@@ -750,6 +750,10 @@ a {
   .nu-shared-navigation__lower {
     height: 91px; } }
 
+#logo {
+  position: relative;
+  z-index: 100; }
+
 @media (min-width: 783px) {
   #nu-alumni-blog-navigation {
     display: -ms-flexbox !important;

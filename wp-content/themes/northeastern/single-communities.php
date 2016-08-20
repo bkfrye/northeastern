@@ -43,7 +43,7 @@ get_header(); ?>
 						echo '</section>';
 
 					echo '<section class="contact_form">';
-						echo gravity_form( 2, false, false, false, '', true );
+						echo gravity_form( 2, true, false, false, '', true );
 					echo '</section>';
 				?>
 			</article>

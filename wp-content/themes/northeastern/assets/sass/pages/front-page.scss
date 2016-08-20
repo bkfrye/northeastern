@@ -908,7 +908,7 @@ div[class*=icon]{
 ******* Blog Section ********
 ****************************/
 .blog{
-    padding: 0 16px;
+    padding: 0 16px 1em;
 
     .blog_wrap{
         @include outer-container(1280px);

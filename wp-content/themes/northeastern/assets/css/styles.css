@@ -675,8 +675,6 @@ a {
     font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
     font-size: 0.71rem;
     color: #2B303B; }
-  .nu-shared-navigation__menu-item:last-child {
-    padding: 35px 0 15px 0; }
   .nu-shared-navigation__menu-item a:hover span, .nu-shared-navigation__menu-item a:focus span {
     color: #CC0000; }
   .nu-shared-navigation__menu-item:hover .nu-shared-navigation__sub-menu-item {
@@ -724,8 +722,13 @@ a {
     padding: 0;
     margin-left: 0; } }
 
-#menu-primary {
-  padding: 0; }
+@media (min-width: 768px) {
+  #menu-primary {
+    padding: 0; } }
+
+@media (min-width: 768px) {
+  .menu-item {
+    padding-bottom: 22px; } }
 
 .skip-link {
   position: absolute;

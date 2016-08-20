@@ -127,7 +127,10 @@ html{
 
         @include desktop{
             @include span-columns(4);
-            margin: 0;
+
+            &:nth-child(3n+3){
+                @include omega();
+            }
         }
 
         p{
@@ -154,12 +157,7 @@ html{
 /****************************
 ******* Blog Section ********
 ****************************/
-.blog{
-
-    .view_more{
-        text-align: center;
-    }
-}
+@import '../partials/_blog';
 
 
 /****************************

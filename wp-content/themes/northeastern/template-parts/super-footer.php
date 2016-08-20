@@ -6,12 +6,10 @@
 	</div>
 </section>
 
-
-	<?php
-		get_template_part( 'template-parts/blog', 'footer' );
-	?>
-
-
+<?php
+// add in blog content
+	get_template_part( 'template-parts/blog');
+?>
 
 <section class="signups">
 	<div class="stay_connected">

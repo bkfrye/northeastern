@@ -6,51 +6,42 @@
  */
 ?>
 <section class="blog">
-	<h3>BLOG</h3>
-	<ul class="blog_content">
-	<?php
+	<div class="blog_wrap">
+		<h3>BLOG</h3>
+		<ul class="blog_content">
+		<?php
 
-	// Set up global variables. Great
-	global $wpdb, $blog_id, $post;
+		// Set up global variables
+		global $wpdb, $blog_id, $post;
 
-	// Get a list of blogs in your multisite network
-	//$blog_ids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
-	//print_r($blog_ids);
-	// Iterate through your list of blogs
-	$globalcontainer = array();
-	//foreach ($blog_ids  as $id){
+		$globalcontainer = array();
+			switch_to_blog( 2 );
 
-		switch_to_blog( 1 );
+			$globalquery = get_posts( 'numberposts=4&post_type=post' );
 
-		$globalquery = get_posts( 'numberposts=3&post_type=any' );
 
 			foreach($globalquery as $post) : setup_postdata($post);
-				echo '<li>';
+				echo '<li><a href="'. get_post_permalink() .'"><div class="blog_card">';
 				if (has_post_thumbnail( $post->ID ) ):
-					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-					echo '<div class=\"blogimage\" style=\"background-image: url("'.$image[0].'");\"></div>';
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+
+					echo '<div class="blog_img" style="background-image: url('. $thumb[0]. ');"></div>';
 				endif;
 
-				echo '<div class=\"blog_card\"><a href='. the_permalink() .' title="'. the_title_attribute() . '">'.$post->post_title.'</a>';
-				echo '<article>'.$post->post_excerpt.'</article>';
-				echo $post->post_date.'</div>';
-				echo '</li>';
+				$category = get_the_category($post->ID);
+				echo '<article><div class="category">'. $category[0]->name. '</div>';
+
+				echo '<h3>' .$post->post_title. '</h3>';
+
+
+				echo '<p>'. get_the_excerpt($post->post_excerpt). '</p>';
+
+				echo '<div class="read_more"><span></span><span></span><span></span></div>';
+				echo '</article></div></a></li>';
 			endforeach;
 
-
-
-
-		//$globalcontainer = array_merge( $globalcontainer, $globalquery );
-
-		restore_current_blog();
-	//}
-	//echo "<pre>";
-	//print_r($globalcontainer);
-	//echo "</pre>";
-	//foreach ($globalcontainer as &$value) {
-	//    echo $value[0];
-	//	}
-
-	?>
-	</ul>
+			restore_current_blog();
+		?>
+		</ul>
+	</div>
 </section>

@@ -8,7 +8,7 @@
 
 
 	<?php
-		// get_template_part( 'template-parts/blog', 'footer' );
+		get_template_part( 'template-parts/blog', 'footer' );
 	?>
 
 

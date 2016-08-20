@@ -272,16 +272,14 @@ get_header(); ?>
 			</article>
         </section>
 
-        <section class="blog">
-			<?php
-			// while ( have_posts() ) : the_post();
-			// 	get_template_part( 'template-parts/blog', 'home' );
-			// endwhile;
-			?>
+		<?php
+		//pull blog content from site 2
+		while ( have_posts() ) : the_post();
+			get_template_part( 'template-parts/blog', 'home' );
+		endwhile;
+		?>
         </section>
-
 	</main>
-
 </div>
 
 

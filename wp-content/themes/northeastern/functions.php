@@ -40,7 +40,7 @@ add_action( 'wp_head', 'favicon_link' );
 /******************************************/
 add_action( 'admin_init', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
-	remove_menu_page( 'edit-comments.php' );
+    remove_menu_page( 'edit-comments.php' );
 	remove_menu_page( 'toolset-dashboard' );
 }
 
@@ -299,6 +299,19 @@ class NU_Menu_Maker_Walker extends Walker {
 	}
 
 }
+
+/******************************************/
+/** Blog Excerpt Mods *********************/
+/******************************************/
+function twentysixteen_excerpt_more() {
+	return ' &hellip; ';
+}
+add_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
+
+function custom_excerpt_length( $length ) {
+	return 22;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 ?>

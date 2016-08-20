@@ -65,6 +65,7 @@ get_header(); ?>
 							get_template_part('template-parts/sidebar', 'connect');
 						}
 					}
+					wp_reset_postdata();
 				?>
 			</aside>
 		</section>

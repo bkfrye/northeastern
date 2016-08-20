@@ -40,14 +40,16 @@ add_action( 'wp_head', 'favicon_link' );
 /******************************************/
 add_action( 'admin_init', 'my_remove_admin_menus' );
 function my_remove_admin_menus() {
-    remove_menu_page( 'edit-comments.php' );
+	remove_menu_page( 'edit-comments.php' );
+	remove_menu_page( 'toolset-dashboard' );
 }
 
 // Restrict ACF Access
 function my_acf_show_admin($show) {
 	// provide a list of usernames who can edit custom field definitions here
 	$admins = array(
-		'admin'
+		'admin',
+		'bfrye'
 	);
 
 	// get the current user

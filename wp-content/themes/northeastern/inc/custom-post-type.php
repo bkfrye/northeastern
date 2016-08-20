@@ -29,7 +29,7 @@ function cpt_communities() {
 			'hierarchical' => false,
 			'supports' => array( 'title', 'editor'),
 			'has_archive' => false,
-			'rewrite' => array('slug' => 'communities'),
+			'rewrite' => array('slug' => 'locations'),
 			'query_var' => true
 	 	)
 	);

@@ -521,8 +521,6 @@ a {
       font-family: $font-bold-condensed;
       font-size: 0.71rem;
       color: #2B303B; }
-    .nu-shared-navigation__menu-item:last-child {
-      padding: 35px 0 15px 0; }
     .nu-shared-navigation__menu-item a:hover span, .nu-shared-navigation__menu-item a:focus span {
       color: #CC0000; }
     .nu-shared-navigation__menu-item:hover .nu-shared-navigation__sub-menu-item {
@@ -582,5 +580,15 @@ a {
 }
 
 #menu-primary{
-    padding: 0;
+    @include tablet{
+        padding: 0;
+    }
+
+}
+
+.menu-item{
+    @include tablet{
+        padding-bottom: 22px;
+    }
+
 }

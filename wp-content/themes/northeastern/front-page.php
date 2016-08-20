@@ -275,7 +275,7 @@ get_header(); ?>
 		<?php
 		//pull blog content from site 2
 		while ( have_posts() ) : the_post();
-			get_template_part( 'template-parts/blog');
+			// get_template_part( 'template-parts/blog');
 		endwhile;
 		?>
         </section>

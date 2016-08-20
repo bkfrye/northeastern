@@ -583,12 +583,9 @@ a {
     @include tablet{
         padding: 0;
     }
-
-}
-
-.menu-item{
-    @include tablet{
-        padding-bottom: 22px;
+    .menu-item{
+        @include tablet{
+            padding-bottom: 22px;
+        }
     }
-
 }

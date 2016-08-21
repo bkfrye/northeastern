@@ -797,13 +797,11 @@ a {
     padding: 0;
     margin-left: 0; } }
 
-@media (min-width: 768px) {
-  #menu-primary {
-    padding: 0; } }
-
-@media (min-width: 768px) {
-  #menu-primary .menu-item {
-    padding-bottom: 22px; } }
+#menu-primary {
+  padding: 0; }
+  @media (min-width: 768px) {
+    #menu-primary .menu-item {
+      padding-bottom: 22px; } }
 
 .skip-link {
   position: absolute;

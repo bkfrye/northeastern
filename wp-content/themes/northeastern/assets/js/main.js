@@ -28,7 +28,6 @@ jQuery(function() {
     var blockMobile = jQuery('.content-block_desktop');
 
 
-//////////////////////////////////////////////////////
     function removeContent(){
         block.removeClass('show');
         block.removeClass('hidden');
@@ -81,10 +80,9 @@ jQuery(function() {
 
     jQuery(document).ready(function() {
         moveElements();
-    jQuery(window).resize(function() {
-        moveElements();
-    });
-
+        jQuery(window).resize(function() {
+            moveElements();
+        });
     });
 
 
@@ -175,6 +173,15 @@ jQuery(function() {
     	$oldWord.removeClass('rotate-visible').addClass('rotate-hidden');
     	$newWord.removeClass('rotate-hidden').addClass('rotate-visible');
     }
+
+    //controls accordion close button within content
+    jQuery('.close_item').click(function(){
+        jQuery('input[type=checkbox]').prop('checked', true);
+        jQuery('html, body').animate({
+            scrollTop: jQuery(this).parent().parent().offset().top
+        }, 400);
+
+    });
 
 
 });

@@ -34,7 +34,7 @@
 						<?php endwhile; ?>
 
 					<?php endif;?>
-					<div class="close_item">Close</div>
+					<div class="close_item">CLOSE</div>
 				</div>
 			</li>
 		<?php endwhile; ?>

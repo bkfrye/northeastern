@@ -20,7 +20,7 @@
     margin: 0 auto;
     position: relative;
     background-color: white;
-    padding: 0 30px;
+
     @media (max-width: 550px) {
         box-sizing: border-box;
         transform: translate(0, 0);
@@ -118,7 +118,6 @@
                     size: 24px;
                     family: $font-bold-condensed;
                 }
-                text-transform: uppercase;
             }
         }
         .heading_content {
@@ -138,7 +137,7 @@
                 list-style-type: disc;
             }
 
-            a{
+            li,a{
                 font-size: 16px;
             }
         }

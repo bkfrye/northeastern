@@ -18,10 +18,10 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<!-- <div id="homepage_hero"> -->
-            <!-- <div class="textured_backdrop">
+		<div id="homepage_hero">
+            <div class="textured_backdrop">
                 <h1><?php echo the_field('main_title');?></h1>
-            </div> -->
+            </div>
 
             <?php
                 $home_video_poster = get_field('home_video_poster');
@@ -43,7 +43,7 @@ get_header(); ?>
                 // echo '</div>';
 
             ?>
-		<!-- </div> -->
+		</div>
 
         <section class="callouts">
 			<article>
@@ -161,8 +161,10 @@ get_header(); ?>
         <section class="upcoming_events">
 			<article>
 				<div class="event_title-block">
-					<h2>Upcoming <br>Events</h2>
-					<a href="/events">View All</a>
+					<h2>Upcoming Events</h2>
+					<div class="event_btn-wrap">
+						<a href="/alumni/events">View All</a>
+					</div>
 				</div>
 
                 <div class="owl_wrap">
@@ -270,16 +272,14 @@ get_header(); ?>
 			</article>
         </section>
 
-        <section class="blog">
-			<?php
-			// while ( have_posts() ) : the_post();
-			// 	get_template_part( 'template-parts/blog', 'home' );
-			// endwhile;
-			?>
+		<?php
+		//pull blog content from site 2
+		while ( have_posts() ) : the_post();
+			// get_template_part( 'template-parts/blog');
+		endwhile;
+		?>
         </section>
-
 	</main>
-
 </div>
 
 

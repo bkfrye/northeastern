@@ -3,6 +3,8 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync'),
     runSequence = require('run-sequence'),
+    plumber = require('gulp-plumber'),
+    notify = require('gulp-notify'),
     bourbon = require("node-bourbon").includePaths,
     neat = require("node-neat").includePaths;
 
@@ -18,25 +20,36 @@ var paths = {
 
 // Start browserSync server
 gulp.task('browserSync', function() {
-  browserSync.init({
-    proxy: "http://northeastern.dev"
-  })
+    browserSync.init({
+        proxy: "http://northeastern.dev"
+    });
 });
 
 
 // Run SCSS tasks
 gulp.task('styles', function() {
-  return gulp.src(paths.scss)
-    .pipe(sass({
-      'sourcemap=none': true,
-      includePaths: bourbon,
-      includePaths: neat
-    }))
-    .pipe(autoprefixer('last 2 versions', 'ie 10'))
-    .pipe(gulp.dest('assets/css/'))
-    .pipe(browserSync.reload({
-        stream: true
-    }));
+    var onError = function(err) {
+        notify.onError({
+                    title:    "Gulp Error",
+                    message:  "Error: <%= error.message %>",
+                    sound:    "Beep"
+                })(err);
+
+        this.emit('end');
+    };
+
+    return gulp.src(paths.scss)
+        .pipe(plumber({errorHandler: onError}))
+        .pipe(sass({
+          'sourcemap=none': true,
+          includePaths: bourbon,
+          includePaths: neat
+        }))
+        .pipe(autoprefixer('last 2 versions', 'ie 10'))
+        .pipe(gulp.dest('assets/css/'))
+        .pipe(browserSync.reload({
+            stream: true
+        }));
 });
 
 
@@ -67,5 +80,5 @@ gulp.task('watch', ['browserSync'], function() {
 
 
 gulp.task('default', function (callback) {
-    runSequence(['templates', 'styles', 'js', 'browserSync', 'watch'], callback)
+    runSequence(['templates', 'styles', 'js', 'browserSync', 'watch'], callback);
 });

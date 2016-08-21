@@ -6,12 +6,10 @@
 	</div>
 </section>
 
-
-	<?php
-		// get_template_part( 'template-parts/blog', 'footer' );
-	?>
-
-
+<?php
+// add in blog content
+	get_template_part( 'template-parts/blog');
+?>
 
 <section class="signups">
 	<div class="stay_connected">
@@ -33,19 +31,31 @@
 
 <section class="contact_person">
 	<article>
-		<div class="profile_img" style="background-image:url(<?php echo get_field('profile_image_p')?>)">
-		</div>
-		<div class="profile_info">
-			<p class="profile-title">POINT OF CONTACT</p>
-			<?php
-				$name = get_field('name_p');
-				$title = get_field('title_p');
-				$number = get_field('contact_number_p');
-				$email = get_field('email_p');
 
-				echo '<p class="profile-name">' . get_field('name_p') . '</p>';
-				echo '<p>'.$title.'<br>'.$number.'</p>';
-				echo '<p class="profile-email">'.$email.'</p>';
+			<?php
+				$post_object = get_field('point_of_contact');
+
+				if( $post_object ):
+
+					// override $post
+					$post = $post_object;
+					setup_postdata( $post );
+			?>
+			<div class="profile_img" style="background-image:url(<?php echo get_field('profile_image_p')?>)"></div>
+			<div class="profile_info">
+				<p class="profile-title">POINT OF CONTACT</p>
+			<?php
+					echo the_title('<p class="profile-name">','</p>');
+
+					$title = get_field('title_p');
+					$number = get_field('contact_number_p');
+					$email = get_field('email_p');
+
+					echo '<p>'.$title.'<br>'.$number.'</p>';
+					echo '<p class="profile-email">'.$email.'</p>';
+
+				    wp_reset_postdata();
+				endif;
 			?>
 		</div>
 	</article>

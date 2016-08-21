@@ -36,12 +36,6 @@ jQuery(function() {
         blockMobile.removeClass('show');
     }
 
-    // block.click(function(){
-    //     jQuery(this).addClass('show');
-    //     contentBlock.addClass('enter');
-    //     block.not(jQuery(this)).addClass('hidden');
-    // });
-
     close.click(function(e){
         removeContent();
         e.stopPropagation();
@@ -57,11 +51,8 @@ jQuery(function() {
     function moveElements() {
         var domWidth = jQuery(window).width();
         var blockMobile = jQuery('.content-block_desktop');
-        // var findNext = jQuery(this).nextAll(blockMobile).first();
 
         if (domWidth < 960) {
-            // pageTitle.prependTo(mainContent);
-            // actionAlert.appendTo(header);
             contentOne.appendTo(mobileOne);
             contentTwo.appendTo(mobileTwo);
             contentThree.appendTo(mobileThree);
@@ -76,10 +67,6 @@ jQuery(function() {
 
 
         } else {
-            // pageTitle.appendTo(banner);
-            // actionAlert.prependTo(banner);
-
-
             contentOne.appendTo(desktopOne);
             contentTwo.appendTo(desktopTwo);
             contentThree.appendTo(desktopThree);

@@ -15,7 +15,7 @@ get_header(); ?>
 		<section class="banner_interior" style="background-image:url(<?php echo get_field('hero_image');?>)">
 			<div class="banner_content">
 				<div class="page_title">
-					<?php the_title('<h1>','</h1>');?>
+					<?php the_title('<h1>',' Community</h1>');?>
 				</div>
 			</div>
 		</section>
@@ -43,7 +43,7 @@ get_header(); ?>
 						echo '</section>';
 
 					echo '<section class="contact_form">';
-						echo gravity_form( 2, false, false, false, '', true );
+						echo gravity_form( 2, true, false, false, '', true );
 					echo '</section>';
 				?>
 			</article>
@@ -52,7 +52,7 @@ get_header(); ?>
 					$sidebar_items =  get_field('sidebar_items');
 
 					if( empty($sidebar_items) ) {
-						get_template_part('template-parts/sidebar', 'facebook');
+						get_template_part('template-parts/sidebar', 'connect');
 					}
 					else{
 						if ( in_array('facebook', $sidebar_items) ) {
@@ -61,14 +61,46 @@ get_header(); ?>
 						if ( in_array('events', $sidebar_items) ) {
 							get_template_part('template-parts/sidebar', 'events_community');
 						}
-						if ( in_array('events', $sidebar_items) ) {
+						if ( in_array('connect', $sidebar_items) ) {
 							get_template_part('template-parts/sidebar', 'connect');
 						}
 					}
+					wp_reset_postdata();
 				?>
 			</aside>
-
 		</section>
+
+		<section class="contact_person">
+			<article>
+					<?php
+						$post_object = get_field('point_of_contact');
+
+						if( $post_object ):
+
+							// override $post
+							$post = $post_object;
+							setup_postdata( $post );
+					?>
+					<div class="profile_img" style="background-image:url(<?php echo get_field('profile_image_p')?>)"></div>
+					<div class="profile_info">
+						<p class="profile-title">POINT OF CONTACT</p>
+					<?php
+							echo the_title('<p class="profile-name">','</p>');
+
+							$title = get_field('title_p');
+							$number = get_field('contact_number_p');
+							$email = get_field('email_p');
+
+							echo '<p>'.$title.'<br>'.$number.'</p>';
+							echo '<p class="profile-email">'.$email.'</p>';
+
+						    wp_reset_postdata();
+						endif;
+					?>
+				</div>
+			</article>
+		</section>
+
 
 	</main>
 

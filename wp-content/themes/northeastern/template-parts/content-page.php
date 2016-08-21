@@ -21,6 +21,12 @@
 		<?php
 			echo '<div class="intro_section">' . get_field('intro_section') . '</div>';
 			echo '<div class="main_section">' . get_field('main_section') . '</div>';
+
+			$accordion = get_field('nu_content');
+
+			if ($accordion){
+				get_template_part('template-parts/accordion');
+			}
 		?>
 	</article>
 	<aside>

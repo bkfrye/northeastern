@@ -127,7 +127,10 @@ html{
 
         @include desktop{
             @include span-columns(4);
-            margin: 0;
+
+            &:nth-child(3n+3){
+                @include omega();
+            }
         }
 
         p{
@@ -154,12 +157,7 @@ html{
 /****************************
 ******* Blog Section ********
 ****************************/
-.blog{
-
-    .view_more{
-        text-align: center;
-    }
-}
+@import '../partials/_blog';
 
 
 /****************************
@@ -242,7 +240,7 @@ html{
         height: 178px;
         background:{
             size: cover;
-            position: center;
+            position: top center;
             repeat: no-repeat;
         }
 
@@ -295,3 +293,6 @@ html{
         margin: 0;
     }
 }
+
+
+@import '../partials/_accordion';

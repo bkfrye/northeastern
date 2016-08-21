@@ -1,0 +1,58 @@
+@import 'nav.scss';
+
+.skip-link{
+    position: absolute;
+    top: -100px;
+}
+
+.dropdown-toggle{
+    display: none;
+}
+
+.container{
+    @include outer-container(1280px);
+
+    @media (min-width:783px){
+        padding: 0 12px;
+    }
+
+}
+
+.nu-shared-navigation__lower{
+    @media (min-width:783px){
+        height: 91px;
+    }
+
+}
+
+#logo{
+    position: relative;
+    z-index: 100;
+}
+
+#nu-alumni-blog-navigation{
+
+    @media (min-width:783px){
+        display: flex!important;
+        flex-direction: row!important;
+        justify-content: flex-end;
+    }
+
+
+}
+
+
+.nu-shared-navigation__alumni-logo--mobile,
+.nu-shared-navigation__search-profile-links{
+    @include linx(white, white, white, white);
+    margin: 0;
+    padding: 6px;
+}
+.nu-shared-navigation__alumni-logo--mobile{
+    padding-top: 2em;
+    a{
+        margin: 0!important;
+        font-family: $font-light-condensed;
+
+    }
+}

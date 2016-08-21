@@ -238,11 +238,11 @@ aside .event_info h3 {
     border-width: 40px 0 0 30px;
     border-color: transparent transparent transparent #ca0814; }
 
-aside .connect h3, aside .connect p {
+aside .connect h4, aside .connect p {
   margin: 0;
   text-align: center; }
 
-aside .connect h3 {
+aside .connect h4 {
   font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
   font-size: 24px;
   letter-spacing: 1px; }
@@ -745,8 +745,7 @@ html {
       padding: .4em 1em .4em .6em; } }
 
 .heading_content {
-  margin-left: 1em;
-  margin-bottom: 2em;
+  margin: 1em 1em 2em;
   padding-right: 3.4em;
   padding-left: .8em; }
   .heading_content h3 {
@@ -840,14 +839,31 @@ html {
 
 .accordion-item input[type=checkbox] {
   position: absolute;
-  cursor: pointer;
+  margin: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0; }
+  opacity: 0;
+  cursor: pointer; }
   .accordion-item input[type=checkbox]:checked ~ .heading_content {
-    margin-bottom: 0;
+    margin: 0;
     max-height: 0;
     opacity: 0; }
   .accordion-item input[type=checkbox]:checked ~ .heading:after {
     transform: rotate(-90deg); }
+
+.close_item {
+  position: absolute;
+  bottom: 0;
+  right: 2em;
+  padding: 1em 2em 1em 0;
+  color: #ca0814;
+  font-size: 13px;
+  cursor: pointer; }
+  .close_item:after {
+    position: absolute;
+    margin-left: 8px;
+    content: url(../../img/svg/x-icon.svg);
+    height: 16px;
+    width: 16px;
+    fill: #ca0814; }

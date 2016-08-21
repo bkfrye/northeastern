@@ -54,7 +54,9 @@
         <?php endwhile;
             echo '<a href="/events" style="display: inline-block;margin-left: 2em; padding: 1em 0;">View More Events</a>';
         }else {
-            echo '<p>No Events Scheduled.</p>';
+            echo '<p>No Events Scheduled. Check back soon.</p>';
+            get_template_part('template-parts/sidebar', 'facebook');
+            get_template_part('template-parts/sidebar', 'connect');
         }
 
     ?>

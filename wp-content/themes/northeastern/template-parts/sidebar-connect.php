@@ -1,6 +1,6 @@
 <div class="connect">
     <div class="alumni_community">
-        <h3>Meet your alumni<br>community today</h3>
+        <h4>Meet your alumni<br>community today</h4>
 
         <div class="btn_wrap">
             <a href="/communities" class="btn">FIND MY COMMUNITY</a>
@@ -8,7 +8,7 @@
     </div>
 
     <div class="career_first">
-        <h3>Career First.</h3>
+        <h4>Career First.</h4>
         <p>Connect with job opportunities or bring a co-op to your company.</p>
 
         <div class="btn_wrap">

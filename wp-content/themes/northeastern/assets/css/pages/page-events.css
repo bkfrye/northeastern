@@ -216,39 +216,58 @@ body a.btn_red {
 body {
   background-color: #efefef; }
 
+#masthead {
+  background-color: white; }
+
 /****************************
-******Banner Section ********
+***** Main Content **********
 ****************************/
+#event_title {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px; }
+  #event_title::after {
+    clear: both;
+    content: "";
+    display: table; }
+
 #events {
   max-width: 1280px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
+      flex-wrap: wrap; }
+  #events::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #events:after {
+    content: '';
+    -ms-flex: auto;
+        flex: auto; }
   #events .event-item {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
         flex-direction: column;
-    min-width: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     padding: 1em;
     background-color: white;
     margin-bottom: 1em;
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15); }
     @media (min-width: 768px) {
       #events .event-item {
-        min-width: auto;
-        -ms-flex-preferred-size: 48.5%;
-            flex-basis: 48.5%; } }
+        -ms-flex-preferred-size: 49%;
+            flex-basis: 49%;
+        margin: .5%; } }
     @media (min-width: 960px) {
       #events .event-item {
-        -ms-flex-preferred-size: 23.5%;
-            flex-basis: 23.5%; } }
+        -ms-flex-preferred-size: 32.3%;
+            flex-basis: 32.3%; } }
   #events .event_info-date {
     color: #ca0814;
     font-size: 30px;

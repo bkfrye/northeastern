@@ -721,8 +721,7 @@ html {
   width: 100%;
   margin: 0 auto;
   position: relative;
-  background-color: white;
-  padding: 0 30px; }
+  background-color: white; }
   @media (max-width: 550px) {
     #accordion {
       box-sizing: border-box;
@@ -820,8 +819,7 @@ html {
       .accordion-item li .heading p {
         color: #000000;
         font-size: 24px;
-        font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
-        text-transform: uppercase; }
+        font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif; }
     .accordion-item li .heading_content {
       color: #000000;
       font-size: 24px;
@@ -837,7 +835,7 @@ html {
               backface-visibility: visible; }
       .accordion-item li .heading_content li {
         list-style-type: disc; }
-      .accordion-item li .heading_content a {
+      .accordion-item li .heading_content li, .accordion-item li .heading_content a {
         font-size: 16px; }
 
 .accordion-item input[type=checkbox] {

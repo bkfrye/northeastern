@@ -10,14 +10,19 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
+		<div id="event_title">
+			<?php the_title('<h1>','</h1>');?>
+		</div>
+
 		<section id="events">
+
 			<?php
 				$args = array(
 					'post_type' => 'events',
-					'status' => 'published',
 					'orderby' => 'meta_value_num',
 					'order' => ASC,
 					'meta_key' => 'date_start',
+					'posts_per_page' => '-1'
 				);
 
 				$events = new WP_Query( $args );

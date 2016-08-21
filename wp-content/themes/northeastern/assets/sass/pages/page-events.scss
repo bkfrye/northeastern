@@ -15,26 +15,34 @@ body{
     background-color: $lightgray;
 }
 
+#masthead{
+    background-color: white;
+}
+
 
 /****************************
-******Banner Section ********
+***** Main Content **********
 ****************************/
 
+#event_title{
+    @include outer-container(1280px);
+    padding-left: 12px;
+}
+
 #events{
-    max-width: 1280px;
-    margin: 0 auto;
+    @include outer-container(1280px);
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
 
-    @include tablet{
-
+    &:after{
+        content:'';
+        flex: auto;
     }
+
     .event-item{
         display: flex;
         flex-direction: column;
-        min-width: 100%;
+        flex-basis: 100%;
         padding: 1em;
         background-color: white;
 
@@ -43,11 +51,11 @@ body{
 
 
         @include tablet{
-            min-width: auto;
-            flex-basis: 48.5%;
+            flex-basis: 49%;
+            margin: .5%;
         }
         @include desktop{
-            flex-basis: 23.5%;
+            flex-basis: 32.3%;
         }
     }
 

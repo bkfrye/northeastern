@@ -176,11 +176,10 @@ jQuery(function() {
 
     //controls accordion close button within content
     jQuery('.close_item').click(function(){
-        jQuery('input[type=checkbox]').prop('checked', true);
+        jQuery(this).parent().siblings('input:checkbox').prop('checked', true);
         jQuery('html, body').animate({
             scrollTop: jQuery(this).parent().parent().offset().top
         }, 400);
-
     });
 
 

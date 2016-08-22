@@ -797,11 +797,12 @@ a {
     padding: 0;
     margin-left: 0; } }
 
-#menu-primary {
-  padding: 0; }
-  @media (min-width: 768px) {
-    #menu-primary .menu-item {
-      padding-bottom: 22px; } }
+@media (min-width: 768px) {
+  #menu-primary .menu-item {
+    padding-bottom: 22px; } }
+
+#nu-alumni-blog-navigation {
+  padding-top: 1em; }
 
 .skip-link {
   position: absolute;
@@ -1002,10 +1003,12 @@ a {
       #site_footer nav:first-child {
         margin: 0; } }
   #site_footer nav ul {
+    float: none;
     padding: 0; }
   #site_footer nav li {
     margin-bottom: 8px;
-    list-style-type: none; }
+    list-style-type: none;
+    text-align: left; }
   #site_footer #privacy_info {
     margin-top: 32px; }
     #site_footer #privacy_info a {

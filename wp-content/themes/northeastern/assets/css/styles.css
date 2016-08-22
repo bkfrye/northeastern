@@ -116,7 +116,14 @@ body a.btn_red {
     margin: 0; }
 
 #gform_1 {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
   height: 35px; }
+  #gform_1::after {
+    clear: both;
+    content: "";
+    display: table; }
   #gform_1 .gform_body,
   #gform_1 .gform_footer {
     display: inline-block; }
@@ -126,12 +133,22 @@ body a.btn_red {
     width: 100%;
     height: 35px;
     padding-left: 1em;
-    line-height: 1;
-    float: left; }
+    line-height: 1; }
   #gform_1 #gform_submit_button_1 {
     width: 35px;
-    height: auto;
-    margin-left: 12px; }
+    height: 35px;
+    color: transparent;
+    margin-left: 12px;
+    border: 0;
+    background-image: url(../../img/svg/submit-arrow.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent; }
+    #gform_1 #gform_submit_button_1:hover {
+      cursor: pointer; }
+  #gform_1 .top_label {
+    margin: 0;
+    padding: 0; }
 
 #gform_2 {
   position: relative;

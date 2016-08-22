@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.icon-Facebook {
+  background-image: url("../../img/svg/facebook.svg"); }
+
+.icon-Twitter {
+  background-image: url("../../img/svg/twitter.svg"); }
+
+.icon-Instagram {
+  background-image: url("../../img/svg/instagram.svg"); }
+
+/****************************
+********  General  **********
+****************************/
+.contact_person {
+  background: 0;
+  background-color: #f7f7f7; }
+
+.university_contacts {
+  margin: 0;
+  padding: 0; }
+  .university_contacts li {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none; }
+    .university_contacts li::after {
+      clear: both;
+      content: "";
+      display: table; }
+    .university_contacts li h3 {
+      font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+      font-size: 28px;
+      text-transform: uppercase; }
+  .university_contacts .profile {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-align: end;
+        align-items: flex-end;
+    margin-bottom: 1em; }
+    @media (min-width: 960px) {
+      .university_contacts .profile {
+        width: 50%;
+        float: left; } }

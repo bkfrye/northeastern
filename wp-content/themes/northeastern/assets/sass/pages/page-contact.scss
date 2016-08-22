@@ -1,0 +1,50 @@
+@import "bourbon";
+@import "neat";
+@import "../partials/_settings";
+@import "../partials/_media-queries";
+@import "../partials/_mixins";
+
+
+/****************************
+********  General  **********
+****************************/
+
+.contact_person{
+    background: 0;
+    background-color: lighten($lightgray, 3%);
+}
+.university_contacts{
+    margin: 0;
+    padding: 0;
+
+    li{
+        @include outer-container(1280px);
+        list-style-type: none;
+
+        h3{
+            font:{
+                family: $font-bold-condensed;
+                size: 28px;
+            }
+            text-transform: uppercase;
+        }
+    }
+
+    .profile{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;;
+        margin-bottom: 1em;
+
+        @include desktop{
+            width: 50%;
+            float: left;
+        }
+
+        &:nth-child(2){
+
+
+        }
+    }
+
+}

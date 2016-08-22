@@ -31,7 +31,7 @@ add_action( 'login_enqueue_scripts', 'login_logo' );
 
 // Custom Favicon
 function favicon_link() {
-    echo '<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />' . "\n";
+    echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />' . "\n";
 }
 add_action( 'wp_head', 'favicon_link' );
 
@@ -108,6 +108,10 @@ function northeastern_scripts(){
 
 	if(is_page('events')){
 		wp_enqueue_style( 'events-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-events.css', false );
+	}
+
+	if(is_page('contact')){
+		wp_enqueue_style( 'contact-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-contact.css', false );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'northeastern_scripts' , 11);

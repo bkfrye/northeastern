@@ -140,7 +140,7 @@ get_header(); ?>
 						<span class="rotator_item">Find employees</span>
 					</span>
 				</h2>
-	            <a href="#" class="btn">Learn More</a>
+	            <a href="<?php echo get_field('learn_more_link')?>" class="btn">Learn More</a>
 			</article>
         </section>
 

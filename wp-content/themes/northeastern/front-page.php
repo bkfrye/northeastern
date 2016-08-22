@@ -47,13 +47,11 @@ get_header(); ?>
 
         <section class="callouts">
 			<article>
-
-
 				<div id="angled_one" class="block">
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Events</h3>
+							<h3><?php echo the_field('callout_title_1');?></h3>
 							<p><?php echo the_field('callout_desc_1');?></p>
 						</div>
 					</div>
@@ -68,14 +66,11 @@ get_header(); ?>
 				</div>
 				<div id="mobile_one" class="content-block_desktop"></div>
 
-
-
-
 				<div id="angled_two" class="block">
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Lifelong Learning</h3>
+							<h3><?php echo the_field('callout_title_1');?></h3>
 							<p><?php echo the_field('callout_desc_2');?></p>
 						</div>
 					</div>
@@ -90,15 +85,11 @@ get_header(); ?>
 				</div>
 				<div id="mobile_two" class="content-block_desktop"></div>
 
-
-
-
-
 				<div id="angled_three" class="block">
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Communities</h3>
+							<h3><?php echo the_field('callout_title_1');?></h3>
 							<p><?php echo the_field('callout_desc_3');?></p>
 						</div>
 					</div>
@@ -112,11 +103,6 @@ get_header(); ?>
 					</div>
 				</div>
 				<div id="mobile_three" class="content-block_desktop"></div>
-
-
-
-
-
 			</article>
         </section>
 

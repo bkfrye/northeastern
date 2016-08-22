@@ -28,7 +28,7 @@ get_header(); ?>
 				while ( $communities->have_posts() ) : $communities->the_post();
 
 
-				echo '<li>'.get_the_title().'</li>';
+				echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
 
 				endwhile;
 			?>

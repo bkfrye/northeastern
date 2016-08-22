@@ -127,6 +127,7 @@ jQuery(function() {
     jQuery('#view_more-juicer').click(function(e){
         jQuery('.social_feed article').addClass('expand_juicer');
         jQuery(this).css('display', 'none');
+        jQuery('.overlay_gradient').css('display', 'none');
         return false;
     });
 

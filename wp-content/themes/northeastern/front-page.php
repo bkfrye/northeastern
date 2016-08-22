@@ -107,7 +107,6 @@ get_header(); ?>
         </section>
 
         <section class="social_feed">
-
             <nav id="juicer_nav">
                 <ul>
                     <li id="juicer_home" class="active" data-name="Home"><?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/svg/home.svg');?></li>
@@ -117,9 +116,8 @@ get_header(); ?>
                 </ul>
             </nav>
 			<article>
-
 				<?php get_template_part( 'template-parts/juicer' );?>
-
+				<div class="overlay_gradient"></div>
 			</article>
 			<div class="view_more-wrap">
 				<a href="#" id="view_more-juicer" class="btn_red">View More</a>

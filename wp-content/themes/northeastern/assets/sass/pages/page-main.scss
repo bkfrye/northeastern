@@ -72,9 +72,10 @@ html{
 
 .content{
     @include outer-container(1280px);
-    padding: 18px 1em;
+    padding: 18px 0;
 
     article{
+        padding: 0 1em;
         @include tablet{
             @include span-columns(8);
         }

@@ -156,11 +156,13 @@
             }
         }
         ul{
+            float: none;
             padding: 0;
         }
         li{
             margin-bottom: 8px;
             list-style-type: none;
+            text-align: left;
         }
     }
 

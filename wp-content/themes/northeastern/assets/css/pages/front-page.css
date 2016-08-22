@@ -350,6 +350,12 @@ html p {
   .social_feed article {
     height: 70vh;
     overflow-y: hidden; }
+  .social_feed .overlay_gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 52px;
+    background: linear-gradient(0deg, #efefef, rgba(239, 239, 239, 0)); }
   .social_feed .view_more-wrap {
     margin: 2em 0;
     text-align: center; }

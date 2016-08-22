@@ -47,13 +47,11 @@ get_header(); ?>
 
         <section class="callouts">
 			<article>
-
-
 				<div id="angled_one" class="block">
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Events</h3>
+							<h3><?php echo the_field('callout_title_1');?></h3>
 							<p><?php echo the_field('callout_desc_1');?></p>
 						</div>
 					</div>
@@ -68,14 +66,11 @@ get_header(); ?>
 				</div>
 				<div id="mobile_one" class="content-block_desktop"></div>
 
-
-
-
 				<div id="angled_two" class="block">
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Lifelong Learning</h3>
+							<h3><?php echo the_field('callout_title_1');?></h3>
 							<p><?php echo the_field('callout_desc_2');?></p>
 						</div>
 					</div>
@@ -90,15 +85,11 @@ get_header(); ?>
 				</div>
 				<div id="mobile_two" class="content-block_desktop"></div>
 
-
-
-
-
 				<div id="angled_three" class="block">
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3>Communities</h3>
+							<h3><?php echo the_field('callout_title_1');?></h3>
 							<p><?php echo the_field('callout_desc_3');?></p>
 						</div>
 					</div>
@@ -112,16 +103,10 @@ get_header(); ?>
 					</div>
 				</div>
 				<div id="mobile_three" class="content-block_desktop"></div>
-
-
-
-
-
 			</article>
         </section>
 
         <section class="social_feed">
-
             <nav id="juicer_nav">
                 <ul>
                     <li id="juicer_home" class="active" data-name="Home"><?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/svg/home.svg');?></li>
@@ -131,9 +116,8 @@ get_header(); ?>
                 </ul>
             </nav>
 			<article>
-
 				<?php get_template_part( 'template-parts/juicer' );?>
-
+				<div class="overlay_gradient"></div>
 			</article>
 			<div class="view_more-wrap">
 				<a href="#" id="view_more-juicer" class="btn_red">View More</a>
@@ -154,7 +138,7 @@ get_header(); ?>
 						<span class="rotator_item">Find employees</span>
 					</span>
 				</h2>
-	            <a href="#" class="btn">Learn More</a>
+	            <a href="<?php echo get_field('learn_more_link')?>" class="btn">Learn More</a>
 			</article>
         </section>
 

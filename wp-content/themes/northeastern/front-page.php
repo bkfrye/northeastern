@@ -18,7 +18,7 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div id="homepage_hero">
+		<div id="homepage_hero" style="background-image:url(<?php echo get_field('hero_image');?>)">
             <div class="textured_backdrop">
                 <h1><?php echo the_field('main_title');?></h1>
             </div>

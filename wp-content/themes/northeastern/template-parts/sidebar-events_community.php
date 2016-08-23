@@ -9,7 +9,7 @@
             'order' => ASC,
             'meta_key' => 'date_start',
             'posts_per_page' => 3,
-            'category_name' => $community
+            'tag' => $community
             );
 
         $events = new WP_Query( $args );

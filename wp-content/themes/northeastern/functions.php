@@ -286,11 +286,11 @@ class NU_Menu_Maker_Walker extends Walker {
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= '</span>';
 		if (!empty($children)) {
-			$item_output .= '<div class="svg-container visible-xs-inline-block visible-sm-inline-block">
-				<svg class="svg svg__svg-icon--white" width="100%" height="100%" viewBox="0 0 16 32">
-					<path d="M14.125 11.438l1.875 1.875-8 8-8-8 1.875-1.875 6.125 6.125z"></path>
-				</svg>
-			</div>';
+			// $item_output .= '<div class="svg-container visible-xs-inline-block visible-sm-inline-block">
+			// 	<svg class="svg svg__svg-icon--white" width="100%" height="100%" viewBox="0 0 16 32">
+			// 		<path d="M14.125 11.438l1.875 1.875-8 8-8-8 1.875-1.875 6.125 6.125z"></path>
+			// 	</svg>
+			// </div>';
 		}
 		$item_output .= '</a>';
 		$item_output .= $args->after;

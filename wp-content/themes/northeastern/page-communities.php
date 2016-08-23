@@ -16,23 +16,46 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<section id="events">
-			<ul>
+			<!-- <ul> -->
 			<?php
-				$args = array(
-					'post_type' => 'communities',
-					'orderby' => 'title',
-					'order' => 'ASC'
+
+
+
+				$my_cat_menu = array(
+					 'title_li' => __( '' ),
+					 'order_by' => 'name',
+					 'child_of' => 2
 				);
 
-				$communities = new WP_Query( $args );
-				while ( $communities->have_posts() ) : $communities->the_post();
+				echo '<ul class="my-categories-menu">';
+					wp_list_categories( $my_cat_menu );
+				echo '</ul>';
 
 
-				echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
+				$cat = get_categories();
+				echo '<pre>';
+				var_dump( $cat );
+				echo '</pre>';
 
-				endwhile;
+				// $args = array(
+				// 	'post_type' => 'communities',
+				// 	'orderby' => 'category',
+				// 	'order' => 'ASC'
+				// );
+				//
+				// $communities = new WP_Query( $args );
+				// while ( $communities->have_posts() ) : $communities->the_post();
+				// $category = get_the_category_list($post->ID);
+				//
+				// echo '<li>';
+				// 	echo '<h3>'. $category[0]->name.'</h3>';
+				//
+				//
+				// echo '</li>';
+				//
+				// endwhile;
 			?>
-			</ul>
+			<!-- </ul> -->
 		</section>
 	</main>
 </div>

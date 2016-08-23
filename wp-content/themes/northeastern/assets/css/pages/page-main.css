@@ -193,14 +193,17 @@ body a.btn_red {
       display: table; }
   #gform_2 #field_2_1,
   #gform_2 #field_2_2 {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
     margin-bottom: 2.5%; }
-    #gform_2 #field_2_1:last-child,
-    #gform_2 #field_2_2:last-child {
-      margin-right: 0; }
+    @media (min-width: 768px) {
+      #gform_2 #field_2_1,
+      #gform_2 #field_2_2 {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%; }
+        #gform_2 #field_2_1:last-child,
+        #gform_2 #field_2_2:last-child {
+          margin-right: 0; } }
   #gform_2 #field_2_2 {
     margin-right: 0; }
   #gform_2 #gform_submit_button_2 {
@@ -365,11 +368,19 @@ html h1 {
 ****************************/
 .banner_interior {
   position: relative;
-  height: 70vh;
+  height: 300px;
+  margin-top: 2em;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: gray; }
+  @media (min-width: 768px) {
+    .banner_interior {
+      margin-top: 0;
+      height: 70vh; } }
+  @media (min-width: 768px) {
+    .banner_interior {
+      background-position: top; } }
   .banner_interior .banner_content {
     max-width: 1280px;
     margin-left: auto;
@@ -380,31 +391,45 @@ html h1 {
       display: table; }
   .banner_interior .page_title {
     position: absolute;
-    bottom: 0;
+    width: 100%;
     background-color: white;
-    transform: skew(35deg);
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 57.35098%; }
-    .banner_interior .page_title:last-child {
-      margin-right: 0; }
+    top: -2em; }
+    @media (min-width: 768px) {
+      .banner_interior .page_title {
+        top: inherit;
+        bottom: 0;
+        transform: skew(35deg);
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 57.35098%; }
+        .banner_interior .page_title:last-child {
+          margin-right: 0; } }
     .banner_interior .page_title:before {
-      content: '';
-      height: 100%;
-      position: absolute;
-      right: 50%;
-      background-color: white;
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 100%; }
-      .banner_interior .page_title:before:last-child {
-        margin-right: 0; }
+      display: none; }
+      @media (min-width: 768px) {
+        .banner_interior .page_title:before {
+          content: '';
+          height: 100%;
+          position: absolute;
+          right: 50%;
+          background-color: white;
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 100%; }
+          .banner_interior .page_title:before:last-child {
+            margin-right: 0; } }
     .banner_interior .page_title h1 {
-      font-size: 44px;
-      padding-left: 18px;
-      transform: skew(-35deg); }
+      margin: 14px 0;
+      font-size: 2.4em;
+      padding-left: 18px; }
+      @media (min-width: 768px) {
+        .banner_interior .page_title h1 {
+          margin: .8em 0;
+          padding-right: 12px;
+          font-size: 44px;
+          transform: skew(-35deg); } }
 
 /****************************
 ******Content Section ********

@@ -24,7 +24,13 @@ html{
 ****************************/
 .banner_interior{
     position: relative;
-    height: 70vh;
+    height: 300px;
+    margin-top: 2em;
+
+    @include tablet{
+        margin-top: 0;
+        height: 70vh;
+    }
 
     background:{
         position: center;
@@ -33,6 +39,9 @@ html{
 
         color: gray;
     }
+    @include tablet{
+        background-position: top;
+    }
 
     .banner_content{
         @include outer-container(1280px);
@@ -40,26 +49,44 @@ html{
 
     .page_title{
         position: absolute;
-        bottom: 0;
+        width: 100%;
         background-color: white;
-        transform: skew(35deg);
-        @include span-columns(7);
+        top: -2em;
+
+
+        @include tablet{
+            top: inherit;
+            bottom: 0;
+            transform: skew(35deg);
+            @include span-columns(7);
+        }
 
         &:before{
-            content:'';
-            height: 100%;
-            position: absolute;
-            right: 50%;
-            background-color: white;
+            display: none;
 
-            @include span-columns(12);
+            @include tablet{
+                content:'';
+                height: 100%;
+                position: absolute;
+                right: 50%;
+                background-color: white;
+
+                @include span-columns(12);
+            }
+
 
         }
 
         h1{
-            font-size: 44px;
+            margin: 14px 0;
+            font-size: 2.4em;
             padding-left:18px;
-            transform: skew(-35deg);
+            @include tablet{
+                margin: .8em 0;
+                padding-right: 12px;
+                font-size: 44px;
+                transform: skew(-35deg);
+            }
         }
     }
 

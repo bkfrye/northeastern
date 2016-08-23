@@ -12,7 +12,7 @@
         <p>Connect with job opportunities or bring a co-op to your company.</p>
 
         <div class="btn_wrap">
-            <a href="/career-services" class="btn">LEARN HOW</a>
+            <a href="/career-services/hire-a-husky/" class="btn">LEARN HOW</a>
         </div>
     </div>
 

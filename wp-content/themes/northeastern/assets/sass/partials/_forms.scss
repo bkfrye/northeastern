@@ -108,8 +108,11 @@
 
     #field_2_1,
     #field_2_2{
-        @include span-columns(6);
         margin-bottom: 2.5%;
+
+        @include tablet{
+            @include span-columns(6);
+        }
 
     }
     #field_2_2{@include omega()}

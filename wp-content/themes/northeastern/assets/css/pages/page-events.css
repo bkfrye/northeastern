@@ -193,14 +193,17 @@ body a.btn_red {
       display: table; }
   #gform_2 #field_2_1,
   #gform_2 #field_2_2 {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
     margin-bottom: 2.5%; }
-    #gform_2 #field_2_1:last-child,
-    #gform_2 #field_2_2:last-child {
-      margin-right: 0; }
+    @media (min-width: 768px) {
+      #gform_2 #field_2_1,
+      #gform_2 #field_2_2 {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%; }
+        #gform_2 #field_2_1:last-child,
+        #gform_2 #field_2_2:last-child {
+          margin-right: 0; } }
   #gform_2 #field_2_2 {
     margin-right: 0; }
   #gform_2 #gform_submit_button_2 {

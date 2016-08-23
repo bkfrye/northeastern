@@ -28,9 +28,13 @@ html p {
   height: 85vh;
   overflow: hidden;
   transition: all 0.3s ease 0s;
+  margin-bottom: 8px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
+  @media (min-width: 960px) {
+    #homepage_hero {
+      margin: 0; } }
   #homepage_hero .textured_backdrop {
     display: -ms-flexbox;
     display: flex;

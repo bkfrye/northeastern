@@ -25,11 +25,16 @@ html{
     height: 85vh;
     overflow: hidden;
     transition: all 0.3s ease 0s;
+    margin-bottom: 8px;
 
     background:{
         size: cover;
         position: center;
         repeat: no-repeat;
+    }
+
+    @include desktop{
+        margin: 0;
     }
 
 

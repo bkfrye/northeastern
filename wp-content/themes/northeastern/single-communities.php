@@ -35,7 +35,7 @@ get_header(); ?>
 							echo '<ul>';
 							foreach($rows as $row)
 							{
-								echo '<li><p class="leader-name">'. $row['name'] .'</p><p class="leader-title">'. $row['title']. '</p><p class="leader-email">'. $row['email']. '</p></li>';
+								echo '<li><p class="leader-name">'. $row['name'] .'</p><p class="leader-title">'. $row['title']. '</p><a href="mailto:'. $row['email']. '" class="leader-email">'. $row['email']. '</a></p></li>';
 							}
 							echo '</ul>';
 						}
@@ -92,7 +92,7 @@ get_header(); ?>
 							$email = get_field('email_p');
 
 							echo '<p>'.$title.'<br>'.$number.'</p>';
-							echo '<p class="profile-email">'.$email.'</p>';
+							echo '<p><a href="mailto:'.$email.'" class="profile-email">'.$email.'</a></p>';
 
 						    wp_reset_postdata();
 						endif;

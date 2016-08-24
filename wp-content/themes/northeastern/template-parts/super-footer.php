@@ -8,7 +8,7 @@
 
 <?php
 	// add in blog content
-	// get_template_part( 'template-parts/blog-excerpts');
+	get_template_part( 'template-parts/blog-excerpts');
 ?>
 
 <section class="signups">
@@ -52,7 +52,7 @@
 					$email = get_field('email_p');
 
 					echo '<p>'.$title.'<br>'.$number.'</p>';
-					echo '<p class="profile-email">'.$email.'</p>';
+					echo '<p><a href="mailto:'.$email.'" class="profile-email">'.$email.'</a></p>';
 
 				    wp_reset_postdata();
 				endif;

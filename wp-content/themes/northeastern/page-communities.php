@@ -89,9 +89,6 @@ get_header(); ?>
 		</section>
 
 		<?php get_template_part('template-parts/super-footer');?>
-		<section id="community_list">
-
-		</section>
 	</main>
 </div>
 

@@ -156,8 +156,8 @@
                     ?>
 
                     <ul id="privacy_info">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Privacy Statement</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>privacy-policy">Privacy Policy</a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>privacy-statement/">Privacy Statement</a></li>
                     </ul>
                 </nav>
             </div>

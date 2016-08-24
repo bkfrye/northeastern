@@ -590,3 +590,23 @@ a {
 #nu-alumni-blog-navigation{
     padding-top: 1em;
 }
+
+@media (min-width: 783px){
+    .nu-shared-navigation__menu-item:last-child {
+            // padding: 35px 0px 15px 0;
+        .nu-shared-navigation__sub-menu-item {
+            right: 0;
+        }
+    }
+
+    #menu-primary{
+        li:last-child{
+            padding: 35px 0px 22px 0;
+        }
+        .nu-shared-navigation__sub-menu-item {
+            li{
+                padding: 0 0 22px;
+            }
+        }
+    }
+}

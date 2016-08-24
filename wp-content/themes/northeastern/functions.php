@@ -318,4 +318,48 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
+/******************************************/
+/** Remove Old Events *********************/
+/******************************************/
+
+add_action( 'expired_event_delete', 'delete_expired_events' );
+// This function will run once the 'expired_post_delete' is called
+function delete_expired_events() {
+	$todays_date = current_time('Ymd');
+	$args = array(
+		'fields' => 'ids',
+	    'post_type' => 'events',
+	    'meta_key' => 'date_end',
+		'meta_value' => $todays_date,
+		'meta_compare' => '<',
+	    'meta_query' => array(
+			'relation'  => 'OR',
+	        array(
+	            'key' => 'date_start',
+	            'value' => $todays_date,
+	            'compare' => '<'
+            )
+    	)
+	);
+	$q = new WP_Query( $args );
+
+	// Check if we have posts to delete
+	if ($q->have_posts()):
+        while($q->have_posts()): $q->the_post();
+                wp_delete_post(get_the_ID());
+        endwhile;
+    endif;
+}
+
+// Add function to register event to wp
+add_action( 'wp', 'register_daily_event_delete');
+function register_daily_event_delete() {
+    // Make sure this event hasn't been scheduled
+    if(! wp_next_scheduled( 'expired_event_delete' )) {
+        // Schedule the event
+        wp_schedule_event( time(), 'daily', 'expired_event_delete' );
+    }
+}
+
+
 ?>

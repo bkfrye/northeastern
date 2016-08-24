@@ -20,7 +20,7 @@
 
 .nu-shared-navigation__lower{
     @media (min-width:783px){
-        height: 91px;
+        height: 76px;
     }
 
 }
@@ -31,6 +31,7 @@
 }
 
 #nu-alumni-blog-navigation{
+    padding: 0;
 
     @media (min-width:783px){
         display: flex!important;
@@ -41,6 +42,10 @@
 
 }
 
+.nu-shared-navigation__upper{
+    padding-bottom: 0;
+}
+
 
 .nu-shared-navigation__alumni-logo--mobile,
 .nu-shared-navigation__search-profile-links{
@@ -49,7 +54,7 @@
     padding: 6px;
 }
 .nu-shared-navigation__alumni-logo--mobile{
-    padding-top: 2em;
+    padding: 8px;
     a{
         margin: 0!important;
         font-family: $font-light-condensed;

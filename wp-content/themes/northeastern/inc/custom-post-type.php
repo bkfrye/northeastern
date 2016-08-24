@@ -31,7 +31,6 @@ function cpt_communities() {
 			'has_archive' => false,
 			'rewrite' => array('slug' => 'locations'),
 			'query_var' => true,
-			'taxonomies'  => array( 'category' ),
 		)
 	);
 

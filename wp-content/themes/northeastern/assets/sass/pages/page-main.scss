@@ -188,69 +188,6 @@ html{
 @import '../partials/_blog';
 
 
-/****************************
-***** Signup Section ********
-****************************/
-
-.signups{
-    @include outer-container(1280px);
-    display: flex;
-    flex-direction: column;
-
-    @include tablet{
-        flex-direction: row;
-    }
-
-
-    .stay_connected,
-    .contribute{
-        margin: 1em .5em;
-        padding: 1em;
-
-        @include tablet{
-            flex-basis: 50%;
-            padding: 2em;
-
-        }
-    }
-
-    .stay_connected{
-        background-color: $lightgray;
-
-        h3{
-            font-family: $font-light;
-        }
-    }
-
-    .contribute{
-        background-color: $brightred;
-        color: white;
-
-        display: flex;
-        // flex-direction: row;
-        align-items: center;
-
-        @include tablet{
-            div{
-
-                &:first-child{
-                    flex-basis: 55%;
-                }
-
-                &:last-child{
-                    flex-basis: 45%;
-                    text-align: center;
-                }
-            }
-        }
-
-        h3{
-            font:{
-                family: $font-bold-condensed;
-            }
-        }
-    }
-}
 
 /****************************
 ***** Contact Person ********
@@ -324,3 +261,4 @@ html{
 
 
 @import '../partials/_accordion';
+@import '../partials/_forms';

@@ -15,48 +15,80 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<section id="events">
-			<!-- <ul> -->
-			<?php
 
-
-
-				$my_cat_menu = array(
-					 'title_li' => __( '' ),
-					 'order_by' => 'name',
-					 'child_of' => 2
-				);
-
-				echo '<ul class="my-categories-menu">';
-					wp_list_categories( $my_cat_menu );
-				echo '</ul>';
-
-
-				$cat = get_categories();
-				echo '<pre>';
-				var_dump( $cat );
-				echo '</pre>';
-
-				// $args = array(
-				// 	'post_type' => 'communities',
-				// 	'orderby' => 'category',
-				// 	'order' => 'ASC'
-				// );
-				//
-				// $communities = new WP_Query( $args );
-				// while ( $communities->have_posts() ) : $communities->the_post();
-				// $category = get_the_category_list($post->ID);
-				//
-				// echo '<li>';
-				// 	echo '<h3>'. $category[0]->name.'</h3>';
-				//
-				//
-				// echo '</li>';
-				//
-				// endwhile;
-			?>
-			<!-- </ul> -->
+		<section class="banner_interior" style="background-image:url(<?php echo get_field('hero_image');?>)">
+			<div class="banner_content">
+				<div class="page_title">
+					<?php the_title('<h1>','</h1>');?>
+				</div>
+			</div>
 		</section>
+
+		<section class="content">
+			<article>
+				<?php
+					echo '<div class="intro_section">' . get_field('intro_section') . '</div>';
+					echo '<div class="main_section">' . get_field('main_section') . '</div>';
+
+					while ( have_posts() ) : the_post();
+						if( have_rows('communities_list') ):
+							while( have_rows('communities_list') ): the_row(); ?>
+								<div class="region">
+									<h3><?php the_sub_field('region_name'); ?></h3>
+									<?php
+									if( have_rows('region_list') ): ?>
+										<ul>
+										<?php
+
+										while( have_rows('region_list') ): the_row();
+										echo '<li>';
+											$post_object = get_sub_field('location');
+											if( $post_object ):
+
+												// override $post
+												$post = $post_object;
+												setup_postdata( $post );?>
+
+												<a href="<?php the_permalink($post->ID); ?>"><?php echo $post->post_title ?></a>
+
+											    <?php wp_reset_postdata();
+											endif;?>
+											</li>
+										<?php endwhile; ?>
+										</ul>
+									<?php endif;?>
+								</div>
+							<?php endwhile;
+						endif;
+					endwhile;
+				?>
+			</article>
+			<aside>
+				<?php
+					$sidebar_items =  get_field('sidebar_items');
+
+					if( empty($sidebar_items) ) {
+						get_template_part('template-parts/sidebar', 'events');
+					}
+					else{
+						if ( in_array('facebook', $sidebar_items) ) {
+							get_template_part('template-parts/sidebar', 'facebook');
+						}
+						if ( in_array('events', $sidebar_items) ) {
+							get_template_part('template-parts/sidebar', 'events');
+						}
+						if ( in_array('connect', $sidebar_items) ) {
+							get_template_part('template-parts/sidebar', 'connect');
+						}
+					}
+
+					wp_reset_postdata();
+				?>
+			</aside>
+
+		</section>
+
+		<?php get_template_part('template-parts/super-footer');?>
 	</main>
 </div>
 

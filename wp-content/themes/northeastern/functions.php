@@ -322,7 +322,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 /** Remove Old Events *********************/
 /******************************************/
 
-add_action( 'wp', 'delete_expired_events' );
+add_action( 'expired_event_delete', 'delete_expired_events' );
 // This function will run once the 'expired_post_delete' is called
 function delete_expired_events() {
 	$todays_date = current_time('Ymd');
@@ -352,7 +352,7 @@ function delete_expired_events() {
 }
 
 // Add function to register event to wp
-// add_action( 'wp', 'register_daily_event_delete');
+add_action( 'wp', 'register_daily_event_delete');
 function register_daily_event_delete() {
     // Make sure this event hasn't been scheduled
     if(! wp_next_scheduled( 'expired_event_delete' )) {

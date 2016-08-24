@@ -853,20 +853,25 @@ a {
 
 @media (min-width: 783px) {
   .nu-shared-navigation__lower {
-    height: 91px; } }
+    height: 76px; } }
 
 #logo {
   position: relative;
   z-index: 100; }
 
-@media (min-width: 783px) {
-  #nu-alumni-blog-navigation {
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -ms-flex-direction: row !important;
-        flex-direction: row !important;
-    -ms-flex-pack: end;
-        justify-content: flex-end; } }
+#nu-alumni-blog-navigation {
+  padding: 0; }
+  @media (min-width: 783px) {
+    #nu-alumni-blog-navigation {
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+      -ms-flex-pack: end;
+          justify-content: flex-end; } }
+
+.nu-shared-navigation__upper {
+  padding-bottom: 0; }
 
 .nu-shared-navigation__alumni-logo--mobile,
 .nu-shared-navigation__search-profile-links {
@@ -886,7 +891,7 @@ a {
       color: white; }
 
 .nu-shared-navigation__alumni-logo--mobile {
-  padding-top: 2em; }
+  padding: 8px; }
   .nu-shared-navigation__alumni-logo--mobile a {
     margin: 0 !important;
     font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }

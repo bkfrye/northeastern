@@ -39,9 +39,21 @@ get_header(); ?>
 									if( have_rows('region_list') ): ?>
 										<ul>
 										<?php
+
 										while( have_rows('region_list') ): the_row();
-											?>
-											<li> <?php the_sub_field('location'); ?></li>
+										echo '<li>';
+											$post_object = get_sub_field('location');
+											if( $post_object ):
+
+												// override $post
+												$post = $post_object;
+												setup_postdata( $post );?>
+
+												<a href="<?php the_permalink($post->ID); ?>"><?php echo $post->post_title ?></a>
+
+											    <?php wp_reset_postdata();
+											endif;?>
+											</li>
 										<?php endwhile; ?>
 										</ul>
 									<?php endif;?>

@@ -105,128 +105,6 @@ body a.btn_red {
 /****************************
 ******* Forms ***************
 ****************************/
-.gform_wrapper label {
-  display: none; }
-
-.gform_wrapper ul {
-  margin: 0;
-  padding: 0; }
-  .gform_wrapper ul li {
-    list-style-type: none;
-    margin: 0; }
-
-#gform_1 {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-  height: 35px; }
-  #gform_1::after {
-    clear: both;
-    content: "";
-    display: table; }
-  #gform_1 .gform_body,
-  #gform_1 .gform_footer {
-    display: inline-block; }
-  #gform_1 .gform_body {
-    width: 85%; }
-  #gform_1 #input_1_1 {
-    width: 100%;
-    height: 35px;
-    padding-left: 1em;
-    line-height: 1; }
-  #gform_1 #gform_submit_button_1 {
-    width: 35px;
-    height: 35px;
-    color: transparent;
-    margin-left: 12px;
-    border: 0;
-    background-image: url(../../img/svg/submit-arrow.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: transparent; }
-    #gform_1 #gform_submit_button_1:hover {
-      cursor: pointer; }
-  #gform_1 .top_label {
-    margin: 0;
-    padding: 0; }
-
-#gform_2 {
-  position: relative;
-  width: 100%;
-  margin: 1em 0; }
-  @media (min-width: 768px) {
-    #gform_2 {
-      width: 80%; } }
-  #gform_2 .gform_title {
-    font-size: 26px;
-    font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
-    text-transform: uppercase; }
-  #gform_2 input, #gform_2 textarea {
-    margin: 0;
-    padding: 8px;
-    border: 1px solid #b8b8b8;
-    width: 100%;
-    background-color: #dbdbdb;
-    font-size: 16px;
-    font-family: "HelveticaNeueW01-47LtCn 692686", arial, sans-serif; }
-    #gform_2 input::-webkit-input-placeholder, #gform_2 textarea::-webkit-input-placeholder {
-      color: #171717;
-      font-size: 16px; }
-    #gform_2 input::-moz-placeholder, #gform_2 textarea::-moz-placeholder {
-      color: #171717;
-      font-size: 16px; }
-    #gform_2 input:-moz-placeholder, #gform_2 textarea:-moz-placeholder {
-      color: #171717;
-      font-size: 16px; }
-    #gform_2 input:-ms-input-placeholder, #gform_2 textarea:-ms-input-placeholder {
-      color: #171717;
-      font-size: 16px; }
-  #gform_2 input {
-    height: 44px; }
-  #gform_2 #gform_fields_2 {
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto; }
-    #gform_2 #gform_fields_2::after {
-      clear: both;
-      content: "";
-      display: table; }
-  #gform_2 #field_2_1,
-  #gform_2 #field_2_2 {
-    margin-bottom: 2.5%; }
-    @media (min-width: 768px) {
-      #gform_2 #field_2_1,
-      #gform_2 #field_2_2 {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 48.82117%; }
-        #gform_2 #field_2_1:last-child,
-        #gform_2 #field_2_2:last-child {
-          margin-right: 0; } }
-  #gform_2 #field_2_2 {
-    margin-right: 0; }
-  #gform_2 #gform_submit_button_2 {
-    display: inline-block;
-    margin: 1em 0;
-    border: 2px solid #ca0814;
-    border-radius: 22px;
-    color: #ca0814;
-    background-color: transparent;
-    font-size: 12pt;
-    text-transform: uppercase;
-    height: 44px;
-    min-width: 190px;
-    padding: 10px 30px;
-    text-decoration: none;
-    text-align: center;
-    font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
-    letter-spacing: .5px; }
-    @media (min-width: 768px) {
-      #gform_2 #gform_submit_button_2 {
-        margin: 2em 0;
-        width: 33.3%; } }
-
 .icon-Facebook {
   background-image: url("../../img/svg/facebook.svg"); }
 
@@ -828,7 +706,7 @@ a {
   .nu-shared-navigation__menu-item:last-child .nu-shared-navigation__sub-menu-item {
     right: 0; }
   #menu-primary li:last-child {
-    padding: 35px 0px 15px 0; }
+    padding: 35px 0px 22px 0; }
   #menu-primary .nu-shared-navigation__sub-menu-item li {
     padding: 0 0 22px; } }
 

@@ -608,8 +608,12 @@ div[class*=icon]{
 
         font-size: 4vw;
 
+
         @include tablet{
             margin: 0 0 0 -90%;
+        }
+        @media (min-width:1440px){
+            font-size: 58px;
         }
     }
 }
@@ -775,12 +779,20 @@ div[class*=icon]{
         }
 
         .event_btn-wrap{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
 
             @include tablet{
                 display: block;
+            }
+
+            a{
+                border: 0;
+                width: 100%;
+                margin: 0;
+                padding: 12px;
+                @include tablet{
+                    width: auto;
+                }
+
             }
         }
     }

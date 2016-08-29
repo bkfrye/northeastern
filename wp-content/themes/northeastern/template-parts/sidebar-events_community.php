@@ -28,16 +28,16 @@
                         $finish_date = strtotime($end);
 
                         if ( $finish_date == '' ){
-                            echo date( 'j M', $start_date );
+                            echo date( 'M j', $start_date );
                         } else {
                             if ( date( 'Y', $start_date ) == date( 'Y', $finish_date ) ){
                                 if ( date( 'M', $start_date ) == date( 'M', $finish_date ) ){
-                                    echo date( 'j', $start_date ) . ' - ' .  date( 'j M', $finish_date );
+                                    echo date( 'j', $start_date ) . ' - ' .  date( 'M j', $finish_date );
                                 } else {
-                                    echo date( 'j M', $start_date ) . ' - ' .  date( 'j M', $finish_date );
+                                    echo date( 'M j', $start_date ) . ' - ' .  date( 'M j', $finish_date );
                                 }
                             } else {
-                                echo date( 'j M', $start_date ) . ' - ' .  date( 'j M', $finish_date );
+                                echo date( 'M j', $start_date ) . ' - ' .  date( 'M j', $finish_date );
                             }
                         }
                     ?>

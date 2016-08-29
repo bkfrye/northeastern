@@ -18,6 +18,10 @@ html{
     }
 }
 
+.content{
+    background-color: white;
+}
+
 
 /****************************
 ******Banner Section ********
@@ -56,7 +60,7 @@ html{
 
         @include tablet{
             top: inherit;
-            bottom: 0;
+            bottom: -1px;
             transform: skew(35deg);
             @include span-columns(7);
         }
@@ -92,6 +96,38 @@ html{
 
 }
 
+.child_menu{
+    cursor: pointer;
+    background-color: $lightgray;
+    @include tablet{
+        display: none;
+    }
+    p{
+        margin: 0;
+        padding: .6em 1em;
+    }
+}
+
+.child_menu-wrap{
+    max-height: 0;
+    transition: all 270ms ease-in-out;
+    ul{
+        margin: 0;
+        padding: 0;
+        max-height: 400px;
+        li{
+            list-style-type: none;
+            background-color: $black;
+            padding: 1em;
+            text-transform: uppercase;
+
+            @include linx(white, white, white, white);
+        }
+    }
+}
+.child_menu-wrap.open{
+    max-height: 600px;
+}
 
 /****************************
 ******Content Section ********
@@ -258,7 +294,25 @@ html{
         margin: 0;
     }
 }
+/****************************
+***** Community List ********
+****************************/
+.communities{
+    counter-reset: column;
+    @include tablet{
+        column-count:2;
+    }
+    @include desktop{
+        column-count:3;
+    }
 
+    .region{
+        page-break-inside: avoid;
+        break-after: avoid;
+        counter-increment: column;
+    }
+
+}
 
 @import '../partials/_accordion';
 @import '../partials/_forms';

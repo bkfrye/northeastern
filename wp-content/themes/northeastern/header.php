@@ -19,13 +19,13 @@
 
 <body>
 <div id="page" class="site">
-<!-- <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P8RFZ7"
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P8RFZ7"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P8RFZ7');</script> -->
+})(window,document,'script','dataLayer','GTM-P8RFZ7');</script>
 
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
@@ -76,8 +76,8 @@ https://www.linkedin.com/groups/82654/profile" class="svg-container nu-shared-na
 						</div>
 
 						<div class="nu-shared-navigation__search-profile-links visible-md-inline-block visible-lg-inline-block">
-							<a href="#">Login</a>
-							<a href="#">Signup</a>
+							<a href="https://securelb.imodules.com/s/1386/hybrid/index.aspx?sid=1386&gid=1&pgid=3&cid=40&returnurl=http%3a%2f%2fwww.alumni.northeastern.edu%2fs%2f1386%2fhybrid%2findex.aspx%3fsid%3d1386%26gid%3d1%26pgid%3d60%26cid%3d169%26referer%3d%26query%3dcareer-se">Login</a>
+							<a href="https://neuidm1.neu.edu/idm/user/anonWorkItemEdit.jsp?id=%23ID%23583C10BFDBD326BA%3A-17604B52%3A1567E3CACC3%3A-43DE#_ga=1.60566125.1165079071.1462390246">Signup</a>
 						</div>
 				</div>
 			</div>
@@ -93,8 +93,8 @@ https://www.linkedin.com/groups/82654/profile" class="svg-container nu-shared-na
 					<div class="nu-shared-navigation__menu-flyout--trans-cover"></div>
 
 					<div class="nu-shared-navigation__search-profile-links visible-xs-block visible-sm-block">
-						<a href="#">Login</a>
-						<a href="#">Signup</a>
+						<a href="https://securelb.imodules.com/s/1386/hybrid/index.aspx?sid=1386&gid=1&pgid=3&cid=40&returnurl=http%3a%2f%2fwww.alumni.northeastern.edu%2fs%2f1386%2fhybrid%2findex.aspx%3fsid%3d1386%26gid%3d1%26pgid%3d60%26cid%3d169%26referer%3d%26query%3dcareer-se">Login</a>
+						<a href="https://neuidm1.neu.edu/idm/user/anonWorkItemEdit.jsp?id=%23ID%23583C10BFDBD326BA%3A-17604B52%3A1567E3CACC3%3A-43DE#_ga=1.60566125.1165079071.1462390246">Signup</a>
 					</div>
 
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>

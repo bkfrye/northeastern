@@ -23,44 +23,51 @@ get_header(); ?>
 				</div>
 			</div>
 		</section>
-
+		<div class="child_menu">
+			<p>More Links +</p>
+			<div class="child_menu-wrap">
+				<?php wpb_list_child_pages(); ?>
+			</div>
+		</div>
 		<section class="content">
 			<article>
 				<?php
 					echo '<div class="intro_section">' . get_field('intro_section') . '</div>';
 					echo '<div class="main_section">' . get_field('main_section') . '</div>';
 
-					while ( have_posts() ) : the_post();
-						if( have_rows('communities_list') ):
-							while( have_rows('communities_list') ): the_row(); ?>
-								<div class="region">
-									<h3><?php the_sub_field('region_name'); ?></h3>
-									<?php
-									if( have_rows('region_list') ): ?>
-										<ul>
+					echo '<div class="communities">';
+						while ( have_posts() ) : the_post();
+							if( have_rows('communities_list') ):
+								while( have_rows('communities_list') ): the_row(); ?>
+									<div class="region">
+										<h3><?php the_sub_field('region_name'); ?></h3>
 										<?php
+										if( have_rows('region_list') ): ?>
+											<ul>
+											<?php
 
-										while( have_rows('region_list') ): the_row();
-										echo '<li>';
-											$post_object = get_sub_field('location');
-											if( $post_object ):
+											while( have_rows('region_list') ): the_row();
+											echo '<li>';
+												$post_object = get_sub_field('location');
+												if( $post_object ):
 
-												// override $post
-												$post = $post_object;
-												setup_postdata( $post );?>
+													// override $post
+													$post = $post_object;
+													setup_postdata( $post );?>
 
-												<a href="<?php the_permalink($post->ID); ?>"><?php echo $post->post_title ?></a>
+													<a href="<?php the_permalink($post->ID); ?>"><?php echo $post->post_title ?></a>
 
-											    <?php wp_reset_postdata();
-											endif;?>
-											</li>
-										<?php endwhile; ?>
-										</ul>
-									<?php endif;?>
-								</div>
-							<?php endwhile;
-						endif;
-					endwhile;
+												    <?php wp_reset_postdata();
+												endif;?>
+												</li>
+											<?php endwhile; ?>
+											</ul>
+										<?php endif;?>
+									</div>
+								<?php endwhile;
+							endif;
+						endwhile;
+					echo '</div>';
 				?>
 			</article>
 			<aside>

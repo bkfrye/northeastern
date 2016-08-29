@@ -6,8 +6,8 @@
  * @since Twenty Sixteen 1.0
  */
 
-$deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
-$scriptVersion = $detect->getScriptVersion();
+// $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
+// $scriptVersion = $detect->getScriptVersion();
 
 get_header(); ?>
 <style>
@@ -24,10 +24,10 @@ get_header(); ?>
             </div>
 
             <?php
-                $home_video_poster = get_field('home_video_poster');
-                $home_video_poster_url = $home_video_poster['url'];
-                $home_video_webm = get_field('home_video_webm');
-                $home_video_mp4 = get_field('home_video_mp4');
+                // $home_video_poster = get_field('home_video_poster');
+                // $home_video_poster_url = $home_video_poster['url'];
+                // $home_video_webm = get_field('home_video_webm');
+                // $home_video_mp4 = get_field('home_video_mp4');
 
                 // echo '<div id="video_container">';
                 // if( $deviceType == 'computer' ) {// || $deviceType == 'tablet' ) {
@@ -61,7 +61,7 @@ get_header(); ?>
 							<h4><?php echo the_field('callout_detailed_title_1');?></h4>
 							<?php echo the_field('callout_detailed_1');?>
 						</div>
-						<a href="#" class="btn">Learn More</a>
+						<a href="<?php echo the_field('callout_link_1');?>" class="btn">Learn More</a>
 					</div>
 				</div>
 				<div id="mobile_one" class="content-block_desktop"></div>
@@ -70,17 +70,17 @@ get_header(); ?>
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3><?php echo the_field('callout_title_1');?></h3>
+							<h3><?php echo the_field('callout_title_2');?></h3>
 							<p><?php echo the_field('callout_desc_2');?></p>
 						</div>
 					</div>
 					<div id="content_two" class="content-block">
 						<div class="close">X</div>
 						<div class="content-block_copy">
-							<h4><?php echo the_field('callout_detailed_title_1');?></h4>
-							<?php echo the_field('callout_detailed_1');?>
+							<h4><?php echo the_field('callout_detailed_title_2');?></h4>
+							<?php echo the_field('callout_detailed_2');?>
 						</div>
-						<a href="#" class="btn">Learn More</a>
+						<a href="<?php echo the_field('callout_link_2');?>" class="btn">Learn More</a>
 					</div>
 				</div>
 				<div id="mobile_two" class="content-block_desktop"></div>
@@ -89,17 +89,17 @@ get_header(); ?>
 					<div class="color_overlay"></div>
 					<div class="lower_third">
 						<div class="lower_third-wrap">
-							<h3><?php echo the_field('callout_title_1');?></h3>
+							<h3><?php echo the_field('callout_title_3');?></h3>
 							<p><?php echo the_field('callout_desc_3');?></p>
 						</div>
 					</div>
 					<div id="content_three" class="content-block">
 						<div class="close">X</div>
 						<div class="content-block_copy">
-							<h4><?php echo the_field('callout_detailed_title_1');?></h4>
-							<?php echo the_field('callout_detailed_1');?>
+							<h4><?php echo the_field('callout_detailed_title_3');?></h4>
+							<?php echo the_field('callout_detailed_3');?>
 						</div>
-						<a href="#" class="btn">Learn More</a>
+						<a href="<?php echo the_field('callout_link_3');?>" class="btn">Learn More</a>
 					</div>
 				</div>
 				<div id="mobile_three" class="content-block_desktop"></div>
@@ -259,12 +259,14 @@ get_header(); ?>
 		<?php
 		//pull blog content from site 2
 		while ( have_posts() ) : the_post();
-			// get_template_part( 'template-parts/blog-excerpts');
+			get_template_part( 'template-parts/blog-excerpts');
 		endwhile;
 		?>
         </section>
 	</main>
 </div>
+
+<?php get_footer(); ?>
 
 
 <script type="text/javascript">
@@ -295,4 +297,3 @@ jQuery(document).ready(function(){
 
 });
 </script>
-<?php get_footer(); ?>

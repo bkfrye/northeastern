@@ -8,7 +8,7 @@
 
 <?php
 	// add in blog content
-	get_template_part( 'template-parts/blog-excerpts');
+	// get_template_part( 'template-parts/blog-excerpts');
 ?>
 
 <section class="signups">

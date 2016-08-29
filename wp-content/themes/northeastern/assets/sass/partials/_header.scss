@@ -38,8 +38,16 @@
         flex-direction: row!important;
         justify-content: flex-end;
     }
-
-
+}
+.nu-shared-navigation__menu{
+    a span{
+        @media (min-width:783px) and (max-width:869px){
+            font-size: 13px;
+        }
+        @media (min-width:870px){
+            font-size: 15px;
+        }
+    }
 }
 
 .nu-shared-navigation__upper{

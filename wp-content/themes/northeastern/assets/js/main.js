@@ -183,5 +183,9 @@ jQuery(function() {
         }, 400);
     });
 
+    jQuery('.child_menu').click(function() {
+        jQuery('.child_menu-wrap').toggleClass('open');
+    });
+
 
 });

@@ -23,7 +23,12 @@ get_header(); ?>
 				</div>
 			</div>
 		</section>
-
+		<div class="child_menu">
+			<p>More Links +</p>
+			<div class="child_menu-wrap">
+				<?php wpb_list_child_pages(); ?>
+			</div>
+		</div>
 		<section class="content">
 			<article>
 				<?php

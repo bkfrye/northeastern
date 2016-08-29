@@ -337,7 +337,7 @@ html h1 {
     @media (min-width: 768px) {
       .banner_interior .page_title {
         top: inherit;
-        bottom: 0;
+        bottom: -1px;
         transform: skew(35deg);
         float: left;
         display: block;
@@ -660,6 +660,22 @@ html h1 {
 /****************************
 ***** Community List ********
 ****************************/
+.communities {
+  counter-reset: column; }
+  @media (min-width: 768px) {
+    .communities {
+      -moz-column-count: 2;
+           column-count: 2; } }
+  @media (min-width: 960px) {
+    .communities {
+      -moz-column-count: 3;
+           column-count: 3; } }
+  .communities .region {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+         break-after: avoid;
+    counter-increment: column; }
+
 html {
   box-sizing: border-box; }
 
@@ -838,9 +854,6 @@ html {
     width: 16px;
     fill: #ca0814; }
 
-.gform_wrapper label {
-  display: none; }
-
 .gform_wrapper ul {
   margin: 0;
   padding: 0; }
@@ -857,6 +870,8 @@ html {
     clear: both;
     content: "";
     display: table; }
+  #gform_1 label {
+    display: none; }
   #gform_1 .gform_body,
   #gform_1 .gform_footer {
     display: inline-block; }
@@ -892,6 +907,8 @@ html {
   @media (min-width: 768px) {
     #gform_2 {
       width: 80%; } }
+  #gform_2 label {
+    display: none; }
   #gform_2 .gform_title {
     font-size: 26px;
     font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
@@ -961,3 +978,50 @@ html {
       #gform_2 #gform_submit_button_2 {
         margin: 2em 0;
         width: 33.3%; } }
+
+#gform_3 {
+  margin-bottom: 2em; }
+  #gform_3 .gfield_label {
+    padding-bottom: 10px; }
+  #gform_3 .gfield_html {
+    color: #ca0814;
+    font-size: 22px;
+    font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
+    margin: 2em 0 1em; }
+  #gform_3 input, #gform_3 textarea, #gform_3 select {
+    width: 100%;
+    height: 42px;
+    border-radius: 8px;
+    border: 1px solid #b8b8b8;
+    font-size: 18px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    padding: 8px; }
+  #gform_3 textarea {
+    height: 100%; }
+  #gform_3 #gform_submit_button_3 {
+    background-color: #ca0814;
+    color: white;
+    border: 0; }
+  #gform_3 #field_3_18 .gfield_label {
+    display: none; }
+  #gform_3 #field_3_18 br {
+    display: none; }
+  #gform_3 #field_3_18 .gchoice_3_18_1 {
+    display: inline;
+    position: relative; }
+    #gform_3 #field_3_18 .gchoice_3_18_1 label, #gform_3 #field_3_18 .gchoice_3_18_1 input {
+      display: inline-block; }
+    #gform_3 #field_3_18 .gchoice_3_18_1 input {
+      width: 30px; }
+  #gform_3 #field_3_18 #label_3_18_1 {
+    position: absolute;
+    top: -13px;
+    width: 300px; }
+  #gform_3 #label_3_18_1 {
+    display: inline-block; }
+  #gform_3 .ginput_complex input {
+    width: 49.5%;
+    display: inline-block; }
+  #gform_3 .ginput_complex .ginput_left label, #gform_3 .ginput_complex .ginput_right label {
+    display: none; }

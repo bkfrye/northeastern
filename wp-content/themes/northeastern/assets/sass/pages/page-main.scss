@@ -60,7 +60,7 @@ html{
 
         @include tablet{
             top: inherit;
-            bottom: 0;
+            bottom: -1px;
             transform: skew(35deg);
             @include span-columns(7);
         }
@@ -298,6 +298,19 @@ html{
 ***** Community List ********
 ****************************/
 .communities{
+    counter-reset: column;
+    @include tablet{
+        column-count:2;
+    }
+    @include desktop{
+        column-count:3;
+    }
+
+    .region{
+        page-break-inside: avoid;
+        break-after: avoid;
+        counter-increment: column;
+    }
 
 }
 

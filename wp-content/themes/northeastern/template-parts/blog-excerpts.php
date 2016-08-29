@@ -22,7 +22,7 @@
 
 			foreach($globalquery as $post) : setup_postdata($post);
 				// $slug = get_post_field('post_name', get_post());
-				echo '<li><a href="//http://www.alumni.northeastern.edu/blog/detail/'. $post->post_name .'"><div class="blog_card">';
+				echo '<li><a href="//www.alumni.northeastern.edu/blog/detail/'. $post->post_name .'"><div class="blog_card">';
 				if (has_post_thumbnail( $post->ID ) ):
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
 

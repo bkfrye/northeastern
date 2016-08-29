@@ -259,12 +259,14 @@ get_header(); ?>
 		<?php
 		//pull blog content from site 2
 		while ( have_posts() ) : the_post();
-			// get_template_part( 'template-parts/blog-excerpts');
+			get_template_part( 'template-parts/blog-excerpts');
 		endwhile;
 		?>
         </section>
 	</main>
 </div>
+
+<?php get_footer(); ?>
 
 
 <script type="text/javascript">
@@ -295,4 +297,3 @@ jQuery(document).ready(function(){
 
 });
 </script>
-<?php get_footer(); ?>

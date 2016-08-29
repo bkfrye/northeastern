@@ -748,6 +748,14 @@ a {
       -ms-flex-pack: end;
           justify-content: flex-end; } }
 
+@media (min-width: 783px) and (max-width: 869px) {
+  .nu-shared-navigation__menu a span {
+    font-size: 13px; } }
+
+@media (min-width: 870px) {
+  .nu-shared-navigation__menu a span {
+    font-size: 15px; } }
+
 .nu-shared-navigation__upper {
   padding-bottom: 0; }
 

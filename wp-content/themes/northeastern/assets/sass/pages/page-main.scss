@@ -18,7 +18,7 @@ html{
     }
 }
 
-section{
+.content{
     background-color: white;
 }
 
@@ -294,7 +294,12 @@ section{
         margin: 0;
     }
 }
+/****************************
+***** Community List ********
+****************************/
+.communities{
 
+}
 
 @import '../partials/_accordion';
 @import '../partials/_forms';

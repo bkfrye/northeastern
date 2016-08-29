@@ -82,7 +82,7 @@ function change_events_default_title( $title ){
 /******************************************/
 function northeastern_scripts(){
 
-	$post = get_post();
+	// $post = get_post();
 
 	// add styles
 	wp_enqueue_style( 'ne-typeface', 'https://fast.fonts.com/cssapi/cac43e8c-6965-44df-b8ca-9784607a3b53.css', '', false);
@@ -361,5 +361,25 @@ function register_daily_event_delete() {
     }
 }
 
+
+/******************************************/
+/** Child Page Menus **********************/
+/******************************************/
+function wpb_list_child_pages() {
+	global $post;
+
+	if ( is_page() && $post->post_parent )
+		$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+	else
+		$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+
+	if ( $childpages ) {
+		$string = '<ul>' . $childpages . '</ul>';
+	}
+
+	echo $string;
+
+}
+// add_shortcode('wpb_childpages', 'wpb_list_child_pages');
 
 ?>

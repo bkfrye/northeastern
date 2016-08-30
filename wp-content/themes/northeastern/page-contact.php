@@ -107,7 +107,7 @@ get_header(); ?>
 												$email = get_field('email_p');
 
 												echo '<p>'.$title.'<br>'.$number.'</p>';
-												echo '<p class="profile-email">'.$email.'</p>';
+												echo '<p class="profile-email"><a href="mailto:'.$email.'">'.$email.'</a></p>';
 
 											    wp_reset_postdata();
 											endif;

@@ -29,10 +29,29 @@ body{
     padding-left: 12px;
 }
 
+.event_tags{
+    .filter-btn{
+        display: inline-block;
+        background-color: $darkred;
+        color: white;
+        margin: 4px;
+        padding: 4px 7px;
+        cursor: pointer;
+
+        font:{
+            size: 12px;
+            family: $font-light;
+        }
+    }
+
+    .filter-btn.is-checked{
+        background-color: $black;
+    }
+}
+
 #events{
     @include outer-container(1280px);
-    display: flex;
-    flex-wrap: wrap;
+    height: auto;
 
     &:after{
         content:'';
@@ -40,22 +59,20 @@ body{
     }
 
     .event-item{
-        display: flex;
-        flex-direction: column;
-        flex-basis: 100%;
+        position: relative;
+        display: block;
+        margin: 1%;
         padding: 1em;
         background-color: white;
 
         margin-bottom: 1em;
         @include box-shadow;
 
-
         @include tablet{
-            flex-basis: 49%;
-            margin: .5%;
+            width: 31.3%;
         }
         @include desktop{
-            flex-basis: 32.3%;
+            width: 23%;
         }
     }
 

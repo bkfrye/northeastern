@@ -1,31 +1,24 @@
 jQuery(function() {
 
-    // jQuery(window).resize(function() {
-    //     if(true === item.hasClass('enter') && jQuery(window).width() < 768) {
-    //         closeContent();
-    //     }
-    // });
-
-
     // controls the three block angled content
-    var _this = jQuery(this);
-    var block = jQuery('.block');
-    var contentBlock = jQuery('.content-block');
-    var angled = jQuery('#angled_one, #angled_two, #angled_three');
-    var close = jQuery('.close');
-    var contentOne = jQuery('#content_one'),
-        contentTwo = jQuery('#content_two'),
-        contentThree = jQuery('#content_three');
+    _this = jQuery(this);
+    block = jQuery('.block');
+    contentBlock = jQuery('.content-block');
+    angled = jQuery('#angled_one, #angled_two, #angled_three');
+    close = jQuery('.close');
+    contentOne = jQuery('#content_one');
+    contentTwo = jQuery('#content_two');
+    contentThree = jQuery('#content_three');
 
-    var desktopOne = jQuery('#angled_one'),
-        desktopTwo = jQuery('#angled_two'),
-        desktopThree = jQuery('#angled_three');
+    desktopOne = jQuery('#angled_one');
+    desktopTwo = jQuery('#angled_two');
+    desktopThree = jQuery('#angled_three');
 
-    var mobileOne = jQuery('#mobile_one'),
-        mobileTwo = jQuery('#mobile_two'),
-        mobileThree = jQuery('#mobile_three');
+    mobileOne = jQuery('#mobile_one');
+    mobileTwo = jQuery('#mobile_two');
+    mobileThree = jQuery('#mobile_three');
 
-    var blockMobile = jQuery('.content-block_desktop');
+    blockMobile = jQuery('.content-block_desktop');
 
 
     function removeContent(){
@@ -56,15 +49,9 @@ jQuery(function() {
             contentTwo.appendTo(mobileTwo);
             contentThree.appendTo(mobileThree);
 
-
             block.click(function(){
                 jQuery(this).nextAll(blockMobile).first().addClass('show');
-                // contentBlock.addClass('enter');
-                // block.not(jQuery(this)).addClass('hidden');
             });
-
-
-
         } else {
             contentOne.appendTo(desktopOne);
             contentTwo.appendTo(desktopTwo);
@@ -87,27 +74,10 @@ jQuery(function() {
 
 
     // controls the filter for the juicer feed
-    jQuery('#juicer_nav li').click(function(){
-        if (jQuery(this).hasClass('active')){
-            return;
-        }else{
-            jQuery("#juicer_nav li").removeClass('active');
-            jQuery(this).addClass('active');
-
-            socialFilter();
-        }
-    });
-
-    function socialFilter(){
-        jQuery( "#juicer_instagram" ).click(function(){
-            jQuery('.j-stack .facebook', '.j-stack .twitter').hide();
-        });
-    }
-
     masonry = jQuery('.juicer_list');
-    var twitter = jQuery('#juicer_twitter');
-    var facebook= jQuery('#juicer_facebook');
-    var instagram = jQuery('#juicer_instagram');
+    twitter = jQuery('#juicer_twitter');
+    facebook= jQuery('#juicer_facebook');
+    instagram = jQuery('#juicer_instagram');
 
     instagram.click(function(){
         masonry.isotope({filter:'.Instagram'});
@@ -121,7 +91,6 @@ jQuery(function() {
 
     jQuery( "#juicer_home" ).click(function(){
         masonry.isotope({filter:'*'});
-
     });
 
     jQuery('#view_more-juicer').click(function(e){
@@ -130,7 +99,6 @@ jQuery(function() {
         jQuery('.overlay_gradient').css('display', 'none');
         return false;
     });
-
 
     // rotating headline controller
     var animationDelay = 2500;
@@ -183,9 +151,40 @@ jQuery(function() {
         }, 400);
     });
 
+    //opens child menu for parent and child pages
     jQuery('.child_menu').click(function() {
         jQuery('.child_menu-wrap').toggleClass('open');
     });
+
+    //controls filter for events pages
+    var events = jQuery('#events').isotope({
+      itemSelector: '.event-item'
+    });
+
+    var filters = {};
+
+    jQuery('.event_tags').on( 'click', '.filter-btn', function() {
+    	var eventGroup = jQuery(this).parents('.event_tags_group');
+    	var filterGroup = eventGroup.attr('data-filter-group');
+    	filters[ filterGroup ] = jQuery(this).attr('data-filter');
+    	var filterValue = concatValues( filters );
+    	events.isotope({ filter: filterValue });
+    });
+    jQuery('.event_tags').each( function( i, eventGroup ) {
+      var eventGroup = jQuery( eventGroup );
+      eventGroup.on( 'click', '.filter-btn', function() {
+        eventGroup.find('.is-checked').removeClass('is-checked');
+        jQuery( this ).addClass('is-checked');
+      });
+    });
+
+    function concatValues( obj ) {
+    	var value = '';
+    	for ( var prop in obj ) {
+    		value += obj[ prop ];
+    	}
+    	return value;
+    }
 
 
 });

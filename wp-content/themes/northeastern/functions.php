@@ -108,6 +108,7 @@ function northeastern_scripts(){
 
 	if(is_page('events')){
 		wp_enqueue_style( 'events-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-events.css', false );
+		wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/assets/js/isotope.js', '', true);
 	}
 
 	if(is_page('contact')){

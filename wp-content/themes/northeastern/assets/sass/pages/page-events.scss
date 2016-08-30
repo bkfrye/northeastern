@@ -30,6 +30,7 @@ body{
 }
 
 .event_tags{
+    @include outer-container(1280px);
     .filter-btn{
         display: inline-block;
         background-color: $darkred;

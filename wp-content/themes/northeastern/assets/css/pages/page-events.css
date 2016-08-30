@@ -134,18 +134,25 @@ body {
     content: "";
     display: table; }
 
-.event_tags .filter-btn {
-  display: inline-block;
-  background-color: #ca0814;
-  color: white;
-  margin: 4px;
-  padding: 4px 7px;
-  cursor: pointer;
-  font-size: 12px;
-  font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif; }
-
-.event_tags .filter-btn.is-checked {
-  background-color: #000000; }
+.event_tags {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+  .event_tags::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .event_tags .filter-btn {
+    display: inline-block;
+    background-color: #ca0814;
+    color: white;
+    margin: 4px;
+    padding: 4px 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: "HelveticaNeueW01-45Ligh", arial, sans-serif; }
+  .event_tags .filter-btn.is-checked {
+    background-color: #000000; }
 
 #events {
   max-width: 1280px;

@@ -79,6 +79,10 @@ body a {
 body a {
   text-decoration: none; }
 
+section p a {
+  text-decoration: underline;
+  font-size: 16px; }
+
 /****************************
 *******   Components  *******
 ****************************/
@@ -444,7 +448,7 @@ html h1 {
     padding-bottom: 1em;
     margin-bottom: 2.8em;
     border-bottom: 1px solid #efefef; }
-    .content .intro_section p {
+    .content .intro_section p, .content .intro_section a {
       font-size: 24px;
       line-height: 1.3; }
 

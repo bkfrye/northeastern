@@ -13,9 +13,35 @@ get_header(); ?>
 		<div id="event_title">
 			<?php the_title('<h1>','</h1>');?>
 		</div>
+		<div class="event_tags">
+			<div class="event_tags_group" data-filter-group="events">
+			<?php
+				$args2 = array(
+					'post_type' => 'events',
+					'orderby' => 'meta_value',
+					'order' => ASC,
+					'posts_per_page' => '-1'
+				);
+
+				$events2 = new WP_Query( $args2 );
+				while ( $events2->have_posts() ) : $events2->the_post();
+
+					$tags = get_the_tags();
+
+					if ( $tags ) {
+						foreach( $tags as $tag ) {
+							$tag_list = $tag->name;
+						}
+					}
+
+					echo '<div class="filter-btn" data-filter=".'.$tag_list.'">'.$tag_list.'</div>';
+
+				endwhile;
+			?>
+			</div>
+		</div>
 
 		<section id="events">
-
 			<?php
 				$args = array(
 					'post_type' => 'events',
@@ -28,14 +54,22 @@ get_header(); ?>
 				$events = new WP_Query( $args );
 				while ( $events->have_posts() ) : $events->the_post();
 
-				$start = get_field('date_start');
-				$end = get_field('date_end');
+					$start = get_field('date_start');
+					$end = get_field('date_end');
 
-				$start_date = strtotime($start);
-				$finish_date = strtotime($end);
+					$start_date = strtotime($start);
+					$finish_date = strtotime($end);
+
+					$post_tags = get_the_tags();
+
+					if ( $post_tags ) {
+						foreach( $post_tags as $tag ) {
+							$event_tag = $tag->name;
+						}
+					}
 			?>
 
-			<article class="event-item">
+			<article class="event-item <?php echo $event_tag ?>">
 				<p class="event_info-date">
 					<?php
 					if ( $finish_date == '' ){

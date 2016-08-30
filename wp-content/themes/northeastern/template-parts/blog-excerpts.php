@@ -21,7 +21,6 @@
 
 
 			foreach($globalquery as $post) : setup_postdata($post);
-				// $slug = get_post_field('post_name', get_post());
 				echo '<li><a href="//www.alumni.northeastern.edu/blog/detail/'. $post->post_name .'"><div class="blog_card">';
 				if (has_post_thumbnail( $post->ID ) ):
 					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
@@ -31,13 +30,9 @@
 
 				$category = get_the_category($post->ID);
 				echo '<article><div class="category">'. $category[0]->name. '</div>';
-
-				echo '<h3>' .$post->post_title. '</h3>';
-
-
-				echo '<p>'. get_the_excerpt($post->post_excerpt). '</p>';
-
-				echo '<div class="read_more"><span></span><span></span><span></span></div>';
+					echo '<h3>' .$post->post_title. '</h3>';
+					echo '<p>'. get_the_excerpt($post->post_excerpt). '</p>';
+					echo '<div class="read_more"><span></span><span></span><span></span></div>';
 				echo '</article></div></a></li>';
 			endforeach;
 

@@ -5,7 +5,7 @@
  * @since Twenty Sixteen 1.0
  */
 
-$url = "https://www.juicer.io/api/feeds/alumni-website?per=28";
+$url = "https://www.juicer.io/api/feeds/alumni-website?per=40";
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

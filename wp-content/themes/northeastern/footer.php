@@ -29,7 +29,7 @@
                     ?>
                     <div id="social_wrap">
     					<div class="social_logo">
-                            <a href="" target="_blank">
+                            <a href="https://www.facebook.com/NortheasternAlumni/" target="_blank">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 	 viewBox="0 0 486.4 486.4" style="enable-background:new 0 0 486.4 486.4;" xml:space="preserve">
                                 <style type="text/css">
@@ -44,7 +44,7 @@
                             </a>
     					</div>
     					<div class="social_logo">
-                            <a href="" target="_blank">
+                            <a href="https://twitter.com/alumninu" target="_blank">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 	 viewBox="0 0 486.4 486.4" style="enable-background:new 0 0 486.4 486.4;" xml:space="preserve">
                                 <style type="text/css">
@@ -67,7 +67,7 @@
                             </a>
     					</div>
     					<div class="social_logo">
-                            <a href="" target="_blank">
+                            <a href="https://www.instagram.com/northeastern_alumni/" target="_blank">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 438.536 438.536" style="enable-background:new 0 0 438.536 438.536;fill:#ffffff"
                                 	 xml:space="preserve">
                                 <g>
@@ -90,7 +90,7 @@
                             </a>
     					</div>
     					<div class="social_logo">
-                            <a href="" target="_blank">
+                            <a href="https://www.linkedin.com/groups/82654/profile" target="_blank">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 	 viewBox="0 0 430.1 430.1" style="enable-background:new 0 0 430.1 430.1;" xml:space="preserve">
                                 	<style type="text/css">
@@ -108,7 +108,7 @@
                             </a>
     					</div>
     					<div class="social_logo">
-                            <a href="" target="_blank">
+                            <a href="https://www.youtube.com/user/NortheasternAlumni" target="_blank">
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 	 viewBox="0 0 438.5 438.5" style="enable-background:new 0 0 438.5 438.5;" xml:space="preserve">
                                 <style type="text/css">

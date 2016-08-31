@@ -22,7 +22,7 @@ get_header(); ?>
 
 				$categories = get_categories( $args );
 				foreach($categories as $cat){
-					echo '<div class="filter-btn" data-filter=".'.$cat->name.'">'.$cat->name.'</div>';
+					echo '<div class="filter-btn" data-filter=".'.str_replace(' ', '-', $cat->name).'">'.$cat->name.'</div>';
 				}
 
 			?>
@@ -57,7 +57,7 @@ get_header(); ?>
 					}
 			?>
 
-			<article class="event-item <?php echo $event_cat ?>">
+			<article class="event-item <?php echo str_replace(' ', '-', $event_cat) ?>">
 				<p class="event_info-date">
 					<?php
 					if ( $finish_date == '' ){

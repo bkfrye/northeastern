@@ -37,6 +37,7 @@
 			endforeach;
 
 			restore_current_blog();
+			wp_reset_postdata();
 		?>
 		</ul>
 	</div>

@@ -23,7 +23,7 @@
 			<p>A stronger, more connected alumni network benefits all of us. What brilliance can you share?</p>
 		</div>
 		<div>
-			<a href="#" class="btn">Connect Now</a>
+			<a href="http://www.alumni.northeastern.edu/s/1386/media.aspx?sid=1386&gid=1&pgid=7487&cid=12467" class="btn">Contact Us</a>
 		</div>
 
 	</div>

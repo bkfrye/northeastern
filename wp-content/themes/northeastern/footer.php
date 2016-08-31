@@ -177,9 +177,9 @@
     				<li><a href="http://www.northeastern.edu/privacy">Privacy</a></li>
     			</ul>
     			<ul class="social-media">
-    				<li><a href="http://www.facebook.com/northeastern"><img alt="facebook" src="http://www.northeastern.edu/images/facebook.gif"></a></li>
-    				<li><a href="http://www.twitter.com/northeastern"><img alt="twitter" src="http://www.northeastern.edu/images/twitter.gif"></a></li>
-    				<li><a href="http://www.youtube.com/northeastern"><img alt="YouTube" src="http://www.northeastern.edu/images/youtube.gif"></a></li>
+    				<li><a href="https://www.facebook.com/northeastern"><img alt="facebook" src="https://www.northeastern.edu/images/facebook.gif"></a></li>
+    				<li><a href="https://www.twitter.com/northeastern"><img alt="twitter" src="https://www.northeastern.edu/images/twitter.gif"></a></li>
+    				<li><a href="https://www.youtube.com/northeastern"><img alt="YouTube" src="https://www.northeastern.edu/images/youtube.gif"></a></li>
     			</ul>
     			<p class="contact">360 Huntington Ave., Boston, Massachusetts 02115 · 617.373.2000 · TTY 617.373.3768<br>
     			 © <span class="the-year">2014</span>&nbsp;Northeastern University</p>

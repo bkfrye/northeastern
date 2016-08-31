@@ -98,6 +98,7 @@ function northeastern_scripts(){
 		wp_enqueue_style( 'front-page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/front-page.css', false );
 		wp_enqueue_style( 'owl-styles', get_bloginfo('stylesheet_directory') . '/assets/css/owl.carousel.css', false );
 		wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/assets/js/isotope.js', '', true);
+		wp_enqueue_script( 'isotope-controller', get_stylesheet_directory_uri() . '/assets/js/isotopeController.js', '', true);
 		wp_enqueue_script( 'owl', get_stylesheet_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), true);
 	}
 
@@ -109,6 +110,7 @@ function northeastern_scripts(){
 	if(is_page('events')){
 		wp_enqueue_style( 'events-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-events.css', false );
 		wp_enqueue_script( 'isotope', get_stylesheet_directory_uri() . '/assets/js/isotope.js', '', true);
+		wp_enqueue_script( 'isotope-controller', get_stylesheet_directory_uri() . '/assets/js/isotopeController.js', '', true);
 	}
 
 	if(is_page('contact')){

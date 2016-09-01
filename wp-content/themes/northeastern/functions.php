@@ -383,6 +383,15 @@ function wpb_list_child_pages() {
 	echo $string;
 
 }
-// add_shortcode('wpb_childpages', 'wpb_list_child_pages');
+
+/******************************************/
+/** Add Button Shortcode ******************/
+/******************************************/
+
+function sButton($atts, $content = null) {
+   extract(shortcode_atts(array('link' => '#'), $atts));
+   return '<a class="btn_red" href="'.$link.'"><span>' . do_shortcode($content) . '</span></a>';
+}
+add_shortcode('button', 'sButton');
 
 ?>

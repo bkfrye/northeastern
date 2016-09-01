@@ -903,6 +903,8 @@ html {
   #gform_1 .top_label {
     margin: 0;
     padding: 0; }
+  #gform_1 .validation_message {
+    position: absolute; }
 
 #gform_2 {
   position: relative;

@@ -15,6 +15,7 @@ get_header(); ?>
 		</div>
 		<div class="event_tags">
 			<div class="event_tags_group" data-filter-group="events">
+				<div id="reset-filter" class="filter-btn is-checked" data-filter="">All Communities</div>
 			<?php
 				$args = array(
 				    'type' => 'events',

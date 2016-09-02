@@ -610,3 +610,24 @@ a {
         }
     }
 }
+
+@media (min-width: 783px){
+    .nu-shared-navigation__search-profile-links a:not(:last-child):after {
+        border-right: 1px solid white;
+        content: '';
+        display: inline-block;
+        height: 11px;
+        margin: 0 8px 0 14px;
+        position: relative;
+    }
+}
+
+
+.nu-shared-navigation__search-profile-links a:not(:last-child):after {
+    border-right: 1px solid white;
+    content: '';
+    display: inline-block;
+    height: 11px;
+    margin: 0 8px 0 14px;
+    position: relative;
+}

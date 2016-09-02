@@ -78,6 +78,8 @@ https://www.linkedin.com/groups/82654/profile" class="svg-container nu-shared-na
 						<div class="nu-shared-navigation__search-profile-links visible-md-inline-block visible-lg-inline-block">
 							<a href="https://securelb.imodules.com/s/1386/hybrid/index.aspx?sid=1386&gid=1&pgid=3&cid=40&returnurl=http%3a%2f%2fwww.alumni.northeastern.edu%2fs%2f1386%2fhybrid%2findex.aspx%3fsid%3d1386%26gid%3d1%26pgid%3d60%26cid%3d169%26referer%3d%26query%3dcareer-se">Login</a>
 							<a href="https://neuidm1.neu.edu/idm/user/anonWorkItemEdit.jsp?id=%23ID%23583C10BFDBD326BA%3A-17604B52%3A1567E3CACC3%3A-43DE#_ga=1.60566125.1165079071.1462390246">Signup</a>
+							<a href="http://www.northeastern.edu/empower/#_ga=1.75695255.368555865.1459347283">Empower</a>
+							<a href="http://www.northeastern.edu/giveonline#_ga=1.88100633.368555865.1459347283">Make Your Gift</a>
 						</div>
 				</div>
 			</div>
@@ -95,6 +97,8 @@ https://www.linkedin.com/groups/82654/profile" class="svg-container nu-shared-na
 					<div class="nu-shared-navigation__search-profile-links visible-xs-block visible-sm-block">
 						<a href="https://securelb.imodules.com/s/1386/hybrid/index.aspx?sid=1386&gid=1&pgid=3&cid=40&returnurl=http%3a%2f%2fwww.alumni.northeastern.edu%2fs%2f1386%2fhybrid%2findex.aspx%3fsid%3d1386%26gid%3d1%26pgid%3d60%26cid%3d169%26referer%3d%26query%3dcareer-se">Login</a>
 						<a href="https://neuidm1.neu.edu/idm/user/anonWorkItemEdit.jsp?id=%23ID%23583C10BFDBD326BA%3A-17604B52%3A1567E3CACC3%3A-43DE#_ga=1.60566125.1165079071.1462390246">Signup</a>
+						<a href="http://www.northeastern.edu/empower/#_ga=1.75695255.368555865.1459347283">Empower</a>
+						<a href="http://www.northeastern.edu/giveonline#_ga=1.88100633.368555865.1459347283">Make Your Gift</a>
 					</div>
 
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>

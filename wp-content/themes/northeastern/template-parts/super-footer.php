@@ -8,7 +8,7 @@
 
 <?php
 	// add in blog content
-	// get_template_part( 'template-parts/blog-excerpts');
+	get_template_part( 'template-parts/blog-excerpts');
 ?>
 
 <section class="signups">
@@ -23,7 +23,7 @@
 			<p>A stronger, more connected alumni network benefits all of us. What brilliance can you share?</p>
 		</div>
 		<div>
-			<a href="http://www.alumni.northeastern.edu/s/1386/media.aspx?sid=1386&gid=1&pgid=7487&cid=12467" class="btn">Contact Us</a>
+			<a href="http://northeastern.imodules.com/s/1386/media.aspx?sid=1386&gid=1&pgid=7487&cid=12467" class="btn">Contact Us</a>
 		</div>
 
 	</div>

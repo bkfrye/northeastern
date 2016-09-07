@@ -34,7 +34,12 @@
 
     .blog_card{
         display: flex;
+        flex-direction: column;
         @include box-shadow;
+
+        @include tablet{
+            flex-direction: row;
+        }
 
         .blog_img{
             min-height: 200px;

@@ -779,7 +779,13 @@ div[class*=icon] {
   .blog_content .blog_card {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15); }
+    @media (min-width: 768px) {
+      .blog_content .blog_card {
+        -ms-flex-direction: row;
+            flex-direction: row; } }
     .blog_content .blog_card .blog_img {
       min-height: 200px;
       min-width: 200px;

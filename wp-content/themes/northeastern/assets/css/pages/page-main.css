@@ -544,7 +544,13 @@ html h1 {
   .blog_content .blog_card {
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15); }
+    @media (min-width: 768px) {
+      .blog_content .blog_card {
+        -ms-flex-direction: row;
+            flex-direction: row; } }
     .blog_content .blog_card .blog_img {
       min-height: 200px;
       min-width: 200px;
@@ -903,6 +909,8 @@ html {
   #gform_1 .top_label {
     margin: 0;
     padding: 0; }
+  #gform_1 .validation_message {
+    position: absolute; }
 
 #gform_2 {
   position: relative;

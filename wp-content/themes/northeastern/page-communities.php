@@ -35,6 +35,8 @@ get_header(); ?>
 					echo '<div class="intro_section">' . get_field('intro_section') . '</div>';
 					echo '<div class="main_section">' . get_field('main_section') . '</div>';
 
+					echo '<iframe src="https://www.google.com/maps/d/embed?mid=zW13pF7vDdv4.k-TvvKkIqdpY" height="480" width="100%"></iframe>';
+
 					echo '<div class="communities">';
 						while ( have_posts() ) : the_post();
 							if( have_rows('communities_list') ):

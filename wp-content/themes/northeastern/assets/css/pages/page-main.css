@@ -498,6 +498,15 @@ html h1 {
 /****************************
 ***** Gallery Section *******
 ****************************/
+#freewall {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
+  #freewall::after {
+    clear: both;
+    content: "";
+    display: table; }
+
 /****************************
 ******* Blog Section ********
 ****************************/

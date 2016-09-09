@@ -6,11 +6,13 @@
 		<?php
 			// loop through parent repeater
 			while( have_rows('nu_content') ): the_row();
+
+			$header_title = get_sub_field('header');
 		?>
-			<li>
+			<li id="<?php echo str_replace(' ', '-', $header_title)?>">
 				<input type="checkbox" checked>
 				<div class="heading">
-					<p><?php the_sub_field('header');?></p>
+					<p><?php echo $header_title?></p>
 				</div>
 				<div class="heading_content">
 

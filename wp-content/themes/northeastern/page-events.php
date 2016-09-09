@@ -23,7 +23,7 @@ get_header(); ?>
 
 				$categories = get_categories( $args );
 				foreach($categories as $cat){
-					echo '<div class="filter-btn" data-filter=".'.str_replace(' ', '-', $cat->name).'">'.$cat->name.'</div>';
+					echo '<div class="filter-btn" data-filter=".'.str_replace(array(' ','.',', '), '-', $cat->name).'">'.$cat->name.'</div>';
 				}
 
 			?>

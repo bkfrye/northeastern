@@ -23,4 +23,22 @@ if( $images ):
 
 
 
-	<?php endforeach; endif; ?>
+	<?php
+        endforeach;
+        endif;
+    ?>
+
+    <script type="text/javascript">
+		var wall = new Freewall("#freewall");
+		wall.reset({
+			selector: '.cell',
+			animate: true,
+			cellW: 20,
+			onResize: function() {
+				wall.fitWidth();
+			}
+		});
+		wall.fitWidth();
+		// for scroll bar appear;
+		jQuery(window).trigger("resize");
+	</script>

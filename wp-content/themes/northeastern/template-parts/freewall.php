@@ -11,17 +11,15 @@ if( $images ):
 		$html = '';
 		$limitItem = 12;
 		for ($i = 0; $i < $limitItem; $i++) {
-			$w = 150 + 350 * random() << 0;
+			$w = 102 + 599 * random() << 0;
 			$html = $w;
 		}
 		?>
 
 
-		<!-- <a href="<?php echo $image['url']; ?>"> -->
-			<div class="cell" style="float: left;width:<?php echo $html ?>px; height: 200px; background-image: url(<?php echo $image['sizes']['large']; ?>); background-image: contain;background-repeat: no-repeat;background-position: center;"></div>
-		<!-- </a> -->
-
-
+		<a href="<?php echo $image['url']; ?>">
+			<div class="cell" style="float: left;width:<?php echo $html ?>px; height: 200px; background-image: url(<?php echo $image['sizes']['large']; ?>); background-image: contain;background-repeat: no-repeat;background-position: center;background-size: cover"></div>
+		</a>
 
 	<?php
         endforeach;
@@ -33,7 +31,6 @@ if( $images ):
 		wall.reset({
 			selector: '.cell',
 			animate: true,
-			cellW: 20,
 			onResize: function() {
 				wall.fitWidth();
 			}

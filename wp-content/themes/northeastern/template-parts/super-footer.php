@@ -4,6 +4,9 @@
 		get_template_part( 'template-parts/freewall' );
 	?>
 	</div>
+	<script type="text/javascript">
+	    lightGallery(document.getElementById('freewall')); 
+	</script>
 </section>
 
 <?php

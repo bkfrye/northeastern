@@ -104,7 +104,9 @@ function northeastern_scripts(){
 
 	if(!is_front_page()){
 		wp_enqueue_style( 'page-styles', get_bloginfo('stylesheet_directory') . '/assets/css/pages/page-main.css', false );
+		wp_enqueue_style( 'lightbox-styles', get_bloginfo('stylesheet_directory') . '/assets/css/lightgallery.min.css', false );
 		wp_enqueue_script( 'freewall', get_stylesheet_directory_uri().'/assets/js/freewall.js', array('jquery'), true);
+		wp_enqueue_script( 'lightbox', get_stylesheet_directory_uri().'/assets/js/lightgallery.min.js', '', true);
 	}
 
 	if(is_page('events')){

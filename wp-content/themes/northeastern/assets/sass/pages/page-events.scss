@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: $lightgray;
+    // background-color: $lightgray;
 }
 
 #masthead{
@@ -50,51 +50,81 @@ body{
     }
 }
 
-#events{
+.events_wrapper{
     @include outer-container(1280px);
-    height: auto;
+}
 
-    &:after{
-        content:'';
-        flex: auto;
+.events_filtering{
+    @include span-columns(3);
+    background-color: $lightgray;
+    padding: 12px;
+
+    select{
+        width: 100%;
     }
+}
+
+#events{
+    @include span-columns(9);
+    height: auto;
+    margin-top: 1em;
 
     .event-item{
         position: relative;
         display: block;
-        margin: 1%;
         padding: 1em;
         background-color: white;
+        width: 100%;
+        border-bottom: 1px solid lightgray;
+        margin: 0;
 
-        margin-bottom: 1em;
-        @include box-shadow;
+        @include outer-container();
+    }
 
-        @include tablet{
-            width: 31.3%;
+    .event_info-wrap{
+        // display: flex;
+        // justify-content: center;
+
+        @media (min-width: 937px){
+            @include span-columns(4);
         }
+
         @include desktop{
-            width: 23%;
+            @include span-columns(3);
+        }
+    }
+    .event_desc-wrap{
+        @include desktop{
+            @include span-columns(8);
         }
     }
 
     .event_info-date{
-        color: $darkred;
-        font:{
-            size: 30px;
-            family: $font-bold-condensed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        background-color: $darkred;
+        text-align: center;
+        margin: 0;
+        p{
+            color: white;
+            font:{
+                size: 30px;
+                family: $font-bold-condensed;
+            }
+            margin: 0;
+            padding: 0;
         }
+    }
+
+    .event_info-title, .event_info-details{
+        font-family: $font-bold-condensed;
         margin: 0;
     }
 
     .event_info-title{
-        font-family: $font-bold-condensed;
-    }
-
-    .event_info-desc{
-        flex: 1;
-    }
-
-    .btn_red{
-
+        color: $darkred;
     }
 }

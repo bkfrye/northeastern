@@ -29,43 +29,51 @@ body{
     padding-left: 12px;
 }
 
-.event_tags{
-    @include outer-container(1280px);
-    .filter-btn{
-        display: inline-block;
-        background-color: $darkred;
-        color: white;
-        margin: 4px;
-        padding: 4px 7px;
-        cursor: pointer;
-
-        font:{
-            size: 12px;
-            family: $font-light;
-        }
-    }
-
-    .filter-btn.is-checked{
-        background-color: $black;
-    }
-}
+// .event_tags{
+//     @include outer-container(1280px);
+//     .filter-btn{
+//         display: inline-block;
+//         background-color: $darkred;
+//         color: white;
+//         margin: 4px;
+//         padding: 4px 7px;
+//         cursor: pointer;
+//
+//         font:{
+//             size: 12px;
+//             family: $font-light;
+//         }
+//     }
+//
+//     .filter-btn.is-checked{
+//         background-color: $black;
+//     }
+// }
 
 .events_wrapper{
     @include outer-container(1280px);
 }
 
 .events_filtering{
-    @include span-columns(3);
     background-color: $lightgray;
     padding: 12px;
 
+    ul{
+        margin: 0;
+        li{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+
     select{
-        width: 100%;
+        width: 200px;
     }
 }
 
 #events{
-    @include span-columns(9);
     height: auto;
     margin-top: 1em;
 
@@ -82,8 +90,6 @@ body{
     }
 
     .event_info-wrap{
-        // display: flex;
-        // justify-content: center;
 
         @media (min-width: 937px){
             @include span-columns(4);

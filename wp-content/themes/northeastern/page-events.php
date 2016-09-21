@@ -19,23 +19,49 @@ get_header(); ?>
 		</section>
 
 		<div class="events_wrapper">
-			<aside class="events_filtering">
-				<p>
-					FILTER BY
-				</p>
-				<p>
-					Category
-				</p>
-				<select name="cat_filter">
+			<div class="events_filtering">
+				<ul>
+					<li>FILTER BY</li>
+					<li>
+						<label>
+							Category
+						</label>
+						<select name="cat_filter" data-filter-group="events">
+							<option data-filter-value=""> -- </option>
+							<?php
+								$args = array(
+								    'type' => 'events',
+								 );
 
-				</select>
-				<p>
-					Type
-				</p>
-				<select name="tag_filter">
+								//grab all categories to add to filter
+								$categories = get_categories( $args );
+								foreach($categories as $cat){
+									echo '<option data-filter-value=".'.str_replace(array(' ','.',','), '-', $cat->name).'">'.$cat->name.'</option>';
+								}
+							?>
+						</select>
+					</li>
+					<li>
+						<label>
+							Type
+						</label>
+						<select name="tag_filter">
+							<option data-filter-value=""> -- </option>
+							<?php
+								$args = array(
+								    'type' => 'events',
+								 );
 
-				</select>
-			</aside>
+								//grab all tags to add to filter
+								$tags = get_tags( $args );
+								foreach($tags as $tag){
+									echo '<option data-filter-value=".'.str_replace(array(' ','.',','), '-', $tag->name).'">'.$tag->name.'</option>';
+								}
+							?>
+						</select>
+					</li>
+				</ul>
+			</div>
 
 			<section id="events">
 				<?php
@@ -56,16 +82,21 @@ get_header(); ?>
 						$start_date = strtotime($start);
 						$finish_date = strtotime($end);
 
+						//grab post category
 						$post_cats = get_the_category();
-
 						if ( $post_cats ) {
 							foreach( $post_cats as $cat ) {
 								$event_cat = $cat->name;
 							}
 						}
+
+						//grab post tags and convert array to string
+						$post_tags = wp_get_post_tags($post->ID, array('fields' => 'names'));
+						$event_tag_class = implode(' ', $post_tags);
+
 				?>
 
-				<div class="event-item <?php echo str_replace(' ', '-', $event_cat) ?>">
+				<div class="event-item <?php echo str_replace(' ', '-', $event_cat). ' '. $event_tag_class?>">
 					<div class="event_info-wrap">
                         <div class="event_info-date">
     						<p>
@@ -101,6 +132,9 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 			</section>
+			<div id="no-results" class="event-item" style="display: none;height: 270px">
+				<p style="text-align:center;">No results matching your filter. Please try again.</p>
+			</div>
 		</div>
 	</main>
 </div>

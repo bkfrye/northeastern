@@ -498,6 +498,20 @@ html h1 {
 /****************************
 ***** Gallery Section *******
 ****************************/
+.img_gallery {
+  display: none;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 9px; }
+  .img_gallery::after {
+    clear: both;
+    content: "";
+    display: table; }
+  @media (min-width: 768px) {
+    .img_gallery {
+      display: inherit; } }
+
 /****************************
 ******* Blog Section ********
 ****************************/

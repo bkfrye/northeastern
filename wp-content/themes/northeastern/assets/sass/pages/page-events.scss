@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: $lightgray;
+    // background-color: $lightgray;
 }
 
 #masthead{
@@ -29,72 +29,108 @@ body{
     padding-left: 12px;
 }
 
-.event_tags{
-    @include outer-container(1280px);
-    .filter-btn{
-        display: inline-block;
-        background-color: $darkred;
-        color: white;
-        margin: 4px;
-        padding: 4px 7px;
-        cursor: pointer;
+// .event_tags{
+//     @include outer-container(1280px);
+//     .filter-btn{
+//         display: inline-block;
+//         background-color: $darkred;
+//         color: white;
+//         margin: 4px;
+//         padding: 4px 7px;
+//         cursor: pointer;
+//
+//         font:{
+//             size: 12px;
+//             family: $font-light;
+//         }
+//     }
+//
+//     .filter-btn.is-checked{
+//         background-color: $black;
+//     }
+// }
 
-        font:{
-            size: 12px;
-            family: $font-light;
+.events_wrapper{
+    @include outer-container(1280px);
+}
+
+.events_filtering{
+    background-color: $lightgray;
+    padding: 12px;
+
+    ul{
+        margin: 0;
+        li{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: inline-block;
         }
     }
 
-    .filter-btn.is-checked{
-        background-color: $black;
+    select{
+        width: 200px;
     }
 }
 
 #events{
-    @include outer-container(1280px);
     height: auto;
-
-    &:after{
-        content:'';
-        flex: auto;
-    }
+    margin-top: 1em;
 
     .event-item{
         position: relative;
         display: block;
-        margin: 1%;
         padding: 1em;
         background-color: white;
+        width: 100%;
+        border-bottom: 1px solid lightgray;
+        margin: 0;
 
-        margin-bottom: 1em;
-        @include box-shadow;
+        @include outer-container();
+    }
 
-        @include tablet{
-            width: 31.3%;
+    .event_info-wrap{
+
+        @media (min-width: 937px){
+            @include span-columns(4);
         }
+
         @include desktop{
-            width: 23%;
+            @include span-columns(3);
+        }
+    }
+    .event_desc-wrap{
+        @include desktop{
+            @include span-columns(8);
         }
     }
 
     .event_info-date{
-        color: $darkred;
-        font:{
-            size: 30px;
-            family: $font-bold-condensed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        background-color: $darkred;
+        text-align: center;
+        margin: 0;
+        p{
+            color: white;
+            font:{
+                size: 30px;
+                family: $font-bold-condensed;
+            }
+            margin: 0;
+            padding: 0;
         }
+    }
+
+    .event_info-title, .event_info-details{
+        font-family: $font-bold-condensed;
         margin: 0;
     }
 
     .event_info-title{
-        font-family: $font-bold-condensed;
-    }
-
-    .event_info-desc{
-        flex: 1;
-    }
-
-    .btn_red{
-
+        color: $darkred;
     }
 }

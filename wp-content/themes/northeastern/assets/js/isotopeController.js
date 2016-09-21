@@ -1,5 +1,6 @@
 jQuery(function() {
     // controls the filter for the juicer feed
+    //****************************************
     masonry = jQuery('.juicer_list');
     twitter = jQuery('#juicer_twitter');
     facebook= jQuery('#juicer_facebook');
@@ -28,32 +29,40 @@ jQuery(function() {
 
 
     //controls filter for events pages
-    var events = jQuery('#events').isotope({
-      itemSelector: '.event-item'
+    //********************************
+    var $container = jQuery('#events'),
+        filters = {};
+
+    $container.isotope({
+        itemSelector : '.event-item'
     });
 
-    var filters = {};
+    // filter buttons
+    jQuery('select').change(function(){
+        var $this = jQuery(this);
 
-    jQuery('.event_tags').on( 'click', '.filter-btn', function() {
-        var eventGroup = jQuery(this).parents('.event_tags_group');
-        var filterGroup = eventGroup.attr('data-filter-group');
-        filters[ filterGroup ] = jQuery(this).attr('data-filter');
-        var filterValue = concatValues( filters );
-        events.isotope({ filter: filterValue });
-    });
-    jQuery('.event_tags').each( function( i, eventGroup ) {
-      var eventGroup = jQuery( eventGroup );
-      eventGroup.on( 'click', '.filter-btn', function() {
-        eventGroup.find('.is-checked').removeClass('is-checked');
-        jQuery( this ).addClass('is-checked');
-      });
-    });
+        // store filter value in object
+        var group = $this.attr('data-filter-group');
+        filters[ group ] = $this.find(':selected').attr('data-filter-value');
 
-    function concatValues( obj ) {
-        var value = '';
-        for ( var prop in obj ) {
-            value += obj[ prop ];
+        // convert object into array
+        var isoFilters = [];
+        for ( var prop in filters ) {
+            isoFilters.push( filters[ prop ] )
         }
-        return value;
-    }
+
+        var selector = isoFilters.join('');
+        $container.isotope({ filter: selector });
+
+        // display message box if no results
+        if(jQuery('#events').height() == 0) {
+            jQuery('#no-results').css('display','block');
+        }else{
+            jQuery('#no-results').css('display','none');
+        }
+
+        return false;
+    });
+
+
 });

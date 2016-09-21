@@ -69,7 +69,7 @@ function cpt_events() {
 			'has_archive' => false,
 			'rewrite' => array('slug' => 'events'),
 			'query_var' => true,
-			'taxonomies' => array('category'),
+			'taxonomies' => array('category', 'post_tag'),
 	 	)
 	);
 

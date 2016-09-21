@@ -10,93 +10,132 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div id="event_title">
-			<?php the_title('<h1>','</h1>');?>
-		</div>
-		<div class="event_tags">
-			<div class="event_tags_group" data-filter-group="events">
-				<div id="reset-filter" class="filter-btn is-checked" data-filter="">All Communities</div>
-			<?php
-				$args = array(
-				    'type' => 'events',
-				 );
-
-				$categories = get_categories( $args );
-				foreach($categories as $cat){
-					echo '<div class="filter-btn" data-filter=".'.str_replace(' ', '-', $cat->name).'">'.$cat->name.'</div>';
-				}
-
-			?>
+		<section class="banner_interior" style="background-image:url(<?php echo get_field('hero_image');?>)">
+			<div class="banner_content">
+				<div class="page_title">
+					<?php the_title('<h1>','</h1>');?>
+				</div>
 			</div>
-		</div>
+		</section>
 
-		<section id="events">
-			<?php
-				$args = array(
-					'post_type' => 'events',
-					'orderby' => 'meta_value_num',
-					'order' => ASC,
-					'meta_key' => 'date_start',
-					'posts_per_page' => '-1'
-				);
+		<div class="events_wrapper">
+			<div class="events_filtering">
+				<ul>
+					<li>FILTER BY</li>
+					<li>
+						<label>
+							Category
+						</label>
+						<select name="cat_filter" data-filter-group="events">
+							<option data-filter-value=""> -- </option>
+							<?php
+								$args = array(
+								    'type' => 'events',
+								 );
 
-				$events = new WP_Query( $args );
-				while ( $events->have_posts() ) : $events->the_post();
+								//grab all categories to add to filter
+								$categories = get_categories( $args );
+								foreach($categories as $cat){
+									echo '<option data-filter-value=".'.str_replace(array(' ','.',','), '-', $cat->name).'">'.$cat->name.'</option>';
+								}
+							?>
+						</select>
+					</li>
+					<li>
+						<label>
+							Type
+						</label>
+						<select name="tag_filter">
+							<option data-filter-value=""> -- </option>
+							<?php
+								$args = array(
+								    'type' => 'events',
+								 );
 
-					$start = get_field('date_start');
-					$end = get_field('date_end');
+								//grab all tags to add to filter
+								$tags = get_tags( $args );
+								foreach($tags as $tag){
+									echo '<option data-filter-value=".'.str_replace(array(' ','.',','), '-', $tag->name).'">'.$tag->name.'</option>';
+								}
+							?>
+						</select>
+					</li>
+				</ul>
+			</div>
 
-					$start_date = strtotime($start);
-					$finish_date = strtotime($end);
+			<section id="events">
+				<?php
+					$args = array(
+						'post_type' => 'events',
+						'orderby' => 'meta_value_num',
+						'order' => ASC,
+						'meta_key' => 'date_start',
+						'posts_per_page' => '-1'
+					);
 
-					$post_cats = get_the_category();
+					$events = new WP_Query( $args );
+					while ( $events->have_posts() ) : $events->the_post();
 
-					if ( $post_cats ) {
-						foreach( $post_cats as $cat ) {
-							$event_cat = $cat->name;
-						}
-					}
-			?>
+						$start = get_field('date_start');
+						$end = get_field('date_end');
 
-			<article class="event-item <?php echo str_replace(' ', '-', $event_cat) ?>">
-				<p class="event_info-date">
-					<?php
-					if ( $finish_date == '' ){
-						echo date( 'M j', $start_date );
-					} else {
-						if ( date( 'Y', $start_date ) == date( 'Y', $finish_date ) ){
-							if ( date( 'M', $start_date ) == date( 'M', $finish_date ) ){
-								echo date( 'j', $start_date ) . ' - ' .  date( 'M j', $finish_date );
-							} else {
-								echo date( 'M j', $start_date ) . ' - ' .  date( 'M j', $finish_date );
+						$start_date = strtotime($start);
+						$finish_date = strtotime($end);
+
+						//grab post category
+						$post_cats = get_the_category();
+						if ( $post_cats ) {
+							foreach( $post_cats as $cat ) {
+								$event_cat = $cat->name;
 							}
-						} else {
-							echo date( 'M j', $start_date ) . ' - ' .  date( 'M j', $finish_date );
-						}
-					}
-					?></p>
-				<p class="event_info-title"><?php echo the_title(); ?><br>
-					<?php
-						echo get_field('start_time');
-						$end_time = get_field('end_time');
-
-						if ( $end_time ){
-							echo ' - ' . $end_time;
-						} else{
-							echo '';
 						}
 
-					?>
-				</p>
-				<div class="event_info-desc">
-					<p><?php echo get_field('desc') ?></p>
+						//grab post tags and convert array to string
+						$post_tags = wp_get_post_tags($post->ID, array('fields' => 'names'));
+						$event_tag_class = implode(' ', $post_tags);
+
+				?>
+
+				<div class="event-item <?php echo str_replace(' ', '-', $event_cat). ' '. $event_tag_class?>">
+					<div class="event_info-wrap">
+                        <div class="event_info-date">
+    						<p>
+    						<?php
+    							echo date( 'M', $start_date );
+								echo '<br>';
+								echo date( 'j', $start_date );
+    						?>
+    						</p>
+    					</div>
+					</div>
+					<div class="event_desc-wrap">
+						<p class="event_info-title"><?php echo the_title(); ?></p>
+						<p class="event_info-details">
+							<?php
+								echo $event_cat . '  |  ';
+								echo get_field('start_time');
+								$end_time = get_field('end_time');
+
+								if ( $end_time ){
+									echo ' - ' . $end_time;
+								} else{
+									echo '';
+								}
+							?>
+						</p>
+						<div class="event_info-desc">
+							<p><?php echo get_field('desc') ?></p>
+						</div>
+					</div>
+					<a href="<?php echo get_field('register') ?>" class="btn_red">Register Now</a>
 				</div>
 
-				<a href="<?php echo get_field('register') ?>" class="btn_red">Register Now</a>
-			</article>
-
-			<?php endwhile; ?>
-		</section>
+				<?php endwhile; ?>
+			</section>
+			<div id="no-results" class="event-item" style="display: none;height: 270px">
+				<p style="text-align:center;">No results matching your filter. Please try again.</p>
+			</div>
+		</div>
 	</main>
 </div>
 

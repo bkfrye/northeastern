@@ -216,7 +216,15 @@ html{
 /****************************
 ***** Gallery Section *******
 ****************************/
+.img_gallery{
+    display: none;
+    @include outer-container(1280px);
+    padding: 0 9px;
 
+    @include tablet{
+        display: inherit;
+    }
+}
 
 /****************************
 ******* Blog Section ********

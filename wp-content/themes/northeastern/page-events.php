@@ -21,13 +21,13 @@ get_header(); ?>
 		<div class="events_wrapper">
 			<div class="events_filtering">
 				<ul>
-					<li>FILTER BY</li>
+					<!-- <li>FILTER BY</li> -->
 					<li>
 						<label>
 							Category
 						</label>
 						<select name="cat_filter" data-filter-group="events">
-							<option data-filter-value=""> -- </option>
+							<option data-filter-value=""> ALL </option>
 							<?php
 								$args = array(
 								    'type' => 'events',
@@ -46,7 +46,7 @@ get_header(); ?>
 							Type
 						</label>
 						<select name="tag_filter">
-							<option data-filter-value=""> -- </option>
+							<option data-filter-value=""> ALL </option>
 							<?php
 								$args = array(
 								    'type' => 'events',
@@ -97,23 +97,13 @@ get_header(); ?>
 				?>
 
 				<div class="event-item <?php echo str_replace(' ', '-', $event_cat). ' '. $event_tag_class?>">
-					<div class="event_info-wrap">
-                        <div class="event_info-date">
-    						<p>
-    						<?php
-    							echo date( 'M', $start_date );
-								echo '<br>';
-								echo date( 'j', $start_date );
-    						?>
-    						</p>
-    					</div>
+					<div class="event_img" style="background-image: url(<?php echo get_field('image'); ?>)">
 					</div>
 					<div class="event_desc-wrap">
 						<p class="event_info-title"><?php echo the_title(); ?></p>
 						<p class="event_info-details">
 							<?php
-								echo $event_cat . '  |  ';
-								echo get_field('start_time');
+								echo date( 'M j', $start_date ) . ' | ' . get_field('start_time');
 								$end_time = get_field('end_time');
 
 								if ( $end_time ){
@@ -121,6 +111,7 @@ get_header(); ?>
 								} else{
 									echo '';
 								}
+								echo '<br/>' . $event_cat;
 							?>
 						</p>
 						<div class="event_info-desc">

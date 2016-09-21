@@ -141,17 +141,19 @@ body a.btn_red {
     display: table; }
 
 .events_filtering {
-  background-color: #efefef;
+  border-bottom: 2px solid #efefef;
   padding: 12px; }
   .events_filtering ul {
-    margin: 0; }
+    margin: 0;
+    padding: 0; }
     .events_filtering ul li {
-      margin: 0;
+      margin: 0 23px 0 0;
       padding: 0;
       list-style-type: none;
       display: inline-block; }
   .events_filtering select {
-    width: 200px; }
+    width: 200px;
+    border: 1px solid #efefef; }
 
 #events {
   height: auto;
@@ -164,30 +166,29 @@ body a.btn_red {
     width: 100%;
     border-bottom: 1px solid lightgray;
     margin: 0;
-    max-width: 68em;
+    max-width: 1280px;
     margin-left: auto;
     margin-right: auto; }
     #events .event-item::after {
       clear: both;
       content: "";
       display: table; }
-  @media (min-width: 937px) {
-    #events .event_info-wrap {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%; }
-      #events .event_info-wrap:last-child {
-        margin-right: 0; } }
-  @media (min-width: 960px) {
-    #events .event_info-wrap {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 23.23176%; }
-      #events .event_info-wrap:last-child {
-        margin-right: 0; } }
-  @media (min-width: 960px) {
+  #events .event_img {
+    display: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media (min-width: 768px) {
+      #events .event_img {
+        display: inherit;
+        height: 250px;
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%; }
+        #events .event_img:last-child {
+          margin-right: 0; } }
+  @media (min-width: 768px) {
     #events .event_desc-wrap {
       float: left;
       display: block;
@@ -195,24 +196,6 @@ body a.btn_red {
       width: 65.88078%; }
       #events .event_desc-wrap:last-child {
         margin-right: 0; } }
-  #events .event_info-date {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: center;
-        justify-content: center;
-    width: 150px;
-    height: 150px;
-    background-color: #ca0814;
-    text-align: center;
-    margin: 0; }
-    #events .event_info-date p {
-      color: white;
-      font-size: 30px;
-      font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
-      margin: 0;
-      padding: 0; }
   #events .event_info-title, #events .event_info-details {
     font-family: "HelveticaNeueW01-77BdCn 692722", arial, sans-serif;
     margin: 0; }

@@ -29,39 +29,19 @@ body{
     padding-left: 12px;
 }
 
-// .event_tags{
-//     @include outer-container(1280px);
-//     .filter-btn{
-//         display: inline-block;
-//         background-color: $darkred;
-//         color: white;
-//         margin: 4px;
-//         padding: 4px 7px;
-//         cursor: pointer;
-//
-//         font:{
-//             size: 12px;
-//             family: $font-light;
-//         }
-//     }
-//
-//     .filter-btn.is-checked{
-//         background-color: $black;
-//     }
-// }
-
 .events_wrapper{
     @include outer-container(1280px);
 }
 
 .events_filtering{
-    background-color: $lightgray;
+    border-bottom: 2px solid $lightgray;
     padding: 12px;
 
     ul{
         margin: 0;
+        padding: 0;
         li{
-            margin: 0;
+            margin: 0 23px 0 0;
             padding: 0;
             list-style-type: none;
             display: inline-block;
@@ -70,6 +50,7 @@ body{
 
     select{
         width: 200px;
+        border: 1px solid $lightgray;
     }
 }
 
@@ -86,44 +67,28 @@ body{
         border-bottom: 1px solid lightgray;
         margin: 0;
 
-        @include outer-container();
+        @include outer-container(1280px);
     }
 
-    .event_info-wrap{
-
-        @media (min-width: 937px){
-            @include span-columns(4);
+    .event_img{
+        display: none;
+        background:{
+            size: cover;
+            repeat: no-repeat;
+            position: center;
         }
-
-        @include desktop{
+        @include tablet{
+            display: inherit;
+            height: 250px;
             @include span-columns(3);
         }
     }
     .event_desc-wrap{
-        @include desktop{
+        @include tablet{
             @include span-columns(8);
         }
     }
 
-    .event_info-date{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 150px;
-        height: 150px;
-        background-color: $darkred;
-        text-align: center;
-        margin: 0;
-        p{
-            color: white;
-            font:{
-                size: 30px;
-                family: $font-bold-condensed;
-            }
-            margin: 0;
-            padding: 0;
-        }
-    }
 
     .event_info-title, .event_info-details{
         font-family: $font-bold-condensed;

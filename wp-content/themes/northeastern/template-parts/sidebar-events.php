@@ -48,7 +48,7 @@
         </article>
 
     <?php endwhile;
-        echo '<a href="'. esc_url( home_url( '/' ) ) .'events" style="display: inline-block;margin-left: 2em; padding: 1em 0;">View More Events</a>';
+        echo '<a href="'. esc_url( home_url( '/' ) ) .'alumni/events" style="display: inline-block;margin-left: 2em; padding: 1em 0;">View More Events</a>';
     ?>
 
 </div>

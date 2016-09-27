@@ -34,10 +34,7 @@ get_header(); ?>
 				<?php
 					echo '<div class="intro_section">' . get_field('intro_section') . '</div>';
 					echo '<div class="main_section">' . get_field('main_section') . '</div>';
-
-					// echo '<iframe src="https://www.google.com/maps/d/embed?mid=zW13pF7vDdv4.k-TvvKkIqdpY" height="480" width="100%"></iframe>';
-
-					echo '<div class="communities">';
+					echo '<div class="communities" style="width: 100%; padding-top: 2em;">';
 						while ( have_posts() ) : the_post();
 							if( have_rows('communities_list') ):
 								while( have_rows('communities_list') ): the_row(); ?>

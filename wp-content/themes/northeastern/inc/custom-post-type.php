@@ -58,7 +58,7 @@ function cpt_events() {
 			'description' => __( 'NE Alumni Events' ),
 			'public' => true,
 			'exclude_from_search' => false,
-			'publicly_queryable' => true,
+			'publicly_queryable' => false,
 			'show_ui' => true,
 			'show_in_nav_menus' => false,
 			'menu_position' => 40,

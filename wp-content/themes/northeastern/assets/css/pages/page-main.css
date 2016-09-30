@@ -391,7 +391,7 @@ html h1 {
   .child_menu-wrap ul {
     margin: 0;
     padding: 0;
-    max-height: 400px; }
+    max-height: 4000px; }
     .child_menu-wrap ul li {
       list-style-type: none;
       background-color: #000000;
@@ -405,9 +405,11 @@ html h1 {
           color: white; }
         .child_menu-wrap ul li a:active {
           color: white; }
+  .child_menu-wrap .children li {
+    padding: .4em 1em; }
 
 .child_menu-wrap.open {
-  max-height: 600px; }
+  max-height: 4000px; }
 
 /****************************
 ******Content Section ********

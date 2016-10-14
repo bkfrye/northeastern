@@ -117,7 +117,7 @@ get_header(); ?>
 						<div class="event_info-desc">
 							<p><?php echo get_field('desc') ?></p>
 						</div>
-						<a href="<?php echo get_field('register') ?>" class="btn_red">Register Now</a>
+						<a href="<?php echo get_field('register') ?>" class="btn_red" target="_blank">Register Now</a>
 					</div>
 
 				</div>

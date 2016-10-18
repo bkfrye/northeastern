@@ -24,7 +24,7 @@ get_header(); ?>
 					<!-- <li>FILTER BY</li> -->
 					<li>
 						<label>
-							Category
+							Location
 						</label>
 						<select name="cat_filter" data-filter-group="events">
 							<option data-filter-value=""> ALL </option>

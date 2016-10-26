@@ -29,6 +29,16 @@ function login_logo() { ?>
 <?php }
 add_action( 'login_enqueue_scripts', 'login_logo' );
 
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'NU Alumni';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
 // Custom Favicon
 function favicon_link() {
     echo '<link rel="shortcut icon" type="image/x-icon" href="'.get_stylesheet_directory_uri().'/assets/img/favicon.ico" />' . "\n";

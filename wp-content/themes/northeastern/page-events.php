@@ -76,17 +76,29 @@ get_header(); ?>
 					$events = new WP_Query( $args );
 					while ( $events->have_posts() ) : $events->the_post();
 
+						// grab date info
 						$start = get_field('date_start');
 						$end = get_field('date_end');
-
 						$start_date = strtotime($start);
 						$finish_date = strtotime($end);
 
-						//grab post category
-						$post_cats = get_the_category();
-						if ( $post_cats ) {
-							foreach( $post_cats as $cat ) {
-								$event_cat = $cat->name;
+						// grab event categories (locations)
+						$post_cats = wp_get_post_categories($post->ID, array('fields' => 'names'));
+
+						// setup cat strings
+						$event_cat_class = '';
+						$event_cat_piped = '';
+
+						// loops through event categories array
+						for ($i = 0; $i < count($post_cats); $i++){
+							// sets up class names for filtering
+							$event_cat_class .= str_replace(' ', '-', $post_cats[$i]) . ' ';
+
+							// sets up cats to display within event
+							$event_cat_piped .= $post_cats[$i];
+							// adds pipes between strings
+							if ($i < count($post_cats) - 1){
+								$event_cat_piped .= ' | ';
 							}
 						}
 
@@ -94,9 +106,10 @@ get_header(); ?>
 						$post_tags = wp_get_post_tags($post->ID, array('fields' => 'names'));
 						$event_tag_class = implode(' ', $post_tags);
 
+
 				?>
 
-				<div class="event-item <?php echo str_replace(' ', '-', $event_cat). ' '. $event_tag_class?>">
+				<div class="event-item <?php echo $event_cat_class . ' '. $event_tag_class?>">
 					<div class="event_img" style="background-image: url(<?php echo get_field('image'); ?>)">
 					</div>
 					<div class="event_desc-wrap">
@@ -111,7 +124,7 @@ get_header(); ?>
 								} else{
 									echo '';
 								}
-								echo '<br/>' . $event_cat;
+								echo '<br/>' . $event_cat_piped;
 							?>
 						</p>
 						<div class="event_info-desc">

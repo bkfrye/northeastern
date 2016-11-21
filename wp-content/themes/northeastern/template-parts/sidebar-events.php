@@ -49,6 +49,9 @@
 
     <?php endwhile;
         echo '<a href="'. esc_url( home_url( '/' ) ) .'events" style="display: inline-block;margin-left: 2em; padding: 1em 0;">View More Events</a>';
+
+        
+        wp_reset_postdata();
     ?>
 
 </div>

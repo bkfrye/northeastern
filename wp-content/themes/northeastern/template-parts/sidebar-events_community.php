@@ -56,7 +56,6 @@
         }else {
             echo '<p>No Events Scheduled. Check back soon.</p>';
             get_template_part('template-parts/sidebar', 'facebook');
-            get_template_part('template-parts/sidebar', 'connect');
         }
 
     ?>

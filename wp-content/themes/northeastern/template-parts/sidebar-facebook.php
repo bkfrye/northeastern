@@ -10,6 +10,12 @@
         <p>Connect with community members from your area by joining the <?php echo the_title();?> Community Facebook Page!</p>
     </div>
     <div class="btn_wrap">
-        <a href="https://www.facebook.com/NortheasternAlumni/" class="btn_red" target="_blank">Follow Us</a>
+        <?php
+        if(get_field('facebook_community_link')){
+            echo '<a href="' . get_field('facebook_community_link') . '" class="btn_red" target="_blank">Follow Us</a>';
+        }else{
+            echo '<a href="https://www.facebook.com/NortheasternAlumni/" class="btn_red" target="_blank">Follow Us</a>';
+        }
+        ?>
     </div>
 </div>

@@ -49,12 +49,10 @@ get_header(); ?>
 			</article>
 			<aside>
 				<?php
-
-
 					$sidebar_items =  get_field('sidebar_items');
 
-					if( !($sidebar_items) ) {
-						get_template_part('template-parts/sidebar', 'facebook');
+					if( empty($sidebar_items) ) {
+						echo '';
 					}
 					else{
 						if ( in_array('events', $sidebar_items) ) {

@@ -36,9 +36,23 @@
 	</article>
 	<aside>
 		<?php
-			$sb_rows = get_field('custom_sidebar_items');
 			$sidebar_items =  get_field('sidebar_items');
 
+			if( empty($sidebar_items) ) {
+				echo '';
+			}
+			else{
+				if ( in_array('events', $sidebar_items) ) {
+					get_template_part('template-parts/sidebar', 'events');
+				}
+				if ( in_array('facebook', $sidebar_items) ) {
+					get_template_part('template-parts/sidebar', 'facebook');
+				}
+			}
+
+			wp_reset_postdata();
+
+			$sb_rows = get_field('custom_sidebar_items');
 
 			if ($sb_rows){
 				foreach ($sb_rows as $sb_row){
@@ -54,6 +68,8 @@
 					<style>
 					.custom_sb_btn a{
 						display: inline-block;
+						color: <?php echo $btn_color?>;
+						border: 2px solid <?php echo $btn_color?>;
 						border-radius: 22px;
 						font-size: 12pt;
 						text-transform: uppercase;
@@ -63,8 +79,7 @@
 						text-decoration: none;
 						text-align: center;
 					}
-					.custom_sb_btn a:hover,
-					.custom_sb_btn a:visited{
+					.custom_sb_btn a:hover, .custom_sb_btn a:visited{
 						color: <?php echo $btn_color?>;
 					}
 					</style>
@@ -76,7 +91,7 @@
 								<?php echo $sidebar_content ?>
 							</p>
 							<div class="custom_sb_btn" style="text-align: center;">
-								<?php echo '<a href="' . $sidebar_button_link . '"style="color:'.$btn_color.';border: 2px solid '.$btn_color.'">' . $sidebar_button_copy . '</a>';?>
+								<?php echo '<a href="' . $sidebar_button_link . '">' . $sidebar_button_copy . '</a>';?>
 							</div>
 
 						</article>
@@ -84,20 +99,6 @@
 		<?php
 				}
 			}
-
-			if( empty($sidebar_items) ) {
-				get_template_part('template-parts/sidebar', 'facebook');
-			}
-			else{
-				if ( in_array('events', $sidebar_items) ) {
-					get_template_part('template-parts/sidebar', 'events');
-				}
-				if ( in_array('facebook', $sidebar_items) ) {
-					get_template_part('template-parts/sidebar', 'facebook');
-				}
-			}
-
-			wp_reset_postdata();
 		?>
 	</aside>
 

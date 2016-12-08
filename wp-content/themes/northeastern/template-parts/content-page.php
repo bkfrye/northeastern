@@ -82,14 +82,17 @@
 					.custom_sb_btn a:hover, .custom_sb_btn a:visited{
 						color: <?php echo $btn_color?>;
 					}
+					.custom_sb p{
+						color: <?php echo $text_color?>;
+					}
 					</style>
 
 					<div class="custom_sb">
-						<article class="" style="width: 100%;margin-bottom: 2em;padding: 2em;background-color:<?php echo $bg_color?>">
+						<article class="" style="width: 100%;padding: 2em;background-color:<?php echo $bg_color?>">
 							<h3 style="font-size: 26px;color:<?php echo $text_color?>"><?php echo $sidebar_headline ?></h3>
-							<p style="color:<?php echo $text_color?>">
+							<div>
 								<?php echo $sidebar_content ?>
-							</p>
+							</div>
 							<div class="custom_sb_btn" style="text-align: center;">
 								<?php echo '<a href="' . $sidebar_button_link . '">' . $sidebar_button_copy . '</a>';?>
 							</div>

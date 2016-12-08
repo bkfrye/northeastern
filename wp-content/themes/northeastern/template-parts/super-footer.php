@@ -5,7 +5,7 @@
 	?>
 	</div>
 	<script type="text/javascript">
-	    lightGallery(document.getElementById('freewall')); 
+	    lightGallery(document.getElementById('freewall'));
 	</script>
 </section>
 
